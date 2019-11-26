@@ -1,9 +1,4 @@
 class VigneronsController < ApplicationController
-  def new
-  end
-
-  def create
-  end
 
   def index
     @vignerons = Vigneron.all
@@ -12,6 +7,15 @@ class VigneronsController < ApplicationController
   def show
     @vigneron = Vigneron.find_by_id(params[:id])
   end
+
+  def new
+    @vigneron = Vigneron.new
+
+  end
+
+  def create
+  end
+
 
   def edit
   end
