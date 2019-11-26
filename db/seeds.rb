@@ -24,7 +24,24 @@ vigneron1.domain_photo.attach(io: vigneron_domain1, filename: 'vigneron_domain1.
 vigneron1.save!
 
 
-puts 'Created the vignerons seed'
+puts 'Created the wines seed'
+
+wine_photo1 = URI.open('https://cdn.shopify.com/s/files/1/2802/2616/products/small-selection-oe-32_large.jpg?v=1571404436')
+wine1 = Wine.new(
+  name: 'Alsace Pinot Blanc',
+  color: 'Blanc',
+  regionclassification:'Alsace',
+  cepages: 'Pinot Blanc et Auxerrois',
+  year: '2016',
+  alcool: '12,5%',
+  description: 'Moins célèbre que son compagnon le Gewurztraminer, le Pinot Blanc fait partie de ces cépages à découvrir. Nous avons sélectionné celui-ci pour son élégance et sa fraîcheur. Parfait pour accompagner les plats typiques alsaciens, mais aussi excellent avec une salade césar au poulet ou une belle choucroute de la mer!',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  vigneron: vigneron1)
+  #leger_puissant: ,
+  #fruite_tannique: ,
+wine1.wine_photo.attach(io: wine_photo1, filename: 'wine_photo1.jpg', content_type: 'image/jpg')
+wine1.save!
 
 
 # file = URI.open('https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
