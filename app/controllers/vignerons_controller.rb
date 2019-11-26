@@ -10,6 +10,7 @@ class VigneronsController < ApplicationController
   end
 
   def show
+    @vigneron = Vigneron.find_by_id(params[:id])
   end
 
   def edit
