@@ -19,6 +19,6 @@ class VigneronsController < ApplicationController
   def update
   end
 
-  def destroyW
+  def destroy
   end
 end
