@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_154155) do
+ActiveRecord::Schema.define(version: 2019_11_25_170300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "box_items", force: :cascade do |t|
+    t.bigint "box_id"
+    t.bigint "wine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_id"], name: "index_box_items_on_box_id"
+    t.index ["wine_id"], name: "index_box_items_on_wine_id"
+  end
+
+  create_table "boxes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "price"
+    t.date "delivery_date"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_boxes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +42,68 @@ ActiveRecord::Schema.define(version: 2019_11_25_154155) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "zip_code"
+    t.string "city"
+    t.boolean "color_red"
+    t.boolean "color_white"
+    t.boolean "color_rose"
+    t.boolean "region_alsace"
+    t.boolean "region_bordeaux"
+    t.boolean "region_rhone"
+    t.boolean "region_bourgogne"
+    t.boolean "region_loire"
+    t.boolean "classification_biodynamique"
+    t.boolean "classification_naturel"
+    t.boolean "alcool_light"
+    t.boolean "alcool_strong"
+    t.boolean "vin_sec"
+    t.boolean "vin_fruite"
+    t.boolean "vin_mineral"
+    t.boolean "vin_sucre"
+    t.boolean "vin_leger"
+    t.boolean "vin_puissant"
+    t.boolean "vin_tannique"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vignerons", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "region"
+    t.string "domain_name"
+    t.text "description"
+    t.string "avatar_photo"
+    t.string "domain_photo"
+    t.string "cepages"
+    t.string "address"
+    t.string "city"
+    t.string "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wines", force: :cascade do |t|
+    t.string "name"
+    t.bigint "vigneron_id"
+    t.string "color"
+    t.string "regionclassification"
+    t.string "alcool"
+    t.string "description"
+    t.string "sec_sucre"
+    t.string "mineral_fruite"
+    t.string "leger_puissant"
+    t.string "fruite_tannique"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vigneron_id"], name: "index_wines_on_vigneron_id"
+  end
+
+  add_foreign_key "box_items", "boxes"
+  add_foreign_key "box_items", "wines"
+  add_foreign_key "boxes", "users"
+  add_foreign_key "wines", "vignerons"
 end
