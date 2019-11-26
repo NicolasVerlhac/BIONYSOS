@@ -6,6 +6,7 @@ class VigneronsController < ApplicationController
   end
 
   def index
+    @vignerons = Vigneron.all
   end
 
   def show
