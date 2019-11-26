@@ -1,0 +1,24 @@
+.card-product-infos {
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin: 10px;
+  text-align: center;
+}
+
+.card-product-infos img {
+  height: 90px;
+  width: 90px;
+  margin: 15px;
+}
+
+.card-product-infos p {
+  margin: 10px;
+  font-style: italic;
+  color: gray;
+}
+
+.card-product h3{
+  font-size: 25px;
+  margin: 0;
+}
