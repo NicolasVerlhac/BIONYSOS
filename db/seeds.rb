@@ -40,7 +40,7 @@ vigneron2.domain_photo.attach(io: vigneron_domain2, filename: 'vigneron_domain2.
 vigneron2.save!
 
 vigneron_avatar3 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/30746/1.jpgxw218xh218xr2xgn.png')
-vigneron_domain3 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
+vigneron_domain3 = URI.open('https://www.alainchabanon.com/wp-content/uploads/2016/12/MG_2474-700x650.jpg')
 vigneron3 = Vigneron.new(
   first_name: 'Ludovic',
   last_name: 'Greffier',
