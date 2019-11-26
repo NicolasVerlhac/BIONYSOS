@@ -11,6 +11,7 @@
           <p><%= vigneron.last_name %></p>​​
           <p> <%= cl_image_tag vigneron.avatar.key, crop: :fill %></p>​​
           <p> <%= cl_image_tag vigneron.domain_photo.key, crop: :fill %></p>​​
+        <p><%= link_to 'show', vigneron_path(vigneron)%></p>
         </div>
       <% end %>
     </div>
