@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'dashboard/profile'
   get 'box_items/edit'
   get 'box_items/update'
+
   get 'boxes/new'
   get 'boxes/create'
   get 'boxes/index'
@@ -9,20 +10,11 @@ Rails.application.routes.draw do
   get 'boxes/edit'
   get 'boxes/update'
   get 'boxes/destroy'
-  get 'vignerons/new'
-  get 'vignerons/create'
-  get 'vignerons/index'
-  get 'vignerons/show'
-  get 'vignerons/edit'
-  get 'vignerons/update'
-  get 'vignerons/destroyW'
-  get 'vignerons/new'
-  get 'vignerons/create'
-  get 'vignerons/index'
-  get 'vignerons/show'
-  get 'vignerons/edit'
-  get 'vignerons/update'
-  get 'vignerons/destroy'
+
+  resources :vignerons do
+    resources :wines
+  end
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
