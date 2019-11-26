@@ -1,1 +1,21 @@
-<p>coucou index wines</p>
+<div class="container">
+  <h1>Index des vins du vigneron sur lequel tu viens de cliquer !</h1>
+  <div> <% @vigneron.wines.each do |wine| %>
+    <div class="card-product">
+      <h2><%=wine.name%></h2>
+      <p><%= wine.color %></p>
+      <p><%= wine.regionclassification %></p>
+      <p><%= wine.alcool %></p>
+      <p><%= wine.cepages %></p>
+      <p><%= wine.year %></p>
+      <p><%= wine.sec_sucre %></p>
+      <p><%= wine.mineral_fruite %></p>
+      <p><%= wine.description %></p>
+      <p> <%= cl_image_tag wine.wine_photo.key, crop: :fill %></p>​​
+    </div>
+  <% end %>
+</div>
+
+
+
+

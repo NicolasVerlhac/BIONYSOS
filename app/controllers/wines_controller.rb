@@ -1,7 +1,12 @@
 class WinesController < ApplicationController
 
   def index
-    @vigneron = Vigneron.find_by(params:[:id])
+    @vigneron = Vigneron.find(params[:vigneron_id])
+    @wine = @vigneron.wines
+
+  end
+
+  def show
   end
 
 end
