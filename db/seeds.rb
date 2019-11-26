@@ -1,8 +1,8 @@
 require 'open-uri'
 puts 'Delete vignerons and wines'
 
-Vignerons.destroy_all
-Wines.destroy_all
+Vigneron.destroy_all
+Wine.destroy_all
 
 puts 'Deleted the Vignerons and Wines seeds'
 
@@ -13,11 +13,11 @@ vigneron1 = Vigneron.new(
   first_name: 'Phillipe',
   last_name: 'Zinck',
   region:  'Alsace',
-  domain_name: 'Domaine Zinck'
-  description: "Le domaine familial est situé sur les coteaux à pente douce d'Eguisheim et de Gueberschwihr, à quelques kilomètres au sud de Colmar, dont les sols sont à dominante argilo-calcaire. Ils pratiquent une culture biologique non certifiée sur le vignoble."
-  cepage: 'Pinot Blanc, Riesling'
-  address: '18 Rue des 3 Châteaux'
-  city: 'Eguisheim'
+  domain_name: 'Domaine Zinck',
+  description: "Le domaine familial est situé sur les coteaux à pente douce d'Eguisheim et de Gueberschwihr, à quelques kilomètres au sud de Colmar, dont les sols sont à dominante argilo-calcaire. Ils pratiquent une culture biologique non certifiée sur le vignoble.",
+  cepages: 'Pinot Blanc, Riesling',
+  address: '18 Rue des 3 Châteaux',
+  city: 'Eguisheim',
   zip_code: '68420')
 vigneron1.avatar.attach(io: vigneron_avatar1, filename: 'vigneron_avatar1.jpg', content_type: 'image/jpg')
 vigneron1.domain_photo.attach(io: vigneron_domain1, filename: 'vigneron_domain1.jpg', content_type: 'image/jpg')
