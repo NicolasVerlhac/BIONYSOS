@@ -24,7 +24,7 @@ vigneron1.domain_photo.attach(io: vigneron_domain1, filename: 'vigneron_domain1.
 vigneron1.save!
 
 vigneron_avatar2 = URI.open('https://s.lesgrappes.com/media/avatar/p/h/ff69ce04f9ce236d07775ef971c0ea5d-1438857007.jpgxw218xh218xr2xgn.png')
-vigneron_domain2 = URI.open('https://s.lesgrappes.com/media/osaka/slideshowmanufacturers/chais-chateau-de-premeaux.jpgxw50xh50xr2xgc.jpg')
+vigneron_domain2 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
 vigneron2 = Vigneron.new(
   first_name: 'Arnaud',
   last_name: 'Pelletier',
@@ -40,7 +40,7 @@ vigneron2.domain_photo.attach(io: vigneron_domain2, filename: 'vigneron_domain2.
 vigneron2.save!
 
 vigneron_avatar3 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/30746/1.jpgxw218xh218xr2xgn.png')
-vigneron_domain3 = URI.open('https://s3.lesgrappes.com/media/osaka/slideshowmanufacturers/1560263234fb_img_1513014015106.jpg')
+vigneron_domain3 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
 vigneron3 = Vigneron.new(
   first_name: 'Ludovic',
   last_name: 'Greffier',
@@ -56,7 +56,7 @@ vigneron3.domain_photo.attach(io: vigneron_domain3, filename: 'vigneron_domain3.
 vigneron3.save!
 
 vigneron_avatar4 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/22112/1541680694michel_vineyard_web.jpgxw218xh218xr2xgn.png')
-vigneron_domain4 = URI.open('https://s2.lesgrappes.com/media/osaka/slideshowmanufacturers/1541681005chteaudenagestravailvignes_web.jpgxw50xh50xr2xgc.jpg')
+vigneron_domain4 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
 vigneron4 = Vigneron.new(
   first_name: 'Michel',
   last_name: 'Gassier',
@@ -72,7 +72,7 @@ vigneron4.domain_photo.attach(io: vigneron_domain4, filename: 'vigneron_domain4.
 vigneron4.save!
 
 vigneron_avatar5 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/29025/photo_team_malidain_bd_.jpgxw218xh218xr2xgn.png')
-vigneron_domain5 = URI.open('https://s1.lesgrappes.com/media/osaka/slideshowmanufacturers/1555402778malidainvigne.png')
+vigneron_domain5 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
 vigneron5 = Vigneron.new(
   first_name: 'Romain',
   last_name: 'Malidain',
@@ -124,7 +124,7 @@ wine2 = Wine.new(
 wine2.wine_photo.attach(io: wine_photo2, filename: 'wine_photo2.jpg', content_type: 'image/jpg')
 wine2.save!
 
-wine_photo3 = URI.open('https://s3.lesgrappes.com/media/catalog/product/m/l/ml_hd.pngxw100xh220xr2.jpg')
+wine_photo3 = URI.open('https://media.lepetitballon.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/maison-ginestet-margaux-2015.jpg')
 wine3 = Wine.new(
   name: 'Château Moulin de Launay',
   color: 'Blanc',
@@ -141,7 +141,7 @@ wine3 = Wine.new(
 wine3.wine_photo.attach(io: wine_photo3, filename: 'wine_photo3.jpg', content_type: 'image/jpg')
 wine3.save!
 
-wine_photo4 = URI.open('https://s3.lesgrappes.com/media/catalog/product/n/g/nglnrg_sm-1541412118.pngxw100xh220xr2.jpg')
+wine_photo4 = URI.open('https://media.lepetitballon.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/maison-ginestet-margaux-2015.jpg')
 wine4 = Wine.new(
   name: "Liberty'nages Rouge",
   color: 'Rouge',
@@ -158,7 +158,7 @@ wine4 = Wine.new(
 wine4.wine_photo.attach(io: wine_photo4, filename: 'wine_photo4.jpg', content_type: 'image/jpg')
 wine4.save!
 
-wine_photo5 = URI.open('https://s3.lesgrappes.com/media/catalog/product/n/g/nglnrg_sm-1541412118.pngxw100xh220xr2.jpg')
+wine_photo5 = URI.open('https://media.lepetitballon.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/maison-ginestet-margaux-2015.jpg')
 wine5 = Wine.new(
   name: "Liberty'nages Rouge bis",
   color: 'Rouge',
