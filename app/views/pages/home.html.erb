@@ -1,2 +1,70 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1542384517060-2b41144f12a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80);">
+  <div class="container">
+    <h1>Découvrez les meilleurs vins bio!</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+
+    <div class="btn btn-flat">
+      <%= link_to 'Notre Offre', pages_offer_path(@offer) %>
+    </div>
+
+  </div>
+</div>
+<div class="container">
+  <div>
+    <h2 class="text-center mt-4 mb-4" > Découvrez notre offre </h2>
+    <div class="row">
+      <div class="col-sm">
+        <div class="card-product-infos">
+          <img src="" />
+          <h3>Lorem ipsum dolor</h3>
+          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card-product-infos">
+          <img src="" />
+          <h3>Lorem ipsum dolor</h3>
+          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card-product-infos">
+          <img src="" />
+          <h3>Lorem ipsum dolor</h3>
+          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        </div>
+      </div>
+    </div>
+      <div class="text-center">
+        <div class="btn btn-flat-block">
+          <%= link_to 'Notre Offre', pages_offer_path(@offer) %>
+        </div>
+      </div>
+  </div>
+
+  <div>
+    <h2 class="text-center mt-4 mb-4" > Nos nouveaux vignerons </h2>
+    <div class="row">
+      <div class="col-sm">
+        <div class='column-cards'>
+          <% @vignerons.first(3).each do |vigneron| %>
+          <%= link_to vigneron_path(vigneron) do %>
+          <div class="card-trip">
+              <%= cl_image_tag vigneron.domain_photo.key, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                <p><%= vigneron.first_name %> <%= vigneron.last_name %></p>
+                <p><%= vigneron.region %> <%= vigneron.domain_name %></p>
+                <%= image_tag url_for(vigneron.avatar), class: 'card-trip-user avatar-bordered' %>
+              </div>
+            </div>
+          </div>
+         <% end %>
+       <% end %>
+    </div>
+  </div>
+      </div>
+      <div class="text-center">
+      <a class="btn btn-flat-block" href="#">Voir tous nos vignerons</a>
+      </div>
+</div>

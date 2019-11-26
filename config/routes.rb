@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'boxes/update'
   get 'boxes/destroy'
 
+  get 'pages/about'
+  get 'pages/offer'
+
   resources :vignerons do
     resources :wines
   end

@@ -1,0 +1,30 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #C60D25;
+  opacity: 0.95;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #C60D25;
+  opacity: 1;
+  color: white;
+}
+
+.btn-flat-block {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #C60D25;
+  opacity: 0.95;
+  transition: background 0.3s ease;
+  margin: 20px;
+}
+
+.btn-flat-block:hover {
+  background: #C60D25;
+  opacity: 1;
+  color: white;
+}
