@@ -2,7 +2,11 @@
   <div class="container">
     <h1>Découvrez les meilleurs vins bio!</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-    <a class="btn btn-flat" href="#">Notre Offre</a>
+
+    <div class="btn btn-flat">
+      <%= link_to 'Notre Offre', pages_offer_path(@offer) %>
+    </div>
+
   </div>
 </div>
 <div class="container">
@@ -32,7 +36,9 @@
       </div>
     </div>
       <div class="text-center">
-      <a class="btn btn-flat-block" href="#">Notre Offre</a>
+        <div class="btn btn-flat-block">
+          <%= link_to 'Notre Offre', pages_offer_path(@offer) %>
+        </div>
       </div>
   </div>
 
