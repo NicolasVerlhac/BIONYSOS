@@ -59,7 +59,7 @@ vigneron_domain4 = URI.open('https://cdn.futura-sciences.com/buildsv6/images/med
 vigneron4 = Vigneron.new(
   first_name: 'Michel',
   last_name: 'Gassier',
-  region:  'Vallée du Rhône',
+  region:  'Rhone',
   domain_name: 'Domaine Gassier',
   description: "Implanté en terroir Rhodanien, le Château de Nages est le berceau de la famille Gassier. Aimé et respecté, cette terre est exploitée en agriculture biologique, par la 4ème génération en charge du domaine aujourd’hui, afin d’en exprimer le meilleur. Avant d’en arriver là, il a fallu que la famille Gassier remette en question les approches, routines et parfois même le rejet de règles inadaptées mais cela est aussi ce qui caractérise l’esprit du Château de Nages aujourd’hui : la liberté de penser et de créer. C’est d’ailleurs ce que représente la gamme Liberty.",
   cepages: 'Grenache, Roussane, Colombard',
@@ -75,7 +75,7 @@ vigneron_domain5 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x
 vigneron5 = Vigneron.new(
   first_name: 'Romain',
   last_name: 'Malidain',
-  region:  'Pays de la Loire',
+  region:  'Loire',
   domain_name: 'Domaine Malidain',
   description: "Le Vignoble Malidain, c'est : un domaine viticole familial depuis 1954, situé en AOP Muscadet Côtes de Grandlieu, non loin du Lac de Grandlieu. 45 hectares de vignes sont travaillées dans le plus grand respect de l'environnement par trois associés Malidain : les deux frères, Romain et Freddy, et leur oncle Christophe. Le vignoble est en effet conduit en terra Vitis et les trois associés produisent des vins vegans. Muscadet Côtes de Grandlieu sur lie, Chardonnay, Sauvignon, Muscat sec et moelleux, Viognier, Grolleau, Pinot noir, Merlot, Cabernet franc... voilà une belle gamme riche et variée !",
   cepages: 'Muscadet Côtes de Grandlieu sur lie, Chardonnay, Sauvignon, Muscat sec et moelleux, Viognier, Grolleau, Pinot noir, Merlot, Cabernet franc',
@@ -123,12 +123,12 @@ vigneron_domain8 = URI.open('https://www.sciencesetavenir.fr/assets/img/2016/02/
 vigneron8 = Vigneron.new(
   first_name: 'Claude',
   last_name: "Champault",
-  region:  'Pays de la Loire',
+  region:  'Loire',
   domain_name: 'Domaine Champault',
   description: "Le Domaine Roger Champault est situé à 'Champtin' dans un vieux village vigneron au sud de Sancerre. Plantés sur des coteaux aux expositions et aux terroirs réputés Pinot Noir et Sauvignon s'épanouissent au fil des saisons. Travaillant passionnément cette terre aux richesses multiples, le Domaine a obtenu la certification HVE (Haute Valeur Environnementale). Nous produisons du Sancerre blanc, rouge et rosé ainsi que du Menetou Salon blanc et rouge. Grâce à ses efforts et ses vins de qualité, le Domaine a été représenté, en juin 2010, au mariage de la Princesse de Suède, avec sa cuvée 'Les Pierris' (Sancerre blanc 2008).",
   cepages: 'Chenin, Pinot Noir, Grenache',
-  address: '5 route de Foulot',
-  city: 'Crézancy-en-Sancerre',
+  address: '5 rue Porte Serrure',
+  city: 'Sancerre',
   zip_code: '18300')
 vigneron8.avatar.attach(io: vigneron_avatar8, filename: 'vigneron_avatar8.jpg', content_type: 'image/jpg')
 vigneron8.domain_photo.attach(io: vigneron_domain8, filename: 'vigneron_domain8.jpg', content_type: 'image/jpg')
@@ -139,7 +139,7 @@ vigneron_domain9 = URI.open('https://www.drone-malin.com/medias/images/images-ae
 vigneron9 = Vigneron.new(
   first_name: 'Samuel',
   last_name: "Arnaud",
-  region:  'Vallée du Rhône',
+  region:  'Rhone',
   domain_name: 'Domaine Ferme des Arnaud',
   description: "Le domaine est un vignoble familial qui se transmet de génération en génération. Historiquement, c’est Papé Yves, qui plante les premières vignes en 1940 sur des terres abandonnées pendant la guerre. Lors de la reprise du vignoble par son fils Pierre, ils prennent alors la courageuse décision d’adhérer dès 1978 au bio ! Le domaine est repris en 2008 par le fils cadet de Pierre : Martial, œnologue de formation et enrichi d'une formidable expérience en Nouvelle-Zélande. C'est en 2013 que le fils aîné, Samuel, ingénieur électronicien de formation rejoint son frère. Le domaine prend alors une nouvelle dimension vers un nouvel avenir.",
   cepages: 'Grenache, Syrah Cinsault',
