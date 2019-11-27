@@ -12,6 +12,7 @@
       <p><%= wine.mineral_fruite %></p>
       <p><%= wine.description %></p>
       <p> <%= cl_image_tag wine.wine_photo.key, crop: :fill %></p>​​
+      <p><%= link_to 'Détail', vigneron_wine_path(@vigneron, wine)%></p>
     </div>
   <% end %>
 </div>
