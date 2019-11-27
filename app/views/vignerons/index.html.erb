@@ -3,17 +3,30 @@
 
 
   <div class="container col-11">
-    <p>Classement par ordre de pertinence</p>
+    <p class="mb-4">Classement par ordre de pertinence</p>
     <div class='d-flex'>
-      <% @vignerons.each do |vigneron| %>
-        <div class='column-cards'>
-          <h2><%= vigneron.first_name %></h2>
-          <p><%= vigneron.last_name %></p>​​
-          <p> <%= cl_image_tag vigneron.avatar.key, crop: :fill %></p>​​
-          <p> <%= cl_image_tag vigneron.domain_photo.key, crop: :fill %></p>​​
-        <p><%= link_to 'show', vigneron_path(vigneron)%></p>
-        </div>
-      <% end %>
+      <div class='column-cards'>
+        <% @vignerons.each do |vigneron| %>
+          <div class="card-trip">
+            <p> <%= cl_image_tag vigneron.domain_photo.key, crop: :fill, class: 'vigneron_domain' %></p>​​
+            <div class="card-trip-infos">
+              <h2><%= vigneron.first_name %></h2>
+              <p><%= vigneron.last_name %></p>​​
+              <p> <%= cl_image_tag vigneron.avatar.key, crop: :fill, class: 'card-trip-user avatar-bordered' %></p>​​
+              <p><%= link_to 'show', vigneron_path(vigneron)%></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class='column'>
+        <div
+          id="map"
+          style="width: 400px;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
     </div>
   </div>
-
