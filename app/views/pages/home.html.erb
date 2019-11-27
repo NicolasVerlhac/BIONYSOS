@@ -11,26 +11,26 @@
 </div>
 <div class="container">
   <div>
-    <h2 class="text-center mt-4 mb-4" > Découvrez notre offre </h2>
+    <h2 class="text-center mt-4 mb-4" > Notre offre </h2>
     <div class="row">
       <div class="col-sm">
         <div class="card-product-infos">
-          <img src="" />
-          <h3>Lorem ipsum dolor</h3>
+          <%= image_tag "Homepage/offre_nose.png" %>
+          <h3>Vos Préférences</h3>
           <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
         </div>
       </div>
       <div class="col-sm">
         <div class="card-product-infos">
-          <img src="" />
-          <h3>Lorem ipsum dolor</h3>
+          <%= image_tag "Homepage/offre_reco.png" %>
+          <h3>Nos Recommendations</h3>
           <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
         </div>
       </div>
       <div class="col-sm">
         <div class="card-product-infos">
-          <img src="" />
-          <h3>Lorem ipsum dolor</h3>
+          <%= image_tag "Homepage/offre_feedback-2.png" %>
+          <h3>Votre Feedack</h3>
           <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
         </div>
       </div>
@@ -45,74 +45,73 @@
   <div>
     <h2 class="text-center mt-4 mb-4" > Nos nouveaux vignerons </h2>
     <div class="row">
-      <div class="col-sm">
-        <div class='column-cards'>
-          <% @vignerons.first(3).each do |vigneron| %>
+      <% @vignerons.first(3).each do |vigneron| %>
+        <div class="col-sm-4">
+          <div class=''>
           <%= link_to vigneron_path(vigneron) do %>
           <div class="card-trip">
               <%= cl_image_tag vigneron.domain_photo.key, crop: :fill %>
+                <div class="card-trip-region <%= vigneron.region %>">
+                  <p><%= vigneron.region %></p>
+                </div>
             <div class="card-trip-infos">
               <div>
-                <p><%= vigneron.first_name %> <%= vigneron.last_name %></p>
-                <p><%= vigneron.region %> <%= vigneron.domain_name %></p>
-                <%= image_tag url_for(vigneron.avatar), class: 'card-trip-user avatar-bordered' %>
+                <h3> <strong><%= vigneron.first_name %> <%= vigneron.last_name %></strong>  - <i><%= vigneron.domain_name %></i> </h3>
+                <p><%= vigneron.description.first(145) %> ...</p>
+                <%= image_tag url_for(vigneron.avatar), class: 'card-trip-vigneron avatar-bordered' %>
               </div>
             </div>
           </div>
-         <% end %>
-       <% end %>
         </div>
       </div>
+         <% end %>
+       <% end %>
     </div>
       <div class="text-center">
-      <a class="btn btn-flat-block" href="#">Voir tous nos vignerons</a>
+        <div class="btn btn-flat-block">
+        <%= link_to 'Voir tous nos vignerons', vignerons_path %>
+        </div>
       </div>
   </div>
 
   <div>
-    <h2 class="text-center mt-4 mb-4" > Un engament pour la planète </h2>
+    <h2 class="text-center mt-4 mb-4" > Notre engament pour la planète </h2>
     <div class="row">
       <div class="col-sm">
-        <div class="card-product-infos">
-          <img src="" />
-          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        <div class="card-engagement">
+          <%= image_tag "Homepage/leaf.png" %>
+          <p>Nos vignerons sont engagés pour le <strong>respect de la planète</strong></p>
         </div>
       </div>
       <div class="col-sm">
-        <div class="card-product-infos">
-          <img src="" />
-          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        <div class="card-engagement">
+          <%= image_tag "Homepage/bio.png" %>
+          <p>Ils produisent uniquement des <strong>vins bios et naturels</strong></p>
         </div>
       </div>
       <div class="col-sm">
-        <div class="card-product-infos">
-          <img src="" />
-          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card-product-infos">
-          <img src="" />
-          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        <div class="card-engagement">
+          <%= image_tag "Homepage/price.png" %>
+          <p>Un <strong>prix juste</strong> pour notre vigneron et pour vous </p>
         </div>
       </div>
             <div class="col-sm">
-        <div class="card-product-infos">
-          <img src="" />
-          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        <div class="card-engagement">
+          <%= image_tag "Homepage/electric-truck.png" %>
+          <p>Nous assurons un transport <strong> 100% éléctrique</strong></p>
         </div>
       </div>
             <div class="col-sm">
-        <div class="card-product-infos">
-          <img src="" />
-          <p>lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        <div class="card-engagement">
+          <%= image_tag "Homepage/bike.png" %>
+          <p>Livraison en <strong>vélo</strong> sur les derniers kilométres</p>
         </div>
       </div>
     </div>
       <div class="text-center">
-        <div class="btn btn-flat-block">
+        <div class="btn btn-flat-block btn-last">
 
-          <%= link_to 'Voir tous nos vignerons', vignerons_path %>
+          <%= link_to 'Notre engagement', pages_about_path %>
         </div>
       </div>
   </div>
