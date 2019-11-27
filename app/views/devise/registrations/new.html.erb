@@ -2,7 +2,23 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-sign">
 
-        <h1>Création de compte</h1>
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#mon_ancre_1" class="tab-underlined active">Compte</a>
+  </li>
+  <li>
+    <a href="#mon_ancre_2" class="tab-underlined">Goûts</a>
+  </li>
+  <li>
+    <a href="#mon_ancre_3" class="tab-underlined">Caractéristiques</a>
+  </li>
+</ul>
+
+
+
+        <div class=" p-4 m-3"><h2 id="mon_ancre_1">Création de compte</h2></div>
+
+
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
@@ -27,7 +43,7 @@
               </div>
 
 
-            <p>Quelle couleur de vin aimez-vous ?</p>
+            <p id="mon_ancre_2">Quelle couleur de vin aimez-vous ?</p>
               <div class="flex-row">
               <div class="category_choices flex-row">
                 <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "vin rouge", input_html: { class: 'd-none' } %></div>
@@ -60,7 +76,7 @@
               </div>
 
 
-            <p> Caractéristiques ?</p>
+            <p id="mon_ancre_3"> Caractéristiques ?</p>
               <div class="category_choices">
 
 
@@ -90,5 +106,8 @@
             <%= render "devise/shared/links" %>
 
     </div>
+
+
+
   </div>
 </div>
