@@ -1,7 +1,15 @@
 class VigneronsController < ApplicationController
 
   def index
-    @vignerons = Vigneron.all
+    # @vignerons = Vigneron.all
+    @vignerons = Vigneron.geocoded #returns flats with coordinates
+
+    @markers = @vignerons.map do |vigneron|
+      {
+        lat: vigneron.latitude,
+        lng: vigneron.longitude
+      }
+    end
   end
 
   def show
@@ -10,12 +18,10 @@ class VigneronsController < ApplicationController
 
   def new
     @vigneron = Vigneron.new
-
   end
 
   def create
   end
-
 
   def edit
   end
