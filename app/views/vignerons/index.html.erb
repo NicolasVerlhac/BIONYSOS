@@ -1,9 +1,7 @@
-  <h1>Vignerons#index</h1>
-  <p>Find me in app/views/vignerons/index.html.erb</p>
-
-
+  <br>
+  <h1>Nos Vignerons</h1>
+  <br>
   <div class="container col-11">
-    <p class="mb-4">Classement par ordre de pertinence</p>
     <div class='d-flex'>
       <div class='column-cards'>
         <% @vignerons.each do |vigneron| %>
@@ -13,7 +11,7 @@
               <h2><%= vigneron.first_name %></h2>
               <p><%= vigneron.last_name %></p>​​
               <p> <%= cl_image_tag vigneron.avatar.key, crop: :fill, class: 'card-trip-user avatar-bordered' %></p>​​
-              <p><%= link_to 'show', vigneron_path(vigneron)%></p>
+              <p><%= link_to 'Détail', vigneron_path(vigneron)%></p>
             </div>
           </div>
         <% end %>

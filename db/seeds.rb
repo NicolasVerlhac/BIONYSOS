@@ -6,7 +6,6 @@ Wine.destroy_all
 
 puts 'Deleted the Vignerons and Wines seeds'
 
-
 vigneron_avatar1 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/4726/les_grappes_profils.pngxw218xh218xr2xgn.png')
 vigneron_domain1 = URI.open('https://s.lesgrappes.com/media/osaka/default_cover.jpg')
 vigneron1 = Vigneron.new(
@@ -24,7 +23,7 @@ vigneron1.domain_photo.attach(io: vigneron_domain1, filename: 'vigneron_domain1.
 vigneron1.save!
 
 vigneron_avatar2 = URI.open('https://s.lesgrappes.com/media/avatar/p/h/ff69ce04f9ce236d07775ef971c0ea5d-1438857007.jpgxw218xh218xr2xgn.png')
-vigneron_domain2 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
+vigneron_domain2 = URI.open('http://www.leparisien.fr/resizer/049L6y9Nh76QajhA1Gtbn6iznsw=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/SNVEAARNOHWRFP52CIDERN2PMM.jpg')
 vigneron2 = Vigneron.new(
   first_name: 'Arnaud',
   last_name: 'Pelletier',
@@ -48,7 +47,7 @@ vigneron3 = Vigneron.new(
   domain_name: 'Domaine Greffier',
   description: "Ludovic Greffier est la 5ème génération sur ce Domaine familial implanté en Entre Deux Mers autour de la Butte de Launay, point culminant de la Gironde. Ludovic exploite aujourd'hui 74ha avec la spécificité de ne produire exclusivement que des vins blancs secs ! L'objectif est de cultiver cette différence et de proposer des vins différents pour vous surprendre.",
   cepages: 'Semillion, Sauvignon Blanc, Sauvignon Gris, Muscadelle, Ugni Blanc, Colombard',
-  address: '3, LD Trochon',
+  address: '3 rue du Vallon',
   city: 'Soussac',
   zip_code: '33790')
 vigneron3.avatar.attach(io: vigneron_avatar3, filename: 'vigneron_avatar3.jpg', content_type: 'image/jpg')
@@ -56,7 +55,7 @@ vigneron3.domain_photo.attach(io: vigneron_domain3, filename: 'vigneron_domain3.
 vigneron3.save!
 
 vigneron_avatar4 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/22112/1541680694michel_vineyard_web.jpgxw218xh218xr2xgn.png')
-vigneron_domain4 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
+vigneron_domain4 = URI.open('https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/e/6/0/e60b6a3eca_84124_03-1342.jpg')
 vigneron4 = Vigneron.new(
   first_name: 'Michel',
   last_name: 'Gassier',
@@ -64,7 +63,7 @@ vigneron4 = Vigneron.new(
   domain_name: 'Domaine Gassier',
   description: "Implanté en terroir Rhodanien, le Château de Nages est le berceau de la famille Gassier. Aimé et respecté, cette terre est exploitée en agriculture biologique, par la 4ème génération en charge du domaine aujourd’hui, afin d’en exprimer le meilleur. Avant d’en arriver là, il a fallu que la famille Gassier remette en question les approches, routines et parfois même le rejet de règles inadaptées mais cela est aussi ce qui caractérise l’esprit du Château de Nages aujourd’hui : la liberté de penser et de créer. C’est d’ailleurs ce que représente la gamme Liberty.",
   cepages: 'Grenache, Roussane, Colombard',
-  address: 'Château de Nages, Chemin des Canaux',
+  address: 'Chemin des Canaux',
   city: 'Caissargues',
   zip_code: '30132')
 vigneron4.avatar.attach(io: vigneron_avatar4, filename: 'vigneron_avatar4.jpg', content_type: 'image/jpg')
@@ -87,8 +86,72 @@ vigneron5.avatar.attach(io: vigneron_avatar5, filename: 'vigneron_avatar5.jpg', 
 vigneron5.domain_photo.attach(io: vigneron_domain5, filename: 'vigneron_domain5.jpg', content_type: 'image/jpg')
 vigneron5.save!
 
+vigneron_avatar6 = URI.open('https://s.lesgrappes.com/media/avatar/l/o/190909e7ea1baf0a3c733af6e105e0511469434613.jpgxw218xh218xr2xgn.png')
+vigneron_domain6 = URI.open('https://s.lesgrappes.com/media/osaka/slideshowmanufacturers/1469434614domaine_fleury_2.png')
+vigneron6 = Vigneron.new(
+  first_name: 'Louis-Marie',
+  last_name: 'Coquard',
+  region:  'Bourgogne',
+  domain_name: 'Domaine de Champ-Fleury',
+  description: "Nous sommes les héritiers directs de la tradition beaujolaise, nous répétons tous les jours les gestes transmis par nos ancêtres, et nous mettons tout en œuvre pour assurer la longévité de notre vignoble. Nous avons même des vignes centenaires ! Nous faisons aussi et surtout très attention à la qualité de notre production, car un vin de qualité ne peut se faire qu’avec des raisins de qualité !Soucieux de l’environnement qui nous entoure, c'est en 2004 que nous nous sommes engagés dans une démarche d’agriculture durable qu’est Terra-Vitis.",
+  cepages: 'Gamay, Chardonnay, Pinot Noir',
+  address: '2 rue Marthoret',
+  city: 'Anse',
+  zip_code: '69480')
+vigneron6.avatar.attach(io: vigneron_avatar6, filename: 'vigneron_avatar6.jpg', content_type: 'image/jpg')
+vigneron6.domain_photo.attach(io: vigneron_domain6, filename: 'vigneron_domain6.jpg', content_type: 'image/jpg')
+vigneron6.save!
 
-puts 'Created the wines seed'
+vigneron_avatar7 = URI.open('https://s.lesgrappes.com/media/avatar/j/e/6872726a00f3edca515ad964d1fb941c1465329770.jpgxw218xh218xr2xgn.png')
+vigneron_domain7 = URI.open('https://images.ladepeche.fr/api/v1/images/view/5c3627748fe56f5f1869dc6a/large/image.jpg')
+vigneron7 = Vigneron.new(
+  first_name: 'Jean',
+  last_name: "d'Antras",
+  region:  'Bordeaux',
+  domain_name: 'Domaine Magence',
+  description: "A 50 km au sud de Bordeaux, sur une croupe de 7 mètres de graves Güntziennes, mêlées d'argile et reposant sur une dalle calcaire dominant la Garonne. Un sol pauvre naturellement drainé, idéal pour que s'épanouissent les Cabernet-Sauvignons, Cabernet-Francs, Merlot, Petit-Verdots (cépages rouges) ainsi que les Sauvignons et Sémillons (cépages blancs).Les vignes y sont plantées nord-sud pour un ensoleillement maximum des grappes.Depuis plus de deux siècles dans la même famille, cette propriété s'étend sur 55 hectares d'un seul tenant autour de sa chartreuse édifiée au milieu du 18ème siècle.",
+  cepages: 'Cabernet-Sauvignons, Cabernet-Francs, Merlot, Petit-Verdots, Sauvignons et Sémillons',
+  address: '10 route du Bas',
+  city: 'Saint Pierre de Mons',
+  zip_code: '33210')
+vigneron7.avatar.attach(io: vigneron_avatar7, filename: 'vigneron_avatar7.jpg', content_type: 'image/jpg')
+vigneron7.domain_photo.attach(io: vigneron_domain7, filename: 'vigneron_domain7.jpg', content_type: 'image/jpg')
+vigneron7.save!
+
+vigneron_avatar8 = URI.open('https://s.lesgrappes.com/media/avatar/c/l/4f0b83efee3664bbaf6f41bc58534d3e1461679190.jpgxw218xh218xr2xgn.png')
+vigneron_domain8 = URI.open('https://www.sciencesetavenir.fr/assets/img/2016/02/23/cover-r4x3w1000-58b40057e7eb2-des-vignes-le-31-octobre-2013-a-mailly-champagne-pres-de.jpg')
+vigneron8 = Vigneron.new(
+  first_name: 'Claude',
+  last_name: "Champault",
+  region:  'Pays de la Loire',
+  domain_name: 'Domaine Champault',
+  description: "Le Domaine Roger Champault est situé à 'Champtin' dans un vieux village vigneron au sud de Sancerre. Plantés sur des coteaux aux expositions et aux terroirs réputés Pinot Noir et Sauvignon s'épanouissent au fil des saisons. Travaillant passionnément cette terre aux richesses multiples, le Domaine a obtenu la certification HVE (Haute Valeur Environnementale). Nous produisons du Sancerre blanc, rouge et rosé ainsi que du Menetou Salon blanc et rouge. Grâce à ses efforts et ses vins de qualité, le Domaine a été représenté, en juin 2010, au mariage de la Princesse de Suède, avec sa cuvée 'Les Pierris' (Sancerre blanc 2008).",
+  cepages: 'Chenin, Pinot Noir, Grenache',
+  address: '5 route de Foulot',
+  city: 'Crézancy-en-Sancerre',
+  zip_code: '18300')
+vigneron8.avatar.attach(io: vigneron_avatar8, filename: 'vigneron_avatar8.jpg', content_type: 'image/jpg')
+vigneron8.domain_photo.attach(io: vigneron_domain8, filename: 'vigneron_domain8.jpg', content_type: 'image/jpg')
+vigneron8.save!
+
+vigneron_avatar9 = URI.open('https://s.lesgrappes.com/media/avatar/f/e/8c5d67651691adc305b83eedcaa7d686-1417443557.jpgxw218xh218xr2xgn.png')
+vigneron_domain9 = URI.open('https://www.drone-malin.com/medias/images/images-aeriennes-par-drone-au-service-des-vignes-et-vignobles.jpg')
+vigneron9 = Vigneron.new(
+  first_name: 'Samuel',
+  last_name: "Arnaud",
+  region:  'Vallée du Rhône',
+  domain_name: 'Domaine Ferme des Arnaud',
+  description: "Le domaine est un vignoble familial qui se transmet de génération en génération. Historiquement, c’est Papé Yves, qui plante les premières vignes en 1940 sur des terres abandonnées pendant la guerre. Lors de la reprise du vignoble par son fils Pierre, ils prennent alors la courageuse décision d’adhérer dès 1978 au bio ! Le domaine est repris en 2008 par le fils cadet de Pierre : Martial, œnologue de formation et enrichi d'une formidable expérience en Nouvelle-Zélande. C'est en 2013 que le fils aîné, Samuel, ingénieur électronicien de formation rejoint son frère. Le domaine prend alors une nouvelle dimension vers un nouvel avenir.",
+  cepages: 'Grenache, Syrah Cinsault',
+  address: '5 rue des Templiers',
+  city: 'Villedieu',
+  zip_code: '84110')
+vigneron9.avatar.attach(io: vigneron_avatar9, filename: 'vigneron_avatar9.jpg', content_type: 'image/jpg')
+vigneron9.domain_photo.attach(io: vigneron_domain9, filename: 'vigneron_domain9.jpg', content_type: 'image/jpg')
+vigneron9.save!
+
+
+puts 'Created the vignerons seed'
 
 wine_photo1 = URI.open('https://cdn.shopify.com/s/files/1/2802/2616/products/small-selection-oe-32_large.jpg?v=1571404436')
 wine1 = Wine.new(
@@ -176,12 +239,10 @@ wine5.wine_photo.attach(io: wine_photo5, filename: 'wine_photo5.jpg', content_ty
 wine5.save!
 
 
-
-
 # file = URI.open('https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 # fusée1 = User.first.vehicules.create!(title: "Ariane 5", description: "Développé pour placer des satellites sur orbite géostationnaire et des charges lourdes en orbite", category: "Fusée", capacity: 8, country: "🇫🇷 France", city: "Paris", address: "16 rue Duhesme", daily_price: 7000, permit: true, availability: true)
 # fusée1.photo.attach(io: file, filename: 'fusée1.jpg', content_type: 'image/jpg')
 # fusée1.save
 
-puts 'Created the vehicules seed'
+puts 'Created the wines seed'
 
