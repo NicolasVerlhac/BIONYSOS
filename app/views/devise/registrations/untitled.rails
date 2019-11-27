@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-sign">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
+      <div class="form-sign">
         <h1>Création de compte</h1>
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
-              <div class="form-input">
+
+            <div class="form-input">
                 <%= f.input :email,
                             required: true,
                             autofocus: true,
@@ -19,76 +21,65 @@
                             required: true,
                             input_html: { autocomplete: "new-password" } %>
 
+            <div class="row">
+              <div class="col-xs-6 p-3">
+                <%= f.input :first_name,
+                            required: true %>
               </div>
-              <div class="row">
-
-                <div class="col-xs-6 p-3"><%= f.input :first_name, required: true %></div>
-                <div class="col-xs-6 p-3"><%= f.input :last_name, required: true %></div>
+              <div class="col-xs-6 p-3">
+                <%= f.input :last_name,
+                            required: true %>
               </div>
 
-
+           <div class="row m-1">
             <p>Quelle couleur de vin aimez-vous ?</p>
-              <div class="flex-row">
-              <div class="category_choices flex-row">
-                <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "vin rouge", input_html: { class: 'd-none' } %></div>
-                <div class="category_choice"><%= f.input :color_white, as: :boolean, label: "vin blanc", input_html: { class: 'd-none' } %></div>
-                <div class="category_choice"><%= f.input :color_rose, as: :boolean, label: "vin rosé", input_html: { class: 'd-none' } %></div>
-              </div>
-            </div>
+              <div class="category_choices">
+                <div class="category_choice col-xs-6 p-3"><%= f.input :color_red, as: :boolean, label: "vin rouge", input_html: { class: 'd-none' } %></div>
+                <div class="category_choice col-xs-6 p-3"><%= f.input :color_white, as: :boolean, label: "vin blanc", input_html: { class: 'd-none' } %></div>
+                <div class="category_choice col-xs-6 p-3"><%= f.input :color_rose, as: :boolean, label: "vin rosé", input_html: { class: 'd-none' } %></div>
 
             <p> Quelle région ?</p>
 
-              <div class="category_choices">
+                <div class="category_choices">
                 <div class="category_choice"><%= f.input :region_alsace, as: :boolean, label: "Alsace", input_html: { class: 'd-none' } %></div>
                 <div class="category_choice"><%= f.input :region_bordeaux, as: :boolean, label: "Bordeaux", input_html: { class: 'd-none' }  %></div>
                 <div class="category_choice"><%= f.input :region_rhone, as: :boolean, label: "Rhone", input_html: { class: 'd-none' }  %></div>
                 <div class="category_choice"><%= f.input :region_bourgogne, as: :boolean, label: "Bourgogne", input_html: { class: 'd-none' } %></div>
                 <div class="category_choice"><%= f.input :region_loire, as: :boolean, label: "Loire", input_html: { class: 'd-none' } %></div>
-              </div>
+                </div>
 
             <p> Quelle type de vin ?</p>
-
-              <div class="category_choices">
+                <div class="category_choices ">
                   <div class="category_choice"><%= f.input :classification_biodynamique, as: :boolean, label: "Biodynamique", input_html: { class: 'd-none' } %></div>
                   <div class="category_choice"><%= f.input :classification_naturel, as: :boolean, label: "Naturel", input_html: { class: 'd-none' } %></div>
-              </div>
+                </div>
 
             <p> Plutôt léger ou corsé ?</p>
-              <div class="category_choices">
+                <div class="category_choices ">
                   <div class="category_choice"><%= f.input :alcool_light, as: :boolean, label: "Léger", input_html: { class: 'd-none' } %></div>
                   <div class="category_choice"><%= f.input :alcool_strong, as: :boolean, label: "Corsé", input_html: { class: 'd-none' } %></div>
-              </div>
+                </div>
+          </div>
 
-
+          <div class="flex-column">
             <p> Caractéristiques ?</p>
-              <div class="category_choices">
+                  <%= f.input :vin_sec, as: :range %>
+                  <%= f.input :vin_fruite, as: :range %>
+                  <%= f.input :vin_mineral, as: :range %>
+                  <%= f.input :vin_sucre, as: :range %>
+                  <%= f.input :vin_leger, as: :range %>
+                  <%= f.input :vin_puissant, as: :range %>
+                  <%= f.input :vin_tannique, as: :range %>
 
-
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_leger, as: :boolean, label: "Léger", input_html: { class: 'd-none' } %></div>
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_puissant, as: :boolean, label: "Puissant", input_html: { class: 'd-none' } %></div>
-
-
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none' } %></div>
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_tannique, as: :boolean, label: "Tannique", input_html: { class: 'd-none' } %></div>
-
-
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sec, as: :boolean, label: "Sec", input_html: { class: 'd-none' } %></div>
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sucre, as: :boolean, label: "Sucré", input_html: { class: 'd-none' } %></div>
-
-
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_mineral, as: :boolean, label: "Minéral", input_html: { class: 'd-none' } %></div>
-                <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none' } %></div>
-              </div>
-
-
-
+            <div class="form-actions">
                 <%= f.button :submit, "Créer mon compte", class:"btn btn-primary" %>
-
+            </div>
 
             <% end %>
 
             <%= render "devise/shared/links" %>
-
+          </div>
+      </div>
     </div>
   </div>
 </div>
