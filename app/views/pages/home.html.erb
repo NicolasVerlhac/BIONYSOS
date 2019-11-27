@@ -45,9 +45,9 @@
   <div>
     <h2 class="text-center mt-4 mb-4" > Nos nouveaux vignerons </h2>
     <div class="row">
-      <div class="col-sm">
-        <div class='column-cards'>
-          <% @vignerons.first(3).each do |vigneron| %>
+      <% @vignerons.first(3).each do |vigneron| %>
+        <div class="col-sm-4">
+          <div class=''>
           <%= link_to vigneron_path(vigneron) do %>
           <div class="card-trip">
               <%= cl_image_tag vigneron.domain_photo.key, crop: :fill %>
@@ -56,16 +56,16 @@
                 </div>
             <div class="card-trip-infos">
               <div>
-                <h3><%= vigneron.first_name %> <%= vigneron.last_name %> - <%= vigneron.domain_name %></h3>
-                <p><%= vigneron.description.first(135) %>...</p>
+                <h3> <strong><%= vigneron.first_name %> <%= vigneron.last_name %></strong>  - <i><%= vigneron.domain_name %></i> </h3>
+                <p><%= vigneron.description.first(145) %> ...</p>
                 <%= image_tag url_for(vigneron.avatar), class: 'card-trip-vigneron avatar-bordered' %>
               </div>
             </div>
           </div>
-         <% end %>
-       <% end %>
         </div>
       </div>
+         <% end %>
+       <% end %>
     </div>
       <div class="text-center">
         <div class="btn btn-flat-block">

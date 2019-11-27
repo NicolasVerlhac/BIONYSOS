@@ -113,8 +113,16 @@ a:hover {
 }
 
 
-.card-trip-region .Bourgogne {
-  background-color: black !important;
+.card-trip-region.Bourgogne {
+  background-color: gray !important;
+}
+
+.card-trip-region.Alsace {
+  background-color: #FFD700 !important;
+}
+
+.card-trip-region.Bordeaux {
+  background-color: #4CBB17 !important;
 }
 
 
