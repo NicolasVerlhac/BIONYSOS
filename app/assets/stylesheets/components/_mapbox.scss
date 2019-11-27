@@ -1,3 +1,12 @@
+#map {
+display:block;
+height: 100vh;
+position : sticky;
+top : 0px;
+margin-left: 45px;
+margin-bottom: 30px;
+}
+
 .mapboxgl-popup {
   max-width: 200px;
   border-radius: 0%;
@@ -13,6 +22,11 @@
   background: #F4F4F4;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.mapboxgl-popup-content a {
+  color: blue;
+  text-decoration: underline;
 }
 
 .mapboxgl-popup-content h2 {
