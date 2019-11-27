@@ -1,13 +1,13 @@
 class VigneronsController < ApplicationController
 
   def index
-    # @vignerons = Vigneron.all
-    @vignerons = Vigneron.geocoded #returns flats with coordinates
+    @vignerons = Vigneron.geocoded
 
     @markers = @vignerons.map do |vigneron|
       {
         lat: vigneron.latitude,
-        lng: vigneron.longitude
+        lng: vigneron.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { vigneron: vigneron })
       }
     end
   end
