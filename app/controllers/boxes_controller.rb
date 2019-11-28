@@ -8,6 +8,11 @@ class BoxesController < ApplicationController
 
   def new
     @box = Box.new
+    @user = current_user
+    # @vigneron = Vigneron.find(:id)
+    # @wine = @vigneron.wines
+    @wines = SuggestionsForUser.call(@user)
+    # @box.wine = Wine.find(params[:wine_id])
   end
 
   def create
