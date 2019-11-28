@@ -15,3 +15,9 @@
   color : #C60D25;
   text-decoration : none;
 }
+
+.navbar-lewagon .navbar-links:hover {
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05)
+}
