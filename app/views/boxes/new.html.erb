@@ -1,2 +1,39 @@
-<h1>Boxes#new</h1>
-<p>Find me in app/views/boxes/new.html.erb</p>
+
+  <div class="row">
+
+    <div class="col col-lg-3">
+      <p class="card-title"><%= @wines[0].name %></p>
+      <h5 class="card-text"><%= @wines[0].regionclassification %></h5>
+      <%= cl_image_tag @wines[0].wine_photo.key, :height=>200, :crop=>"scale" %>
+
+    </div>
+
+    <div class="col col-lg-3">
+          <p class="card-title"><%= @wines[1].name %></p>
+          <h5 class="card-text"><%= @wines[1].regionclassification %></h5>
+          <%= cl_image_tag @wines[1].wine_photo.key, :height=>200, :crop=>"scale" %>
+    </div>
+
+  </div>
+
+  <%= simple_form_for Box.new do |f| %>
+    <%= f.input :wine_id_1, input_html: { value: @wines[0].id } %>
+    <%= f.input :wine_id_2, input_html: { value: @wines[1].id } %>
+    <%= f.submit "save", class: 'btn btn-flat' %>
+  <% end %>
+
+
+  <div class="row">
+    <% @wines[2..-1].each do |wine|  %>
+    <div class="col col-lg-2">
+    <p><%= wine.name %></p>
+    <h5><%= wine.regionclassification %></h5>
+    <%= cl_image_tag wine.wine_photo.key, :height=>200, :crop=>"scale" %>
+    </div>
+    <% end %>
+  </div>
+
+
+
+
+
