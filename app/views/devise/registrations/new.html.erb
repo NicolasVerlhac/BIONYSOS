@@ -1,71 +1,69 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-sign">
+<div class="container" id="signup-form">
+  <div class=" col-sm-6 form-sign">
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Création</a>
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Goûts</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Caractéristiques</a>
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Étape 1</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Étape 2</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Étape 3</a>
       </div>
     </nav>
 
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-         <h1>Création de compte</h1>
-              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                <%= f.error_notification %>
-                  <div class="form-input">
-                    <%= f.input :email,
-                                required: true,
-                                autofocus: true,
-                                input_html: { autocomplete: "email" }%>
-                    <%= f.input :password,
-                                required: true,
-                                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                                input_html: { autocomplete: "new-password" } %>
-                    <%= f.input :password_confirmation,
-                                required: true,
-                                input_html: { autocomplete: "new-password" } %>
-
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-6 p-3"><%= f.input :first_name, required: true %></div>
-                    <div class="col-xs-6 p-3"><%= f.input :last_name, required: true %></div>
-                  </div>
+        <h1>1. Créez votre compte</h1>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+          <div class="form-input">
+            <%= f.input :email,required: true, autofocus: true,input_html: { autocomplete: "email" }%>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" } %>
+          </div>
+          <div class="text-center">
+        <div class="btn btn-flat">
+          <a href="" id="next-step">Prochaine étape</a>
+        </div>
+        </div>
       </div>
 
-
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
-        <p>Quelle couleur de vin aimez-vous ?</p>
-          <div class="flex-row">
-            <div class="category_choices flex-row">
-              <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "vin rouge", input_html: { class: 'd-none' } %></div>
-              <div class="category_choice"><%= f.input :color_white, as: :boolean, label: "vin blanc", input_html: { class: 'd-none' } %></div>
-              <div class="category_choice"><%= f.input :color_rose, as: :boolean, label: "vin rosé", input_html: { class: 'd-none' } %></div>
+        <h1>2. Donnez vos préférences</h1>
+          <p>Quelles couleurs de vin aimez-vous ? <%= image_tag "information.png", data: { toggle:"tooltip", placement: "top"}, title:"toto"%> </p>
+            <div class="flex-row">
+              <div class="category_choices flex-row">
+                <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "Rouge", input_html: { class: 'd-none' } %></div>
+                <div class="category_choice"><%= f.input :color_white, as: :boolean, label: "Blanc", input_html: { class: 'd-none' } %></div>
+                <div class="category_choice"><%= f.input :color_rose, as: :boolean, label: "Rosé", input_html: { class: 'd-none' } %></div>
+              </div>
             </div>
-          </div>
 
-        <p> Quelle région ?</p>
+        <p> Quelles sont vos région favorites ? <%= image_tag "information.png" %></p>
           <div class="category_choices">
             <div class="category_choice"><%= f.input :region_alsace, as: :boolean, label: "Alsace", input_html: { class: 'd-none' } %></div>
             <div class="category_choice"><%= f.input :region_bordeaux, as: :boolean, label: "Bordeaux", input_html: { class: 'd-none' }  %></div>
-            <div class="category_choice"><%= f.input :region_rhone, as: :boolean, label: "Rhone", input_html: { class: 'd-none' }  %></div>
             <div class="category_choice"><%= f.input :region_bourgogne, as: :boolean, label: "Bourgogne", input_html: { class: 'd-none' } %></div>
             <div class="category_choice"><%= f.input :region_loire, as: :boolean, label: "Loire", input_html: { class: 'd-none' } %></div>
+            <div class="category_choice"><%= f.input :region_rhone, as: :boolean, label: "Rhone", input_html: { class: 'd-none' }  %></div>
           </div>
 
-        <p> Quelle type de vin ?</p>
+        <p> Plutôt léger ou corsé ? <%= image_tag "information.png" %></p>
           <div class="category_choices">
-            <div class="category_choice"><%= f.input :classification_biodynamique, as: :boolean, label: "Biodynamique", input_html: { class: 'd-none' } %></div>
-            <div class="category_choice"><%= f.input :classification_naturel, as: :boolean, label: "Naturel", input_html: { class: 'd-none' } %></div>
+            <div class="category_choice"><%= f.input :alcool_light, as: :boolean, label: " < 12.5%", input_html: { class: 'd-none' } %></div>
+            <div class="category_choice"><%= f.input :alcool_strong, as: :boolean, label: " > 12.5%", input_html: { class: 'd-none' } %></div>
           </div>
 
-        <p> Plutôt léger ou corsé ?</p>
+        <p> Souhaitez-vous recevoir des vins ? <%= image_tag "information.png" %></p>
           <div class="category_choices">
-            <div class="category_choice"><%= f.input :alcool_light, as: :boolean, label: "Léger", input_html: { class: 'd-none' } %></div>
-            <div class="category_choice"><%= f.input :alcool_strong, as: :boolean, label: "Corsé", input_html: { class: 'd-none' } %></div>
+            <div class="category_choice"><%= f.input :classification_biodynamique, as: :boolean, label: "Biodynamiques", input_html: { class: 'd-none' } %></div>
+            <div class="category_choice"><%= f.input :classification_naturel, as: :boolean, label: "Naturels", input_html: { class: 'd-none' } %></div>
           </div>
+        <div class="text-center">
+          <div class="btn btn-flat">
+          <a href="" id="next-step-2">Prochaine étape</a>
+          </div>
+        </div>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
       </div>
 
 
@@ -99,5 +97,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>

@@ -1,26 +1,43 @@
+.tab-content img{
+  height : 20px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+.form-sign p {
+  margin-top : 30px;
+  margin-bottom: 0px;
+  margin-left: 7px;
+}
+
 .form-sign {
   background: white;
   margin-top: 50px;
+  margin-bottom : 50px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 20px;
   border-radius: 5px;
+
   h1 {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
     color: #666666;
     margin-bottom: 30px;
+    margin-top: 20px;
   }
   .btn {
-    width: 100%;
     padding: 10px;
-    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
 .category_choices {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   margin: 5px 0;
   fieldset {
     margin: 0;
@@ -30,16 +47,17 @@
     padding: 0;
   }
   label {
-    height: 80px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #b7b7b7;
     border-radius: 5px;
-    opacity: 0.4px;
+    opacity: 0.4;
   }
   input:checked + label {
-    background : grey;
+    background: #C60D25;
+    opacity: 1;
   }
 }
 
@@ -47,14 +65,13 @@
 
 .category_choice {
   background: #b7b7b7;
-  padding: 20px;
   border-radius: 5px;
-  opacity: 0.4px;
+  opacity: 0.4;
   flex: 0 0 30%;
   text-align: center;
   margin: 5px;
   &:hover {
-    opacity: 1;
+    opacity: 0.6;
     cursor: pointer;
   }
 }
@@ -68,12 +85,12 @@
   background: #b7b7b7;
   padding: 0px 0px;
   border-radius: 5px;
-  opacity: 0.4px;
+  opacity: 0.4;
   flex: 0 0 40%;
   text-align: center;
   margin: 5px;
   &:hover {
-    opacity: 1;
+    opacity: 0.8;
     cursor: pointer;
   }
   fieldset {
@@ -90,10 +107,10 @@
     justify-content: center;
     background: #b7b7b7;
     border-radius: 5px;
-    opacity: 0.4px;
+    opacity: 0.4;
   }
   input:checked + label {
-    background : grey;
+    background : gray;
   }
 }
 
@@ -117,6 +134,9 @@
   border-bottom: 3px solid #555555;
 }
 
+
+div.click-to-top span {display: none; position: absolute; bottom: 0; left: 0; right: 0; background: #333; color: #fff; }
+div.click-to-top:hover span {display: block; }
 
 .col {
   background: white;
