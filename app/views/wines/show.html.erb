@@ -1,1 +1,13 @@
-<h1>SHOW VIN</h1>
+<div class="container">
+  <h1><strong><%= @wine.name %></strong></h1>
+    <p>Couleur : <%= @wine.color %></p>
+    <p>Région : <%= @wine.regionclassification %></p>
+    <p>Degré : <%= @wine.alcool %></p>
+    <p>Bouche : <%= @wine.sec_sucre %><%= @wine.leger_puissant %>, <%= @wine.mineral_fruite %><%= @wine.fruite_tannique %></p>
+    <p>Cépage(s) : <%= @wine.cepages %></p>
+    <p>Année : <%= @wine.year %></p>
+    <p>Vin <%= @wine.biodynamique_naturel %></p>
+    <p>Description : <%= @wine.description %></p>
+    <%= cl_image_tag @wine.wine_photo.key %>
+</div>
+
