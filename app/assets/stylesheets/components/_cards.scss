@@ -198,25 +198,30 @@ a:hover {
 // Card Vigneorn-wine-show //
 
 .card-wine {
-  height: 275px;
+  height: 350px;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: black;
   text-decoration: none;
+  margin-bottom: 50px;
 }
 
 
 .card-wine > img {
-  height: 150px;
+  height: 225px;
   object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
 }
 
 .card-wine h3 {
   font-size: 15px;
   font-weight: bold;
-  margin: 0;
-  padding :10px 10px 5px;
+  margin: 0px;
+  padding-left :15px;
 }
 
 .card-wine p {
@@ -224,6 +229,17 @@ a:hover {
   font-style: italic;
   color: gray;
   padding: 5px 10px 5px;
+  margin-bottom: 0;
+
+}
+
+
+.card-wine h5 {
+  font-size: 12px;
+  font-style: italic;
+  color: gray;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-bottom: 0;
 
 }

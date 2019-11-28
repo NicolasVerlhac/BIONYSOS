@@ -14,14 +14,14 @@
         <div class="col-sm-4">
           <%= link_to vigneron_wine_path(@vigneron, wine) do %>
           <div class="card-wine">
-              <%= cl_image_tag wine.wine_photo.key, crop: :fill %>
+              <%= cl_image_tag wine.wine_photo.key %>
                 <div class="card-wine-color <%= wine.color %>">
                   <p><%= wine.color %></p>
                 </div>
             <div class="card-trip-infos">
               <div>
                 <h3> <strong><%= wine.name %> </strong> </h3>
-                <p><%= wine.description.first(20) %> ...</p>
+                <h5><%= wine.description.first(150) %> ...</h5>
               </div>
             </div>
           </div>
@@ -29,9 +29,5 @@
       <% end %>
     <% end %>
   </div>
-
-
-
-  <p><%= link_to 'Voir tous ses vins', vigneron_wines_path(@vigneron) %></p>
 </div>
 
