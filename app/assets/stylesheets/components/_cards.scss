@@ -1,3 +1,8 @@
+
+
+
+
+
 // Bloc 1 Homepage
 
 .card-product-infos {
@@ -26,6 +31,16 @@
   font-size: 20px;
   margin: 0;
 }
+
+
+
+
+
+
+
+
+
+
 
 // Bloc 2 Homepage
 
@@ -124,11 +139,145 @@ a:hover {
 }
 
 
+
+
+
+
+
+
+// Card Vigneorn-Show //
+
+.card-trip-vigneron-show {
+  width: 100px;
+  position: absolute;
+  height: 100px;
+  top: 300px;
+}
+
+.card-trip-region-show {
+  background-color: #C60D25;
+  right: 73%;
+  opacity: 0.8;
+  border-radius: 2px;
+  position: absolute;
+  height: 40px;
+  top: 318px;
+}
+
+.card-trip-region-show p {
+  color: white;
+  font-size: 25px;
+  font-style: normal;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.card-trip-region-show.Bourgogne {
+  background-color: gray !important;
+}
+
+.card-trip-region-show.Alsace {
+  background-color: #FFD700 !important;
+}
+
+.card-trip-region-show.Bordeaux {
+  background-color: #4CBB17 !important;
+}
+
+.card-trip-region-show.Loire {
+  background-color: #46b3e6 !important;
+}
+
+.card-trip-region-show.Rhone {
+  background-color: #de6b35 !important;
+}
+
+
+
+
+// Card Vigneorn-wine-show //
+
+.card-wine {
+  height: 275px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: black;
+  text-decoration: none;
+}
+
+
+.card-wine > img {
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-wine h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+  padding :10px 10px 5px;
+}
+
+.card-wine p {
+  font-size: 12px;
+  font-style: italic;
+  color: gray;
+  padding: 5px 10px 5px;
+  margin-bottom: 0;
+
+}
+
+
+.card-wine-color {
+  opacity: 0.8;
+  border-radius: 2px;
+  position: absolute;
+  height: 30px;
+  top: 0;
+}
+
+
+.card-wine-color.Rouge {
+  background-color: #C60D25 !important;
+}
+
+.card-wine-color.Blanc {
+  background-color: #ECE09D !important;
+}
+
+.card-wine-color.Rose {
+  background-color: #E6A29A !important;
+}
+
+
+.card-wine-color p {
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.vigneron-show .card-trip-infos h3 {
+  margin: 10px;
+}
+
+
+
+
+
+
+
 // Card index //
 
 .card-trip-margin {
   margin-bottom : 30px;
 }
+
+
+
+
+
+
 
 // Card Engagement
 

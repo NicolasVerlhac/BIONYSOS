@@ -1,11 +1,37 @@
-<div class="container">
-<h1>Vignerons#show</h1>
-<p>Find me in app/views/vignerons/show.html.erb</p>
-<p><%= @vigneron.first_name %></p>
-<p><%= @vigneron.last_name %></p>​​
-<p><%= @vigneron.region %></p>​​
-<p><%= @vigneron.description %></p>​​
-<br>
-<p><%= link_to 'list de ses vins', vigneron_wines_path(@vigneron) %></p>
+<%= cl_image_tag @vigneron.domain_photo.key, class: 'banner-3' %>
+<div class="container vigneron-show">
+  <%= image_tag url_for(@vigneron.avatar), class: 'card-trip-vigneron-show avatar-bordered' %>
+  <div class="card-trip-region-show <%= @vigneron.region %>">
+    <p><%= @vigneron.region %></p>
+  </div>
+    <h3> <strong><%= @vigneron.first_name %> <%= @vigneron.last_name %></strong>  - <i><%= @vigneron.domain_name %></i> </h3>
+    <p> <%= image_tag "cepages.png", class: 'picto-show' %> <strong>Cépages</strong>: <%=@vigneron.cepages  %> </p>
+    <p> <%= image_tag "pin.png", class: 'picto-show' %> <strong>Localisation</strong>: <%=@vigneron.city %>, <%=@vigneron.zip_code %> </p>
+    <p><%= @vigneron.description.first(1000) %></p>
+    <h4>Les vins de <%= @vigneron.first_name%>:</h4>
+  <div class="row">
+      <% @vigneron.wines.first(3).each do |wine| %>
+        <div class="col-sm-4">
+          <%= link_to vigneron_wine_path(@vigneron, wine) do %>
+          <div class="card-wine">
+              <%= cl_image_tag wine.wine_photo.key, crop: :fill %>
+                <div class="card-wine-color <%= wine.color %>">
+                  <p><%= wine.color %></p>
+                </div>
+            <div class="card-trip-infos">
+              <div>
+                <h3> <strong><%= wine.name %> </strong> </h3>
+                <p><%= wine.description.first(20) %> ...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
+  <p><%= link_to 'Voir tous ses vins', vigneron_wines_path(@vigneron) %></p>
 </div>
 
