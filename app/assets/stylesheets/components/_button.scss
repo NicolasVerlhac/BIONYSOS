@@ -33,3 +33,19 @@
 .btn-last {
   margin-bottom: 50px;
 }
+
+.btn-flat-nav {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #C60D25;
+  opacity: 0.95;
+  transition: background 0.3s ease;
+  text-decoration : none;
+}
+
+.btn-flat-nav:hover{
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05)
+}
