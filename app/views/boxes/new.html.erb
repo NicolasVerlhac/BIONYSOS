@@ -16,6 +16,12 @@
 
   </div>
 
+  <%= simple_form_for Box.new do |f| %>
+    <%= f.input :wine_id_1, input_html: { value: @wines[0].id } %>
+    <%= f.input :wine_id_2, input_html: { value: @wines[1].id } %>
+    <%= f.submit "save", class: 'btn btn-flat' %>
+  <% end %>
+
 
   <div class="row">
     <% @wines[2..-1].each do |wine|  %>
@@ -26,6 +32,8 @@
     </div>
     <% end %>
   </div>
+
+
 
 
 

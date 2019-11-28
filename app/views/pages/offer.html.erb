@@ -24,7 +24,7 @@
     <div class="text-center">
       <div class="btn btn-flat-block">
         <% if user_signed_in? %>
-        <%= link_to "je m'abonne", boxes_new_path %>
+        <%= link_to "je m'abonne", new_box_path %>
         <% else %>
         <%= link_to "je m'abonne", new_user_registration_path %>
         <% end %>
