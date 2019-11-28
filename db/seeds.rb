@@ -7,7 +7,7 @@ Wine.destroy_all
 puts 'Deleted the Vignerons and Wines seeds'
 
 vigneron_avatar1 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/4726/les_grappes_profils.pngxw218xh218xr2xgn.png')
-vigneron_domain1 = URI.open('https://s.lesgrappes.com/media/osaka/default_cover.jpg')
+vigneron_domain1 = URI.open('https://biosphere-bassin-dordogne.fr/wp-content/uploads/2015/10/15174-france-Dordogne-Chateau-et-vignes-de-Monbazillac-panorama-sentucq.h.jpg')
 vigneron1 = Vigneron.new(
   first_name: 'Phillipe',
   last_name: 'Zinck',
@@ -23,7 +23,7 @@ vigneron1.domain_photo.attach(io: vigneron_domain1, filename: 'vigneron_domain1.
 vigneron1.save!
 
 vigneron_avatar2 = URI.open('https://s.lesgrappes.com/media/avatar/p/h/ff69ce04f9ce236d07775ef971c0ea5d-1438857007.jpgxw218xh218xr2xgn.png')
-vigneron_domain2 = URI.open('http://www.leparisien.fr/resizer/049L6y9Nh76QajhA1Gtbn6iznsw=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/SNVEAARNOHWRFP52CIDERN2PMM.jpg')
+vigneron_domain2 = URI.open('https://www.progenywinery.com/assets/images/Progeny063017-1.jpg')
 vigneron2 = Vigneron.new(
   first_name: 'Arnaud',
   last_name: 'Pelletier',
@@ -39,7 +39,7 @@ vigneron2.domain_photo.attach(io: vigneron_domain2, filename: 'vigneron_domain2.
 vigneron2.save!
 
 vigneron_avatar3 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/30746/1.jpgxw218xh218xr2xgn.png')
-vigneron_domain3 = URI.open('https://www.alainchabanon.com/wp-content/uploads/2016/12/MG_2474-700x650.jpg')
+vigneron_domain3 = URI.open('https://www.extonparkvineyard.com/wp-content/uploads/2018/03/banner-home-4.jpg')
 vigneron3 = Vigneron.new(
   first_name: 'Ludovic',
   last_name: 'Greffier',
@@ -55,7 +55,7 @@ vigneron3.domain_photo.attach(io: vigneron_domain3, filename: 'vigneron_domain3.
 vigneron3.save!
 
 vigneron_avatar4 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/22112/1541680694michel_vineyard_web.jpgxw218xh218xr2xgn.png')
-vigneron_domain4 = URI.open('https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/e/6/0/e60b6a3eca_84124_03-1342.jpg')
+vigneron_domain4 = URI.open('https://domaine-ete.fr/img/vignes.jpg')
 vigneron4 = Vigneron.new(
   first_name: 'Michel',
   last_name: 'Gassier',
@@ -71,7 +71,7 @@ vigneron4.domain_photo.attach(io: vigneron_domain4, filename: 'vigneron_domain4.
 vigneron4.save!
 
 vigneron_avatar5 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/29025/photo_team_malidain_bd_.jpgxw218xh218xr2xgn.png')
-vigneron_domain5 = URI.open('https://avis-vin.lefigaro.fr/var/img/142/35476-650x330-vignes-veuves-clicquot.png')
+vigneron_domain5 = URI.open('http://www.greatbritishwine.com/wp-content/uploads/banner_terlingham.jpg')
 vigneron5 = Vigneron.new(
   first_name: 'Romain',
   last_name: 'Malidain',
@@ -87,7 +87,7 @@ vigneron5.domain_photo.attach(io: vigneron_domain5, filename: 'vigneron_domain5.
 vigneron5.save!
 
 vigneron_avatar6 = URI.open('https://s.lesgrappes.com/media/avatar/l/o/190909e7ea1baf0a3c733af6e105e0511469434613.jpgxw218xh218xr2xgn.png')
-vigneron_domain6 = URI.open('https://s.lesgrappes.com/media/osaka/slideshowmanufacturers/1469434614domaine_fleury_2.png')
+vigneron_domain6 = URI.open('https://elkcove.com/assets/150513_GR_MR_107_WS.jpg')
 vigneron6 = Vigneron.new(
   first_name: 'Louis-Marie',
   last_name: 'Coquard',
@@ -103,7 +103,7 @@ vigneron6.domain_photo.attach(io: vigneron_domain6, filename: 'vigneron_domain6.
 vigneron6.save!
 
 vigneron_avatar7 = URI.open('https://s.lesgrappes.com/media/avatar/j/e/6872726a00f3edca515ad964d1fb941c1465329770.jpgxw218xh218xr2xgn.png')
-vigneron_domain7 = URI.open('https://images.ladepeche.fr/api/v1/images/view/5c3627748fe56f5f1869dc6a/large/image.jpg')
+vigneron_domain7 = URI.open("https://i2.wp.com/www.christiesrealestate.com/blog/wp-content/uploads/2019/01/La_Rioja_vineyard_banner_Getty.jpg?resize=1600%2C550&ssl=1")
 vigneron7 = Vigneron.new(
   first_name: 'Jean',
   last_name: "d'Antras",
@@ -119,7 +119,7 @@ vigneron7.domain_photo.attach(io: vigneron_domain7, filename: 'vigneron_domain7.
 vigneron7.save!
 
 vigneron_avatar8 = URI.open('https://s.lesgrappes.com/media/avatar/c/l/4f0b83efee3664bbaf6f41bc58534d3e1461679190.jpgxw218xh218xr2xgn.png')
-vigneron_domain8 = URI.open('https://www.sciencesetavenir.fr/assets/img/2016/02/23/cover-r4x3w1000-58b40057e7eb2-des-vignes-le-31-octobre-2013-a-mailly-champagne-pres-de.jpg')
+vigneron_domain8 = URI.open("https://i0.wp.com/www.christiesrealestate.com/blog/wp-content/uploads/2018/08/banner_Phantom_Creek_Sundial_Merlot_vineyards.jpg?resize=1600%2C550&ssl=1")
 vigneron8 = Vigneron.new(
   first_name: 'Claude',
   last_name: "Champault",
@@ -135,7 +135,7 @@ vigneron8.domain_photo.attach(io: vigneron_domain8, filename: 'vigneron_domain8.
 vigneron8.save!
 
 vigneron_avatar9 = URI.open('https://s.lesgrappes.com/media/avatar/f/e/8c5d67651691adc305b83eedcaa7d686-1417443557.jpgxw218xh218xr2xgn.png')
-vigneron_domain9 = URI.open('https://www.drone-malin.com/medias/images/images-aeriennes-par-drone-au-service-des-vignes-et-vignobles.jpg')
+vigneron_domain9 = URI.open('https://research.euro.savills.co.uk/_images/viticulture-banner(1).jpg')
 vigneron9 = Vigneron.new(
   first_name: 'Samuel',
   last_name: "Arnaud",
@@ -150,6 +150,22 @@ vigneron9.avatar.attach(io: vigneron_avatar9, filename: 'vigneron_avatar9.jpg', 
 vigneron9.domain_photo.attach(io: vigneron_domain9, filename: 'vigneron_domain9.jpg', content_type: 'image/jpg')
 vigneron9.save!
 
+vigneron_avatar10 = URI.open('https://www.lesgrappes.com/media/winemaker_tmp/10492/20151022_151837.jpgxw218xh218xr2xgn.png')
+vigneron_domain10 = URI.open('https://www.publicdomainpictures.net/download-picture.php?id=265489&check=a2df0326e7ac7f8e23ce937193128613')
+vigneron10 = Vigneron.new(
+  first_name: 'André',
+  last_name: "Dischler",
+  region:  'Alsace',
+  domain_name: 'Domaine Dischler',
+  description: "Nous souhaitons soigner nos vignes et respecter l'environnement. Nous pratiquons l'enherbement avec un apport minimum d'amendement. La taille est courte et les fruits récoltés à leur juste maturité pour obtenir une parfaite harmonie entre sucrosité, finesse, structure et élégance.Bien que nous produisons les cépages d'Alsace réputés et célèbres, notre domaine est connu pour produire des Riesling d'exception grâce aux trois différents terroirs qui composent notre village. Ce sont les lieux dit d'Altenberg et de Wolxheim.Ces merveilleux cépages, dans sur ces appellations bénéficient de terroirs propices à l'obtention d'un grand cru.Vous trouverez des terroirs argilo-calcaires, de grès rose et marno calcaire.",
+  cepages: 'Sylvaner, Pinot Blanc, Riesling, Muscat, Pinot Gris, Gewurtztraminer, Pinot Noir',
+  address: '2 rue Philippe Grass',
+  city: 'Wolxheim',
+  zip_code: '67120')
+vigneron10.avatar.attach(io: vigneron_avatar10, filename: 'vigneron_avatar10.jpg', content_type: 'image/jpg')
+vigneron10.domain_photo.attach(io: vigneron_domain10, filename: 'vigneron_domain10.jpg', content_type: 'image/jpg')
+vigneron10.save!
+
 
 puts 'Created the vignerons seed'
 
@@ -162,6 +178,7 @@ wine1 = Wine.new(
   year: '2016',
   alcool: '12,5%',
   description: 'Moins célèbre que son compagnon le Gewurztraminer, le Pinot Blanc fait partie de ces cépages à découvrir. Nous avons sélectionné celui-ci pour son élégance et sa fraîcheur. Parfait pour accompagner les plats typiques alsaciens, mais aussi excellent avec une salade césar au poulet ou une belle choucroute de la mer!',
+  biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Minéral',
   vigneron: vigneron1)
@@ -179,6 +196,7 @@ wine2 = Wine.new(
   year: '2017',
   alcool: '12,5%',
   description: 'Vin blanc vif au fruité prononcé, sur des arômes de petits fruits jaunes (prune-mirabelle) qui plait à l’apéritif et accompagne idéalement les produits de la mer.',
+  biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
   vigneron: vigneron2)
@@ -187,7 +205,7 @@ wine2 = Wine.new(
 wine2.wine_photo.attach(io: wine_photo2, filename: 'wine_photo2.jpg', content_type: 'image/jpg')
 wine2.save!
 
-wine_photo3 = URI.open('https://media.lepetitballon.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/maison-ginestet-margaux-2015.jpg')
+wine_photo3 = URI.open('https://s.lesgrappes.com/media/catalog/product/m/l/ml_hd.png')
 wine3 = Wine.new(
   name: 'Château Moulin de Launay',
   color: 'Blanc',
@@ -196,6 +214,7 @@ wine3 = Wine.new(
   year: '2018',
   alcool: '12,5%',
   description: "Belle robe pâle, claire et brillante. Le nez offre une impression de fraîcheur avec ses arômes mêlés de fruits à chairs blanches et d'exotisme relevés par une note d'agrume. Bouche à l'attaque douce et grasse, se déployant sur la fraîcheur et la tonicité. La longueur et la rétro-olfaction évoquent les notes de fruits complexes du nez.",
+  biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
   vigneron: vigneron3)
@@ -204,40 +223,203 @@ wine3 = Wine.new(
 wine3.wine_photo.attach(io: wine_photo3, filename: 'wine_photo3.jpg', content_type: 'image/jpg')
 wine3.save!
 
-wine_photo4 = URI.open('https://media.lepetitballon.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/maison-ginestet-margaux-2015.jpg')
+wine_photo4 = URI.open('https://s.lesgrappes.com/media/catalog/product/n/g/nglnrg_sm-1541412118.pngxw140xh300xr2.jpg')
 wine4 = Wine.new(
   name: "Liberty'nages Rouge",
   color: 'Rouge',
-  regionclassification:'Vallée du Rhône',
+  regionclassification:'Rhone',
   cepages: 'Syrah, Grenache, Merlot, Carignan',
   year: 'Non-millésimé',
   alcool: '12,5%',
   description: "Le nez vous transportera au cœur d’une balade champêtre et révélera une cueillette de cassis et de cerises que vous retrouverez à l’aspect de la robe, violine brillant. En bouche c’est une explosive de fruits tendre et suave qui vous attend.",
-  sec_sucre: 'Puissant',
-  mineral_fruite: 'Tannique',
-  vigneron: vigneron4)
-  #leger_puissant: ,
-  #fruite_tannique: ,
+  biodynamique_naturel: 'Biodynamique',
+  # sec_sucre: ,
+  # mineral_fruite: ,
+  vigneron: vigneron4,
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique')
 wine4.wine_photo.attach(io: wine_photo4, filename: 'wine_photo4.jpg', content_type: 'image/jpg')
 wine4.save!
 
-wine_photo5 = URI.open('https://media.lepetitballon.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/maison-ginestet-margaux-2015.jpg')
+wine_photo5 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/o/cotedenuitsvillage-1485430923.pngxw140xh300xr2.jpg')
 wine5 = Wine.new(
-  name: "Liberty'nages Rouge bis",
+  name: 'Château de Premeaux - Côtes de Nuits Village',
   color: 'Rouge',
-  regionclassification:'Vallée du Rhône',
-  cepages: 'Syrah, Grenache, Merlot, Carignan',
-  year: 'Non-millésimé',
+  regionclassification:'Bourgogne',
+  cepages: 'Pinot Noir',
+  year: '2016',
   alcool: '12,5%',
-  description: "Le nez vous transportera au cœur d’une balade champêtre et révélera une cueillette de cassis et de cerises que vous retrouverez à l’aspect de la robe, violine brillant. En bouche c’est une explosive de fruits tendre et suave qui vous attend.",
-  sec_sucre: 'Puissant',
-  mineral_fruite: 'Tannique',
-  vigneron: vigneron4)
-  #leger_puissant: ,
-  #fruite_tannique: ,
+  description: "Ce vin s'exprime avec des touches de petits fruits rouges des bois (fraise, framboise, groseille) et sur un nez toasté, pain grillé provenant d'un sol pierre de lave et silex. A boire sur sa jeunesse en guise d'apéro, ou sur une viande blanche voir un poulet rôti.",
+  biodynamique_naturel: 'Naturel',
+  # sec_sucre: ,
+  # mineral_fruite: ,
+  vigneron: vigneron2,
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Fruité')
 wine5.wine_photo.attach(io: wine_photo5, filename: 'wine_photo5.jpg', content_type: 'image/jpg')
 wine5.save!
 
+wine_photo6 = URI.open('https://s1.lesgrappes.com/media/catalog/product/b/g/bghcnblc-1485439236.pngxw140xh300xr2.jpg')
+wine6 = Wine.new(
+  name: 'Château de Premeaux - Hautes Côtes de Nuits',
+  color: 'Blanc',
+  regionclassification:'Bourgogne',
+  cepages: 'Chardonnay',
+  year: '2017',
+  alcool: '12,5%',
+  description: "Magnifique robe onctueuse et brillante. Explosion d’arômes au nez : mélange malicieux d’exotisme et de fumé. Mariage parfait de la matière beurrée et du velouté sur fond de pierre à fusil.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  vigneron: vigneron2)
+  # leger_puissant: 'Léger',
+  # fruite_tannique: 'Fruité',
+wine6.wine_photo.attach(io: wine_photo6, filename: 'wine_photo6.jpg', content_type: 'image/jpg')
+wine6.save!
+
+wine_photo7 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/h/ch_teau-de-premeaux-nuits-saint-georges-1cru-pagets_2.jpg')
+wine7 = Wine.new(
+  name: 'Château de Premeaux - Nuit Saint-Georges Premier Cru "Clos des Argillières"',
+  color: 'Rouge',
+  regionclassification:'Bourgogne',
+  cepages: 'Pinot Noir',
+  year: '2017',
+  alcool: '12,5%',
+  description: "Très vieilles vignes de 84 ans. Robe rouge foncé, nez d’une grande complexité alliant l’humus, le sous-bois humide ainsi qu’un magnifique caractère de gibier. Vin généreux d’une énorme amplitude qui va enrober vos papilles dans un écrin de velours. Grand vin de terroir à agrémenter d’un grand plat et de bons champignons…",
+  biodynamique_naturel: 'Naturel',
+  # sec_sucre: 'Sec',
+  # mineral_fruite: 'Fruité',
+  vigneron: vigneron2,
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique')
+wine7.wine_photo.attach(io: wine_photo7, filename: 'wine_photo7.jpg', content_type: 'image/jpg')
+wine7.save!
+
+wine_photo8 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/h/ch_teau-de-premeaux-aux-champs-perdrix_1.jpgxw140xh300xr2.jpg')
+wine8 = Wine.new(
+  name: 'Château de Premeaux - Nuit Saint-Georges Premier Cru "Aux Champs Perdrix"',
+  color: 'Blanc',
+  regionclassification:'Bourgogne',
+  cepages: 'Chardonnay',
+  year: '2016',
+  alcool: '13%',
+  description: "Situé tout en haut du coteau entre Nuits-St-Georges et Vosne-Romanée, ce terroir exceptionnel a été planté en Chardonnay, et aménagé de façon à ne pouvoir y accéder qu’à pied. Tout le travail de l’année est réalisé uniquement à dos. Il n’y a aucun tassement du sol.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  vigneron: vigneron2)
+  # leger_puissant: 'Puissant',
+  # fruite_tannique: 'Tannique',
+wine8.wine_photo.attach(io: wine_photo8, filename: 'wine_photo8.jpg', content_type: 'image/jpg')
+wine8.save!
+
+wine_photo9 = URI.open('https://s.lesgrappes.com/media/catalog/product/l/e/le5_hd.png')
+wine9 = Wine.new(
+  name: 'Le 5 des Vignobles Greffier',
+  color: 'Blanc',
+  regionclassification:'Bordeaux',
+  cepages: 'Sauvignons Blanc, Sauvignons Gris, Semillion, Muscadelle, Ugni Blanc',
+  year: '2018',
+  alcool: '13%',
+  description: "Robe jaune pâle aux reflets dorés. Nez expressif aux notes de vanille révélant l'élégance du bois. La bouche est franche, nette, avec une belle complexité aromatique en finale.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  vigneron: vigneron3)
+  #leger_puissant: ,
+  #fruite_tannique: ,
+wine9.wine_photo.attach(io: wine_photo9, filename: 'wine_photo9.jpg', content_type: 'image/jpg')
+wine9.save!
+
+wine_photo10 = URI.open('https://s.lesgrappes.com/media/catalog/product/m/u/muscadelle_hd.png')
+wine10 = Wine.new(
+  name: 'Vignoble Greffier - Muscadelle',
+  color: 'Blanc',
+  regionclassification:'Bordeaux',
+  cepages: 'Muscadelle',
+  year: '2017',
+  alcool: '12%',
+  description: "Robe jaune pâle cristallin et limpide. Nez expressif et floral aux notes d’agrumes et de pêches révélant l’élégance de la Muscadelle. La bouche est franche, nette, avec une belle finesse aromatique en finale.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  vigneron: vigneron3)
+  #leger_puissant: ,
+  #fruite_tannique: ,
+wine10.wine_photo.attach(io: wine_photo10, filename: 'wine_photo10.jpg', content_type: 'image/jpg')
+wine10.save!
+
+wine_photo12 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/h/chteau_magence_rouge_2009_barrique-1465398385.pngxw140xh300xr2.jpg')
+wine12 = Wine.new(
+  name: 'Chateau Magence Rouge Barrique',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Cabernet Sauvignon, Cabernet Franc, Merlot',
+  year: '2009',
+  alcool: '12,5%',
+  description: "Une belle robe grenat avec nez marqué de fruits mûrs (cerise, groseille) en arrière-plan des notes chocolatées, boisées, discrètes. Bouche élégante, structure polie, tanins soyeux, fruit généreux et persistant. Un beau millésime. Un vin frais, fin, ample aux tanins soyeux et puissants. Une belle concentration de notes de griottes et de confiture.",
+  biodynamique_naturel: 'Biodynamique',
+  # sec_sucre: 'Sec',
+  # mineral_fruite: 'Minéral',
+  vigneron: vigneron7,
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Fruité')
+wine12.wine_photo.attach(io: wine_photo12, filename: 'wine_photo12.jpg', content_type: 'image/jpg')
+wine12.save!
+
+wine_photo13 = URI.open('https://s1.lesgrappes.com/media/catalog/product/b/a/bassedef_ros_des_pierres_dores.pngxw140xh300xr2.jpg')
+wine13 = Wine.new(
+  name: 'Domaine de Champs Fleury - Beaujolais Rosé',
+  color: 'Rosé',
+  regionclassification:'Bourgogne',
+  cepages: 'Gamay',
+  year: '2018',
+  alcool: '12,5%',
+  description: "La robe est d’un rose tendrement pâle avec des reflets légèrement cuivrés. Le nez exhale des arômes de framboise et de Lilas. En bouche, l’attaque est franche et souple. Notes séductrices de bonbon à la framboise, d’agrumes, de groseille. Bouche équilibrée entre acidulation et générosité du fruité.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  vigneron: vigneron6)
+  #leger_puissant: ,
+  #fruite_tannique: ,
+wine13.wine_photo.attach(io: wine_photo13, filename: 'wine_photo13.jpg', content_type: 'image/jpg')
+wine13.save!
+
+wine_photo14 = URI.open('https://s1.lesgrappes.com/media/catalog/product/b/a/bassedef_beaujolais_tradition.pngxw140xh300xr2.jpg')
+wine14 = Wine.new(
+  name: 'Domaine de Champs Fleury - Cuvée Tradition',
+  color: 'Rouge',
+  regionclassification:'Bourgogne',
+  cepages: 'Gamay',
+  year: '2018',
+  alcool: '12,5%',
+  description: "La robe couleur rubis est d’une belle intensité. Le nez exhale sur des arômes de fruits rouges : framboises et cerises mures notamment. En bouche, le vin est élégant et souple avec tout de même une présence tannique intéressante.",
+  biodynamique_naturel: 'Naturel',
+  # sec_sucre: 'Sec',
+  # mineral_fruite: 'Fruité',
+  vigneron: vigneron6,
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Fruité')
+wine14.wine_photo.attach(io: wine_photo14, filename: 'wine_photo14.jpg', content_type: 'image/jpg')
+wine14.save!
+
+wine_photo15 = URI.open('https://s1.lesgrappes.com/media/catalog/product/b/a/bassedef_bourgogne_chardonnay.pngxw140xh300xr2.jpg')
+wine15 = Wine.new(
+  name: 'Domaine de Champs Fleury - Chardonnay',
+  color: 'Blanc',
+  regionclassification:'Bourgogne',
+  cepages: 'Chardonnay',
+  year: '2018',
+  alcool: '13%',
+  description: "Il comporte une magnifique robe jaune paille avec quelques reflets verts. Le nez est très typé « chardonnay » avec des notes subtiles de muscat, de miel et de fleurs. La bouche, aux arômes de fruits confits est puissante, suave, mais avec de la fraîcheur. Ce vin est élégant, sympathique et convivial.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  vigneron: vigneron6)
+  # leger_puissant: 'Puissant',
+  # fruite_tannique: 'Fruité')
+wine15.wine_photo.attach(io: wine_photo15, filename: 'wine_photo15.jpg', content_type: 'image/jpg')
+wine15.save!
 
 # file = URI.open('https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 # fusée1 = User.first.vehicules.create!(title: "Ariane 5", description: "Développé pour placer des satellites sur orbite géostationnaire et des charges lourdes en orbite", category: "Fusée", capacity: 8, country: "🇫🇷 France", city: "Paris", address: "16 rue Duhesme", daily_price: 7000, permit: true, availability: true)
