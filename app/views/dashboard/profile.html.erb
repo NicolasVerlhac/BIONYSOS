@@ -11,7 +11,7 @@
   <div>
     <h2> Mes anciennes bouteilles : </h2>
   </div>
-
+<br>
   <div>
     <h2> Mes coordonnées : </h2>
     <p>Prénom : <%= current_user.first_name %></p>
@@ -21,7 +21,7 @@
     <p>Code postal : <%= current_user.zip_code %>
     <p>Ville : <%= current_user.city %></p>
   </div>
-
+<br>
   <div>
     <h2> Mes préférences : </h2>
       <p>J'aime le vin : </p>
@@ -35,8 +35,55 @@
       <p>rosé </p>
       <% end %>
   </div>
+<br>
   <div>
-      <h2> Mes régions préférées : </h2>
+    <h2> Le goût : </h2>
+      <p>J'aime le vin : </p>
+      <% if current_user.vin_sec = true %>
+      <p>Sec </p>
+      <% end %>
+      <% if current_user.vin_fruite = true %>
+      <p>Fruité </p>
+      <% end %>
+      <% if current_user.vin_mineral = true %>
+      <p>Minéral </p>
+      <% end %>
+      <% if current_user.vin_sucre = true %>
+      <p>Sucré </p>
+      <% end %>
+      <% if current_user.vin_leger = true %>
+      <p>Léger </p>
+      <% end %>
+      <% if current_user.vin_puissant = true %>
+      <p>Puissant </p>
+      <% end %>
+      <% if current_user.vin_tannique = true %>
+      <p>Tannique </p>
+      <% end %>
+  </div>
+<br>
+  <div>
+      <p>Alcool : </p>
+      <% if current_user.alcool_light = true %>
+      <p> < 12,5 ° </p>
+      <% end %>
+      <% if current_user.alcool_strong = true %>
+      <p> > 12,5 ° </p>
+      <% end %>
+  </div>
+<br>
+  <div>
+      <p>De classification : </p>
+      <% if current_user.classification_biodynamique = true %>
+      <p>Vin biodynamique </p>
+      <% end %>
+      <% if current_user.classification_naturel = true %>
+      <p>Vin naturel </p>
+      <% end %>
+  </div>
+<br>
+  <div>
+      <p>Mes régions préférées : </p>
       <% if current_user.region_alsace = true %>
       <p>Alsace </p>
       <% end %>
