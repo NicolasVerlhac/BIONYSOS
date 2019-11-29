@@ -371,7 +371,7 @@ wine12.save!
 wine_photo13 = URI.open('https://s1.lesgrappes.com/media/catalog/product/b/a/bassedef_ros_des_pierres_dores.pngxw140xh300xr2.jpg')
 wine13 = Wine.new(
   name: 'Domaine de Champs Fleury - Beaujolais Rosé',
-  color: 'Rosé',
+  color: 'Rose',
   regionclassification:'Bourgogne',
   cepages: 'Gamay',
   year: '2018',
