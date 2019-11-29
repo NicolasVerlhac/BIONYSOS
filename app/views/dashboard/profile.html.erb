@@ -1,7 +1,3 @@
-<h1>Dashboard#profile</h1>
-<p>Find me in app/views/dashboard/profile.html.erb</p>
-
-
 
 <div class="container">
   <div>
@@ -18,6 +14,44 @@
 
   <div>
     <h2> Mes coordonnées : </h2>
+    <p>Prénom : <%= current_user.first_name %></p>
+    <p>Nom : <%= current_user.last_name %></p>
+    <p>Email : <%= current_user.email %></p>
+    <p>Adresse : <%= current_user.address %></p>
+    <p>Code postal : <%= current_user.zip_code %>
+    <p>Ville : <%= current_user.city %></p>
+  </div>
+
+  <div>
+    <h2> Mes préférences : </h2>
+      <p>J'aime le vin : </p>
+      <% if current_user.color_red = true %>
+      <p>rouge </p>
+      <% end %>
+      <% if current_user.color_white = true %>
+      <p>blanc </p>
+      <% end %>
+      <% if current_user.color_rose = true %>
+      <p>rosé </p>
+      <% end %>
+  </div>
+  <div>
+      <h2> Mes régions préférées : </h2>
+      <% if current_user.region_alsace = true %>
+      <p>Alsace </p>
+      <% end %>
+      <% if current_user.region_bordeaux = true %>
+      <p>Bordeaux </p>
+      <% end %>
+      <% if current_user.region_rhone = true %>
+      <p>Vallée du Rhône </p>
+      <% end %>
+      <% if current_user.region_bourgogne = true %>
+      <p>Bourgogne </p>
+      <% end %>
+      <% if current_user.region_loire = true %>
+      <p>Pays de la Loire </p>
+      <% end %>
   </div>
 
 </div>
