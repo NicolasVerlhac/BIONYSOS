@@ -1,37 +1,43 @@
-
-  <div class="container col-10">
-
-
-
-  <div class="d-inline"><h2> Proposition de vins correspondants à vos goûts</h2>
-
-  <%= simple_form_for Box.new do |f| %>
-    <div class="col col-lg-4">
-      <%= f.input :wine_id_1, type:"hidden", label: "Première bouteille ", input_html: { value: @wines[0].name } %>
-      <%= cl_image_tag @wines[0].wine_photo.key, :height=>200, :crop=>"scale" %>
-    </div>
-    <div class="col col-lg-4">
-    <%= f.input :wine_id_2, label: "Seconde bouteille ", input_html: { value: @wines[1].name } %>
-    <%= cl_image_tag @wines[1].wine_photo.key, :height=>200, :crop=>"scale" %>
-    </div>
-    <p>Vous pouvez modifier cette sélection</p>
-    <%= f.submit "save", class: 'btn btn-flat' %>
-  <% end %>
-</div>
-
-
+<div class="container">
+  <h2> <%=@user.first_name.capitalize %>, voici les 2 vins que nous vous recommandons :</h2>
 
   <div class="row">
-    <% @wines[2..-1].each do |wine|  %>
-    <div class="col col-lg-2">
-    <p><%= wine.name %></p>
-    <h5><%= wine.regionclassification %></h5>
-    <%= cl_image_tag wine.wine_photo.key, :height=>200, :crop=>"scale" %>
-    </div>
+      <% @wines[0..1].each do |wine|  %>
+        <div class="col-sm-4">
+          <div class="card-wine">
+              <%= cl_image_tag wine.wine_photo.key %>
+                <div class="card-wine-color <%= wine.color %>">
+                  <p><%= wine.color %></p>
+                </div>
+            <div class="card-trip-infos">
+              <div>
+                <h3> <strong><%= wine.name %> </strong> </h3>
+                <h5><%= wine.description.first(150) %> ...</h5>
+              </div>
+            </div>
+          </div>
+        </div>
     <% end %>
   </div>
 
-
+  <div class="row">
+      <% @wines[2..-1].each do |wine|  %>
+        <div class="col-sm-4">
+          <div class="card-wine">
+              <%= cl_image_tag wine.wine_photo.key %>
+                <div class="card-wine-color <%= wine.color %>">
+                  <p><%= wine.color %></p>
+                </div>
+            <div class="card-trip-infos">
+              <div>
+                <h3> <strong><%= wine.name %> </strong> </h3>
+                <h5><%= wine.description.first(150) %> ...</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>
 
 
