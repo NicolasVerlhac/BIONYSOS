@@ -17,7 +17,16 @@
           </div>
         </div>
     <% end %>
+</div>
+    <div class="row justify-content-md-center mb-4">
+    <%= form_for @box, url: {action: "create"} do |f| %>
+      <%= f.hidden_field :wine_id_1, value: @wines[0].id %>
+      <%= f.hidden_field :wine_id_2, value: @wines[1].id %>
+      <%= f.submit "save", class: 'btn btn-flat' %>
+    <% end %>
   </div>
+
+
 <h4> Troquer l'une de vos bouteilles avec l'une des suivantes :</h4>
   <div class="row">
       <% @wines[2..-1].each do |wine|  %>
@@ -38,8 +47,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-
-
