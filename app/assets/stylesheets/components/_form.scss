@@ -77,11 +77,15 @@
   background: #b7b7b7;
   border-radius: 5px;
   opacity: 0.4;
-  flex: 0 0 30%;
+  flex: 0 0 48%;
   text-align: center;
   margin: 5px;
+  cursor: pointer;
   &:hover {
     opacity: 0.6;
+    cursor: pointer;
+  }
+  label {
     cursor: pointer;
   }
 }
@@ -96,7 +100,7 @@
   padding: 0px 0px;
   border-radius: 5px;
   opacity: 0.4;
-  flex: 0 0 40%;
+  flex: 0 0 48%;
   text-align: center;
   margin: 5px;
   &:hover {
@@ -158,4 +162,23 @@ div.click-to-top:hover span {display: block; }
   font-weight: bold;
   font-size: 30px;
   color: #666666;
+}
+
+#nav-contact .btn.btn-flat {
+  display: block;
+  margin : 20px auto;
+}
+
+.nav {
+  justify-content: center;
+
+  .nav-link {
+      width: 33%;
+      text-align: center;
+      color: #cecdcd;
+
+      &.active {
+        color: #c91b31;
+      }
+  }
 }
