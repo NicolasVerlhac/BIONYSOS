@@ -1,7 +1,6 @@
-<div class="container">
-  <h2> <%=@user.first_name.capitalize %>, voici les 2 vins que nous vous recommandons :</h2>
-
-  <div class="row">
+<div class="container suggestions">
+  <h3> <%=@user.first_name.capitalize %>, voici les 2 vins que nous vous recommandons :</h3>
+  <div class="row justify-content-md-center mt-4">
       <% @wines[0..1].each do |wine|  %>
         <div class="col-sm-4">
           <div class="card-wine">
@@ -19,7 +18,7 @@
         </div>
     <% end %>
   </div>
-
+<h4> Troquer l'une de vos bouteilles avec l'une des suivantes :</h4>
   <div class="row">
       <% @wines[2..-1].each do |wine|  %>
         <div class="col-sm-4">
