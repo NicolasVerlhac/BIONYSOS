@@ -2,6 +2,7 @@ require 'open-uri'
 puts 'Delete vignerons and wines'
 
 Vigneron.destroy_all
+BoxItem.destroy_all
 Wine.destroy_all
 
 puts 'Deleted the Vignerons and Wines seeds'
