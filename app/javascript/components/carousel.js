@@ -1,8 +1,15 @@
 import 'slick-carousel';
-$(document).ready(function(){
-  $('#wines-carousel').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1
+
+const initCarousel = () => {
+  $(document).ready(function(){
+    $('#wines-carousel').slick({
+      infinite: true,
+      draggable: false,
+      mobileFirst: true,
+      slidesToShow: 3,
+      slidesToScroll: 1
+    });
   });
-});
+}
+
+export { initCarousel }
