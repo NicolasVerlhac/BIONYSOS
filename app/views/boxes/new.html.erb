@@ -28,10 +28,10 @@
 
 
 <h4> Troquer l'une de vos bouteilles avec l'une des suivantes :</h4>
-  <div class="row">
+  <div class="row" id="wines-carousel">
       <% @wines[2..-1].each do |wine|  %>
         <div class="col-sm-4">
-          <div class="card-wine">
+          <div class="card-wine" style="width: 350px;">
               <%= cl_image_tag wine.wine_photo.key %>
                 <div class="card-wine-color <%= wine.color %>">
                   <p><%= wine.color %></p>
