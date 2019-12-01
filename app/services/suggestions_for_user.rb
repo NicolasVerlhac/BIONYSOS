@@ -1,15 +1,15 @@
 class SuggestionsForUser
 
-  def self.call(user, wines = Wine.all)
+  def self.call(user)
     wines = Wine.all
-    wines1 = self.call_color(user, wines)
-    wines2 = self.call_region(user, wines)
-    wines3 = self.call_alcool(user, wines)
-    wines4 = self.call_sec_sucre(user, wines)
-    wines5 = self.call_mineral_fruite(user, wines)
-    wines6 = self.call_leger_puissant(user, wines)
-    wines7 = self.call_fruite_tannique(user, wines)
-    wines = wines1 + wines2 + wines3 + wines4 + wines5 + wines6 + wines7
+    wines = self.call_color(user, wines)
+    wines = self.call_region(user, wines)
+    wines = self.call_alcool(user, wines)
+    wines = self.call_biodynamique_naturel(user, wines)
+    #wines = self.call_sec_sucre(user, wines)
+    #wines = self.call_mineral_fruite(user, wines)
+    #wines = self.call_leger_puissant(user, wines)
+    #wines = self.call_fruite_tannique(user, wines)
     return wines.uniq
   end
 
@@ -38,12 +38,12 @@ class SuggestionsForUser
     return Wine.where(alcool: user_alcools)
   end
 
-  # def self.call_biodynamique_naturel(user, wines = Wine.all)
-  #   user_biodynamique_naturel = []
-  #   user_biodynamique_naturel << "Biodynamique" if user.classification_biodynamique
-  #   user_biodynamique_naturel << "Naturel" if user.classification_naturel
-  #   return Wine.where(biodynamique_naturel: user_biodynamique_naturel)
-  # end
+  def self.call_biodynamique_naturel(user, wines = Wine.all)
+    user_biodynamique_naturel = []
+    user_biodynamique_naturel << "Biodynamique" if user.classification_biodynamique
+    user_biodynamique_naturel << "Naturel" if user.classification_naturel
+    return Wine.where(biodynamique_naturel: user_biodynamique_naturel)
+  end
 
   def self.call_sec_sucre(user, wines = Wine.all)
     user_sec_sucre = []
