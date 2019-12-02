@@ -43,7 +43,7 @@ console.log("DROP");
             <h4><%= image_tag "pin.png", class: 'picto-show' %> <%=wine.regionclassification%>, <%=wine.year%></h4>
             <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin <%=wine.biodynamique_naturel.downcase%></h4>
             <h4><%= image_tag "cepages.png", class: 'picto-show' %> <%=wine.cepages%></h4>
-            <h5><%= wine.description.first(175) %> ...</h5>
+            <h5><%= wine.description.first(350) %></h5>
             </div>
           </div>
         </div>
