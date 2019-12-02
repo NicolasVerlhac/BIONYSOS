@@ -334,18 +334,18 @@ a:hover {
 // Card Suggestions
 
 .card-wine-suggestions {
-  height: 450px;
+  height: 250px;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: black;
   text-decoration: none;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 
 .card-wine-suggestions > img {
-  height: 250px;
+  height: 200px;
   object-fit: cover;
   display: block;
   margin-left: auto;
@@ -359,13 +359,16 @@ a:hover {
   margin: 0px;
   padding-left: 25px;
   padding-right: 25px;
+  text-align: center;
 }
 
 .card-wine-suggestions p {
-  font-size: 20px;
   color: white;
+  font-size: 15px;
+  font-style: normal;
   padding: 5px 10px 5px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
+
 
 }
 
@@ -414,6 +417,21 @@ a:hover {
   color: black;
 }
 
+
+.card-trip-infos-suggestions-hidden {
+  display: none;
+}
+
+.card-wine-suggestions:hover .card-trip-infos-suggestions-hidden {
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 // .card-wine-cepages {
 //   background-color: gray;
 //   opacity: 0.5;
@@ -425,5 +443,120 @@ a:hover {
 // .card-wine-cepages p {
 //   font-size : 15px;
 // }
+
+.suggestion-block {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin: 10px;
+  padding-bottom : 1px;
+}
+
+.suggestion-block h2 {
+  text-align: center;
+  color: black;
+  font-style: initial;
+  font-size: 22px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.other-wines {
+  border-style: solid;
+  border-color: gray;
+  margin: 25px;
+
+}
+
+
+/// Other card wines
+
+.card-wine-2 {
+  height: 225px;
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: black;
+  text-decoration: none;
+  margin: 20px;
+
+}
+
+
+.card-wine-2 > img {
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+}
+
+.card-wine-2 h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+}
+
+.card-wine-2 p {
+  font-size: 12px;
+  font-style: italic;
+  color: gray;
+  padding: 5px 10px 5px;
+  margin-bottom: 0;
+
+}
+
+
+.card-wine h5 {
+  font-size: 12px;
+  font-style: italic;
+  color: gray;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 0;
+
+}
+
+
+.card-wine-2-color {
+  opacity: 0.8;
+  border-radius: 2px;
+  position: absolute;
+  height: 30px;
+  top: 20px;
+}
+
+
+.card-wine-2-color.Rouge {
+  background-color: #C60D25 !important;
+}
+
+.card-wine-2-color.Blanc {
+  background-color: #ECE09D !important;
+}
+
+.card-wine-2-color.Rose {
+  background-color: #E6A29A !important;
+}
+
+
+.card-wine-2-color p {
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.vigneron-show .card-trip-infos h3 {
+  margin: 10px;
+}
+
+
+
+
+
 
 
