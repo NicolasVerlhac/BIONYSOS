@@ -16,3 +16,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { initCarousel } from '../components/carousel'
 initCarousel();
+
+import { signUp } from '../components/sign_up';
+signUp();
