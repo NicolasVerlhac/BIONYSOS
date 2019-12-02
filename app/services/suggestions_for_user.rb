@@ -2,14 +2,20 @@ class SuggestionsForUser
 
   def self.call(user)
     wines = Wine.all
+
     wines = self.call_color(user, wines)
     wines = self.call_region(user, wines)
     wines = self.call_alcool(user, wines)
     wines = self.call_biodynamique_naturel(user, wines)
+
     wines = self.call_sec_sucre(user, wines)
+
     wines = self.call_mineral_fruite(user, wines)
+
     wines = self.call_leger_puissant(user, wines)
+
     wines = self.call_fruite_tannique(user, wines)
+
     return wines.uniq
   end
 
@@ -18,7 +24,11 @@ class SuggestionsForUser
     user_colors << "Rouge" if user.color_red
     user_colors << "Blanc" if user.color_white
     user_colors << "Rose" if user.color_rose
-    return wines.where(color: user_colors)
+    if user_colors.length > 0
+      return Wine.where(color: user_colors)
+    else
+      return Wine.all
+    end
   end
 
  def self.call_region(user, wines = Wine.all)
@@ -28,49 +38,78 @@ class SuggestionsForUser
     user_regions << "Rhone" if user.region_rhone
     user_regions << "Bourgogne" if user.region_bourgogne
     user_regions << "Loire" if user.region_loire
-    return Wine.where(regionclassification: user_regions)
+    if user_regions.length > 0
+      return Wine.where(regionclassification: user_regions)
+    else
+      return Wine.all
+    end
   end
 
   def self.call_alcool(user, wines = Wine.all)
     user_alcools = []
     user_alcools << "12,5%" || "12%" if user.alcool_light
     user_alcools << "13%" || "13,5%" || "14%" if user.alcool_strong
-    return Wine.where(alcool: user_alcools)
+    if user_alcools.length > 0
+      return Wine.where(alcool: user_alcools)
+    else
+      return Wine.all
+    end
   end
 
   def self.call_biodynamique_naturel(user, wines = Wine.all)
     user_biodynamique_naturel = []
     user_biodynamique_naturel << "Biodynamique" if user.classification_biodynamique
     user_biodynamique_naturel << "Naturel" if user.classification_naturel
-    return Wine.where(biodynamique_naturel: user_biodynamique_naturel)
+
+    if user_biodynamique_naturel.length > 0
+      return Wine.where(biodynamique_naturel: user_biodynamique_naturel)
+    else
+      return Wine.all
+    end
   end
 
   def self.call_sec_sucre(user, wines = Wine.all)
     user_sec_sucre = []
     user_sec_sucre << "Sec" if user.vin_sec
     user_sec_sucre << "Sucré" if user.vin_sucre
-    return Wine.where(sec_sucre: user_sec_sucre)
+    if user_sec_sucre.length > 0
+      return Wine.where(sec_sucre: user_sec_sucre)
+    else
+      return Wine.all
+    end
   end
 
   def self.call_mineral_fruite(user, wines = Wine.all)
     user_mineral_fruite = []
     user_mineral_fruite << "Minéral" if user.vin_mineral
     user_mineral_fruite << "Fruité" if user.vin_fruite
-    return Wine.where(mineral_fruite: user_mineral_fruite)
+    if user_mineral_fruite.length > 0
+      return Wine.where(mineral_fruite: user_mineral_fruite)
+    else
+      return Wine.all
+    end
   end
 
   def self.call_leger_puissant(user, wines = Wine.all)
     user_leger_puissant = []
     user_leger_puissant << "Léger" if user.vin_leger
     user_leger_puissant << "Puissant" if user.vin_mineral
-    return Wine.where(leger_puissant: user_leger_puissant)
+    if user_leger_puissant.length > 0
+      return Wine.where(leger_puissant: user_leger_puissant)
+    else
+      return Wine.all
+    end
   end
 
   def self.call_fruite_tannique(user, wines = Wine.all)
     user_fruite_tannique = []
     user_fruite_tannique << "Fruité" if user.vin_fruite
     user_fruite_tannique << "Tannique" if user.vin_tannique
-    return Wine.where(fruite_tannique: user_fruite_tannique)
+    if user_fruite_tannique.length > 0
+      return Wine.where(fruite_tannique: user_fruite_tannique)
+    else
+      return Wine.all
+    end
   end
 
 

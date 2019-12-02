@@ -3,43 +3,50 @@
 <% livraison_day = Date.today + 5  %>
 
 <div class="container">
+  <div class="text-center"><h2>Récapitulatif de votre commande </h2></div>
   <div class="row">
 
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>Récapitulatif de votre commande </h2>
-
-      <p>Abonnement mensuel de 29,90€ pour recevoir 2 bouteilles de vin bio par mois</p>
-      <p>Bouteilles de votre prochaine box, livrées le <%= livraison_day %> : </p>
+      <div class="form_delivery_payment">
+        <h3>Abonnement</h3>
+      <p>Tarif : 29,90€ par mois</p>
+      <p>2 bouteilles de vin bio par mois</p>
+      <p>Bouteilles livrées le <%= livraison_day %> : </p>
+      <ul>
       <% @wines.each do |wine| %>
-      <%= wine.name %><br>
-      <%= wine.regionclassification %><br><br>
+      <li> <%= wine.name %><br>
+      <%= wine.regionclassification %></li>
       <% end %>
-      <br><br><br>
+      </ul>
+      </div>
     </div>
 
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>Adresse de livraison</h2>
-       <%= simple_form_for current_user do |f| %>`
+      <div class="form_delivery_payment">
+        <h3>Adresse de livraison</h3>
+       <%= simple_form_for current_user do |f| %>
         <div>
-        <div class="d-inline-block"><%= f.input :first_name, required: true, placeholder: '', label: false %></div>
-        <div class="d-inline-block"><%= f.input :last_name, required: true, placeholder: '', label: false %></div>
+          <div class="d-inline-block"><%= f.input :first_name, required: true, placeholder: '', label: false %></div>
+          <div class="d-inline-block"><%= f.input :last_name, required: true, placeholder: '', label: false %></div>
         </div>
         <div>
-        <div class="d-inline-block"><%= f.input :address, required: true, placeholder: 'Adresse', label: false %></div>
-        <div class="d-inline-block"><%= f.input :zip_code, required: true, placeholder: 'Code postal', label: false %></div>
-        <div class="d-inline-block"><%= f.input :city, required: true, placeholder: 'Ville', label: false  %></div>
+          <div class="d-inline-block"><%= f.input :address, required: true, placeholder: 'Adresse', label: false %></div>
+          <div class="d-inline-block"><%= f.input :zip_code, required: true, placeholder: 'Code postal', label: false %></div>
+          <div class="d-inline-block"><%= f.input :city, required: true, placeholder: 'Ville', label: false  %></div>
         </div>
+      </div>
     </div>
 
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>Information de paiement</h2>
+      <div class="form_delivery_payment">
+        <h3>Information de paiement</h3>
         <div class="d-inline-block"><%= f.input :card_number, required: true, placeholder: 'Numéro de carte', label: false  %></div>
         <div class="d-inline-block"><%= f.input :expiry_date, required: true, placeholder: 'Date d expiration', label: false  %></div>
         <div class="d-inline-block"><%= f.input :security_code, required: true, placeholder: 'Code de sécurité', label: false  %></div>
-
-        <%= f.button :submit, "Je paie", class: "text-center", class: "btn btn-flat" %>
-      <% end %>
+      </div>
     </div>
   </div>
+  <div class="text-center"><%= f.button :submit, "Je paie", class: "text-center", class: "btn btn-flat-payment"  %>
+      <% end %></div>
 </div>
 
