@@ -1,6 +1,14 @@
+
 <div class="banner-form" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1543418219-44e30b057fea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80);">
   <div class="container" id="signup-form">
+
     <div class=" col-sm-6 form-sign">
+      <div class="waiting-algo">
+        <div>
+          <%= image_tag 'https://media3.giphy.com/media/Widn8Yco9vXDa/giphy.webp?cid=790b7611d2946d8efd16e0a128734010d593166831fa282e&rid=giphy.webp' %>
+          <p>Nous recherchons les meilleures bouteilles pour vous...</p>
+        </div>
+      </div>
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Étape 1</a>
@@ -85,7 +93,7 @@
                   <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_mineral, as: :boolean, label: "Minéral", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"On retrouve dans de nombreux vins cette minéralité plus ou moins accrue, caractéristique des pierres à fusil"  }  %></div>
                   <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Qualificatif très général des arômes de la grande famille des fruits pour exprimer le rappel de la chair du fruit frais"  }  %></div>
                 </div>
-                <%= f.button :submit, "Voir mes suggestions", class: "text-center", class: "btn btn-flat" %>
+                <%= f.button :submit, "Voir mes suggestions", class: "text-center", class: "btn btn-flat", id: "sign-up-submit-btn" %>
               <% end %>
         </div>
       </div>
