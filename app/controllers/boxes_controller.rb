@@ -4,21 +4,9 @@ class BoxesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @box = Box.find_by_id(params[:id])
     @wines = @box.wines
-    @wine_1 = @wines[0]
-    @wine_2 = @wines[1]
-
-
-    # @box_items = @box.boxItem
-    # raise
-    # @box_items.wine =
-
-
-    # @wine_1 = Wine.find(@box_items[0].wine_id)
-    # @wine_2 = Wine.find(@box_items[1].wine_id)
-
-
   end
 
   def new
