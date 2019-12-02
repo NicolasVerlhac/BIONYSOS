@@ -54,9 +54,11 @@ console.log("DROP");
 
   <div class="row justify-content-md-center">
     <%= form_for @box, url: {action: "create"} do |f| %>
-      <%= f.hidden_field :wine_id_1, value: @wines[0].id %>
-      <%= f.hidden_field :wine_id_2, value: @wines[1].id %>
+
+      <%= f.hidden_field :wine_id_1, value: @wines[0].id if @wines[0].id %>
+      <%= f.hidden_field :wine_id_2, value: @wines[1].id if @wines[1].id %>
       <%= f.submit "Je valide ma sélection", class: 'btn btn-flat' %>
+
     <% end %>
   </div>
 
