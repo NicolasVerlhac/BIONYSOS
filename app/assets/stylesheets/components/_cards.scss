@@ -221,7 +221,8 @@ a:hover {
   font-size: 15px;
   font-weight: bold;
   margin: 0px;
-  padding-left :15px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .card-wine p {
@@ -328,3 +329,101 @@ a:hover {
   height : 350px;
   width: 600px;
 }
+
+
+// Card Suggestions
+
+.card-wine-suggestions {
+  height: 450px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: black;
+  text-decoration: none;
+  margin-bottom: 50px;
+}
+
+
+.card-wine-suggestions > img {
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+}
+
+.card-wine-suggestions h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.card-wine-suggestions p {
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px 5px;
+  margin-bottom: 0;
+
+}
+
+.card-wine-suggestions h4 {
+  font-size: 14px;
+}
+
+
+.card-wine-suggestions h5 {
+  font-size: 12px;
+  color: gray;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 0;
+
+}
+
+.card-wine-color-suggestions {
+  opacity: 0.8;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+}
+
+
+.card-wine-color-suggestions.Rouge {
+  background-color: #C60D25 !important;
+}
+
+.card-wine-color-suggestions.Blanc {
+  background-color: #ECE09D !important;
+}
+
+.card-wine-color-suggestions.Rose {
+  background-color: #E6A29A !important;
+}
+
+.card-trip-infos-suggestions img {
+  height: 15px;
+}
+
+.card-trip-infos-suggestions h4 {
+  font-size: 14px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: black;
+}
+
+// .card-wine-cepages {
+//   background-color: gray;
+//   opacity: 0.5;
+//   border-radius: 2px;
+//   position: absolute;
+//   height: 30px;
+// }
+
+// .card-wine-cepages p {
+//   font-size : 15px;
+// }
+
+
