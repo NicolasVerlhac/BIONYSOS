@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def update
-    @user = User.find(:id)
-    @user.update(user_params)
+    current_user.update(user_params)
+    redirect_to dashboard_profile_path
   end
 
   private

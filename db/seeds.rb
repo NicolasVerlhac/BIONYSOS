@@ -1,7 +1,7 @@
 require 'open-uri'
 puts 'Delete vignerons and wines'
 
-BoxItem.destroy_al
+BoxItem.destroy_all
 Vigneron.destroy_all
 BoxItem.destroy_all
 Wine.destroy_all
@@ -183,9 +183,9 @@ wine1 = Wine.new(
   biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
   vigneron: vigneron1)
-  #leger_puissant: ,
-  #fruite_tannique: ,
 wine1.wine_photo.attach(io: wine_photo1, filename: 'wine_photo1.jpg', content_type: 'image/jpg')
 wine1.save!
 
@@ -201,9 +201,9 @@ wine2 = Wine.new(
   biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Fruité',
   vigneron: vigneron2)
-  #leger_puissant: ,
-  #fruite_tannique: ,
 wine2.wine_photo.attach(io: wine_photo2, filename: 'wine_photo2.jpg', content_type: 'image/jpg')
 wine2.save!
 
@@ -219,9 +219,9 @@ wine3 = Wine.new(
   biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Fruité',
   vigneron: vigneron3)
-  #leger_puissant: ,
-  #fruite_tannique: ,
 wine3.wine_photo.attach(io: wine_photo3, filename: 'wine_photo3.jpg', content_type: 'image/jpg')
 wine3.save!
 
@@ -235,11 +235,11 @@ wine4 = Wine.new(
   alcool: '12,5%',
   description: "Le nez vous transportera au cœur d’une balade champêtre et révélera une cueillette de cassis et de cerises que vous retrouverez à l’aspect de la robe, violine brillant. En bouche c’est une explosive de fruits tendre et suave qui vous attend.",
   biodynamique_naturel: 'Biodynamique',
-  # sec_sucre: ,
-  # mineral_fruite: ,
-  vigneron: vigneron4,
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
   leger_puissant: 'Puissant',
-  fruite_tannique: 'Tannique')
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron4)
 wine4.wine_photo.attach(io: wine_photo4, filename: 'wine_photo4.jpg', content_type: 'image/jpg')
 wine4.save!
 
@@ -253,11 +253,11 @@ wine5 = Wine.new(
   alcool: '12,5%',
   description: "Ce vin s'exprime avec des touches de petits fruits rouges des bois (fraise, framboise, groseille) et sur un nez toasté, pain grillé provenant d'un sol pierre de lave et silex. A boire sur sa jeunesse en guise d'apéro, ou sur une viande blanche voir un poulet rôti.",
   biodynamique_naturel: 'Naturel',
-  # sec_sucre: ,
-  # mineral_fruite: ,
-  vigneron: vigneron2,
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Fruité',
   leger_puissant: 'Léger',
-  fruite_tannique: 'Fruité')
+  fruite_tannique: 'Fruité',
+  vigneron: vigneron2)
 wine5.wine_photo.attach(io: wine_photo5, filename: 'wine_photo5.jpg', content_type: 'image/jpg')
 wine5.save!
 
@@ -273,9 +273,9 @@ wine6 = Wine.new(
   biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Fruité',
   vigneron: vigneron2)
-  # leger_puissant: 'Léger',
-  # fruite_tannique: 'Fruité',
 wine6.wine_photo.attach(io: wine_photo6, filename: 'wine_photo6.jpg', content_type: 'image/jpg')
 wine6.save!
 
@@ -289,11 +289,11 @@ wine7 = Wine.new(
   alcool: '12,5%',
   description: "Très vieilles vignes de 84 ans. Robe rouge foncé, nez d’une grande complexité alliant l’humus, le sous-bois humide ainsi qu’un magnifique caractère de gibier. Vin généreux d’une énorme amplitude qui va enrober vos papilles dans un écrin de velours. Grand vin de terroir à agrémenter d’un grand plat et de bons champignons…",
   biodynamique_naturel: 'Naturel',
-  # sec_sucre: 'Sec',
-  # mineral_fruite: 'Fruité',
-  vigneron: vigneron2,
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
   leger_puissant: 'Puissant',
-  fruite_tannique: 'Tannique')
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron2)
 wine7.wine_photo.attach(io: wine_photo7, filename: 'wine_photo7.jpg', content_type: 'image/jpg')
 wine7.save!
 
@@ -308,10 +308,10 @@ wine8 = Wine.new(
   description: "Situé tout en haut du coteau entre Nuits-St-Georges et Vosne-Romanée, ce terroir exceptionnel a été planté en Chardonnay, et aménagé de façon à ne pouvoir y accéder qu’à pied. Tout le travail de l’année est réalisé uniquement à dos. Il n’y a aucun tassement du sol.",
   biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
-  mineral_fruite: 'Fruité',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
   vigneron: vigneron2)
-  # leger_puissant: 'Puissant',
-  # fruite_tannique: 'Tannique',
 wine8.wine_photo.attach(io: wine_photo8, filename: 'wine_photo8.jpg', content_type: 'image/jpg')
 wine8.save!
 
@@ -327,9 +327,9 @@ wine9 = Wine.new(
   biodynamique_naturel: 'Biodynamique',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Fruité',
   vigneron: vigneron3)
-  #leger_puissant: ,
-  #fruite_tannique: ,
 wine9.wine_photo.attach(io: wine_photo9, filename: 'wine_photo9.jpg', content_type: 'image/jpg')
 wine9.save!
 
@@ -345,9 +345,9 @@ wine10 = Wine.new(
   biodynamique_naturel: 'Biodynamique',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Fruité',
   vigneron: vigneron3)
-  #leger_puissant: ,
-  #fruite_tannique: ,
 wine10.wine_photo.attach(io: wine_photo10, filename: 'wine_photo10.jpg', content_type: 'image/jpg')
 wine10.save!
 
@@ -361,11 +361,11 @@ wine12 = Wine.new(
   alcool: '12,5%',
   description: "Une belle robe grenat avec nez marqué de fruits mûrs (cerise, groseille) en arrière-plan des notes chocolatées, boisées, discrètes. Bouche élégante, structure polie, tanins soyeux, fruit généreux et persistant. Un beau millésime. Un vin frais, fin, ample aux tanins soyeux et puissants. Une belle concentration de notes de griottes et de confiture.",
   biodynamique_naturel: 'Biodynamique',
-  # sec_sucre: 'Sec',
-  # mineral_fruite: 'Minéral',
-  vigneron: vigneron7,
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
   leger_puissant: 'Puissant',
-  fruite_tannique: 'Fruité')
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron7)
 wine12.wine_photo.attach(io: wine_photo12, filename: 'wine_photo12.jpg', content_type: 'image/jpg')
 wine12.save!
 
@@ -381,9 +381,9 @@ wine13 = Wine.new(
   biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Fruité',
   vigneron: vigneron6)
-  #leger_puissant: ,
-  #fruite_tannique: ,
 wine13.wine_photo.attach(io: wine_photo13, filename: 'wine_photo13.jpg', content_type: 'image/jpg')
 wine13.save!
 
@@ -397,11 +397,11 @@ wine14 = Wine.new(
   alcool: '12,5%',
   description: "La robe couleur rubis est d’une belle intensité. Le nez exhale sur des arômes de fruits rouges : framboises et cerises mures notamment. En bouche, le vin est élégant et souple avec tout de même une présence tannique intéressante.",
   biodynamique_naturel: 'Naturel',
-  # sec_sucre: 'Sec',
-  # mineral_fruite: 'Fruité',
-  vigneron: vigneron6,
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
   leger_puissant: 'Puissant',
-  fruite_tannique: 'Fruité')
+  fruite_tannique: 'Fruité',
+  vigneron: vigneron6)
 wine14.wine_photo.attach(io: wine_photo14, filename: 'wine_photo14.jpg', content_type: 'image/jpg')
 wine14.save!
 
@@ -417,9 +417,9 @@ wine15 = Wine.new(
   biodynamique_naturel: 'Naturel',
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Fruité',
   vigneron: vigneron6)
-  # leger_puissant: 'Puissant',
-  # fruite_tannique: 'Fruité')
 wine15.wine_photo.attach(io: wine_photo15, filename: 'wine_photo15.jpg', content_type: 'image/jpg')
 wine15.save!
 
