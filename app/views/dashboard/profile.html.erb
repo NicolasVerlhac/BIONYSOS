@@ -1,8 +1,50 @@
-
 <div class="container">
   <div>
     <h1 class="text-center">Dashboard</h1>
   </div>
+
+  <div class="row profile">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            <%= current_user.first_name %> <%= current_user.last_name %>
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+          <div class="portlet light bordered">
+            <div>
+              <div class="margin-top-20 profile-desc-link">
+                  <p>✉️ <%= current_user.email %></p>
+              </div>
+              <div class="margin-top-20 profile-desc-link">
+                  <p> <%= current_user.address %></p>
+                  <p> <%= current_user.city %></p>
+                  <p> <%= current_user.zip_code %></p>
+              </div>
+            </div>
+            <p> Préférences </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="profile-content">
+                  <div class="card-trip-infos-suggestions">
+                    <%= cl_image_tag @last_box.wines[0].wine_photo.key %>
+          <div>
+            <h3> <strong><%= @last_box.wines[0].name %> </strong> </h3>
+            <h4><%= image_tag "pin.png", class: 'picto-show' %> <%= @last_box.wines[0].regionclassification %>, <%= @last_box.wines[0].year %></h4>
+            <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin <%= @last_box.wines[0].biodynamique_naturel %></h4>
+            <h4><%= image_tag "cepages.png", class: 'picto-show' %> <%= @last_box.wines[0].cepages %></h4>
+            <h5><%= @last_box.wines[0].description %> ...</h5>
+          </div>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+
 
   <div>
       <h2> Mes prochaines bouteilles : </h2>
@@ -47,77 +89,77 @@
   <div>
     <h2> Mes préférences : </h2>
       <p>J'aime le vin : </p>
-      <% if current_user.color_red = true %>
+      <% if current_user.color_red == true %>
       <p>rouge </p>
       <% end %>
-      <% if current_user.color_white = true %>
+      <% if current_user.color_white == true %>
       <p>blanc </p>
       <% end %>
-      <% if current_user.color_rose = true %>
+      <% if current_user.color_rose == true %>
       <p>rosé </p>
       <% end %>
   </div>
 <br>
   <div>
       <p>Le goût : </p>
-      <% if current_user.vin_sec = true %>
+      <% if current_user.vin_sec == true %>
       <p>Sec </p>
       <% end %>
-      <% if current_user.vin_fruite = true %>
+      <% if current_user.vin_fruite == true %>
       <p>Fruité </p>
       <% end %>
-      <% if current_user.vin_mineral = true %>
+      <% if current_user.vin_mineral == true %>
       <p>Minéral </p>
       <% end %>
-      <% if current_user.vin_sucre = true %>
+      <% if current_user.vin_sucre == true %>
       <p>Sucré </p>
       <% end %>
-      <% if current_user.vin_leger = true %>
+      <% if current_user.vin_leger == true %>
       <p>Léger </p>
       <% end %>
-      <% if current_user.vin_puissant = true %>
+      <% if current_user.vin_puissant == true %>
       <p>Puissant </p>
       <% end %>
-      <% if current_user.vin_tannique = true %>
+      <% if current_user.vin_tannique == true %>
       <p>Tannique </p>
       <% end %>
   </div>
 <br>
   <div>
       <p>Alcool : </p>
-      <% if current_user.alcool_light = true %>
+      <% if current_user.alcool_light == true %>
       <p> < 12,5 ° </p>
       <% end %>
-      <% if current_user.alcool_strong = true %>
+      <% if current_user.alcool_strong == true %>
       <p> > 12,5 ° </p>
       <% end %>
   </div>
 <br>
   <div>
       <p>De classification : </p>
-      <% if current_user.classification_biodynamique = true %>
+      <% if current_user.classification_biodynamique == true %>
       <p>Vin biodynamique </p>
       <% end %>
-      <% if current_user.classification_naturel = true %>
+      <% if current_user.classification_naturel == true %>
       <p>Vin naturel </p>
       <% end %>
   </div>
 <br>
   <div>
       <p>Mes régions préférées : </p>
-      <% if current_user.region_alsace = true %>
+      <% if current_user.region_alsace == true %>
       <p>Alsace </p>
       <% end %>
-      <% if current_user.region_bordeaux = true %>
+      <% if current_user.region_bordeaux == true %>
       <p>Bordeaux </p>
       <% end %>
-      <% if current_user.region_rhone = true %>
+      <% if current_user.region_rhone == true %>
       <p>Vallée du Rhône </p>
       <% end %>
-      <% if current_user.region_bourgogne = true %>
+      <% if current_user.region_bourgogne == true %>
       <p>Bourgogne </p>
       <% end %>
-      <% if current_user.region_loire = true %>
+      <% if current_user.region_loire == true %>
       <p>Pays de la Loire </p>
       <% end %>
   </div>
