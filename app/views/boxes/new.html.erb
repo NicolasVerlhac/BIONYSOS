@@ -1,45 +1,70 @@
+  <script type="text/javascript">
+    function allowDrop(ev) {
+      console.log("ALLOW DROP");
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      console.log("DRAG");
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+console.log("DROP");
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+
 <div class="container suggestions">
   <h3> <%=@user.first_name.capitalize %>, voici les 2 vins que nous vous recommandons :</h3>
+
   <div class="row justify-content-md-center mt-4">
-      <% @wines[0..1].each do |wine|  %>
-        <div class="col-sm-4">
-          <div class="card-wine">
-              <%= cl_image_tag wine.wine_photo.key %>
-                <div class="card-wine-color <%= wine.color %>">
-                  <p><%= wine.color %></p>
-                </div>
-            <div class="card-trip-infos">
-              <div>
-                <h3> <strong><%= wine.name %> </strong> </h3>
-                <h5><%= wine.description.first(150) %> ...</h5>
-              </div>
-            </div>
+    <% @wines[0..1].each do |wine|  %>
+    <div class="col-sm-4">
+      <div class="card-wine" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <%= cl_image_tag wine.wine_photo.key %>
+        <div class="card-wine-color <%= wine.color %>">
+          <p><%= wine.color %></p>
+        </div>
+        <div class="card-trip-infos">
+          <div>
+            <h3> <strong><%= wine.name %> </strong> </h3>
+            <h5><%= wine.description.first(150) %> ...</h5>
           </div>
         </div>
+      </div>
+    </div>
     <% end %>
   </div>
-<h4> Troquez l'une de vos bouteilles avec l'une des suivantes :</h4>
-  <div class="row">
-      <% @wines[2..-1].each do |wine|  %>
-        <div class="col-sm-4">
-          <div class="card-wine">
-              <%= cl_image_tag wine.wine_photo.key %>
-                <div class="card-wine-color <%= wine.color %>">
-                  <p><%= wine.color %></p>
-                </div>
-            <div class="card-trip-infos">
-              <div>
-                <h3> <strong><%= wine.name %> </strong> </h3>
-                <h5><%= wine.description.first(150) %> ...</h5>
-              </div>
-            </div>
+
+  <div class="row justify-content-md-center mb-4">
+    <%= form_for @box, url: {action: "create"} do |f| %>
+      <%= f.hidden_field :wine_id_1, value: @wines[0].id %>
+      <%= f.hidden_field :wine_id_2, value: @wines[1].id %>
+      <%= f.submit "save", class: 'btn btn-flat' %>
+    <% end %>
+  </div>
+
+  <h4> Troquer l'une de vos bouteilles avec l'une des suivantes :</h4>
+  <div class="row" id="wines-carousel">
+  <% @wines[2..-1].each do |wine|  %>
+    <div class="col-sm-4">
+      <div class="card-wine" style="width: 350px;">
+        <%= cl_image_tag wine.wine_photo.key, draggable: true, ondragstart: "drag(event)" %>
+        <div class="card-wine-color <%= wine.color %>">
+          <p><%= wine.color %></p>
+        </div>
+        <div class="card-trip-infos">
+          <div>
+            <h3> <strong><%= wine.name %> </strong> </h3>
+            <h5><%= wine.description.first(150) %> ...</h5>
           </div>
         </div>
-    <% end %>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
-
-
-
-
 
