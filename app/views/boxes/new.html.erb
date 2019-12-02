@@ -26,8 +26,12 @@ console.log("DROP");
 <div class="container suggestions">
   <div class="row mt-4 justify-content-md-center">
     <% @wines[0..1].each do |wine|  %>
-    <div class="col-sm-4">
-      <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    <div class="col-sm-4" id="<%= wine.id %>">
+      <div class="card-wine" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+
+
         <%= cl_image_tag wine.wine_photo.key %>
         <div class="card-wine-color-suggestions <%= wine.color %>">
           <p><%= wine.color %></p>
@@ -59,7 +63,7 @@ console.log("DROP");
   <h4> Troquer l'une de vos bouteilles avec l'une des suivantes :</h4>
   <div class="row" id="wines-carousel">
   <% @wines[2..-1].each do |wine|  %>
-    <div class="col-sm-4">
+    <div class="col-sm-4" id="<%= wine.id %>">
       <div class="card-wine" style="width: 350px;">
         <%= cl_image_tag wine.wine_photo.key, draggable: true, ondragstart: "drag(event)" %>
         <div class="card-wine-color <%= wine.color %>">
