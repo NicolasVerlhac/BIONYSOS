@@ -5,7 +5,29 @@
   </div>
 
   <div>
-    <h2> Mes prochaines bouteilles : </h2>
+      <h2> Mes prochaines bouteilles : </h2>
+      <p>Bouteille n°1 : </p>
+        <p><%= @last_box.wines[0].name %></p>
+        <p>Vin <%= @last_box.wines[0].color %></p>
+        <p>Région : <%= @last_box.wines[0].regionclassification %></p>
+        <p>Alcool : <%= @last_box.wines[0].alcool %></p>
+        <p>Bouche : <%= @last_box.wines[0].sec_sucre %><%= @last_box.wines[0].leger_puissant %>, <%= @last_box.wines[0].mineral_fruite %><%= @last_box.wines[0].fruite_tannique %></p>
+        <p>Cépages : <%= @last_box.wines[0].cepages %></p>
+        <p>Année : <%= @last_box.wines[0].year %></p>
+        <p>Vin : <%= @last_box.wines[0].biodynamique_naturel %></p>
+        <p>Description : <%= @last_box.wines[0].description %></p>
+        <%= cl_image_tag @last_box.wines[0].wine_photo.key %>
+      <p>Bouteille n°2 : </p>
+        <p><%= @last_box.wines[1].name %></p>
+        <p>Vin <%= @last_box.wines[1].color %></p>
+        <p>Région : <%= @last_box.wines[1].regionclassification %></p>
+        <p>Alcool : <%= @last_box.wines[1].alcool %></p>
+        <p>Bouche : <%= @last_box.wines[1].sec_sucre %><%= @last_box.wines[1].leger_puissant %>, <%= @last_box.wines[1].mineral_fruite %><%= @last_box.wines[1].fruite_tannique %></p>
+        <p>Cépages : <%= @last_box.wines[1].cepages %></p>
+        <p>Année : <%= @last_box.wines[1].year %></p>
+        <p>Vin : <%= @last_box.wines[1].biodynamique_naturel %></p>
+        <p>Description : <%= @last_box.wines[1].description %></p>
+        <%= cl_image_tag @last_box.wines[1].wine_photo.key %>
   </div>
 
   <div>
@@ -14,12 +36,12 @@
 <br>
   <div>
     <h2> Mes coordonnées : </h2>
-    <p>Prénom : <%= current_user.first_name %></p>
-    <p>Nom : <%= current_user.last_name %></p>
-    <p>Email : <%= current_user.email %></p>
-    <p>Adresse : <%= current_user.address %></p>
-    <p>Code postal : <%= current_user.zip_code %>
-    <p>Ville : <%= current_user.city %></p>
+      <p>Prénom : <%= current_user.first_name %></p>
+      <p>Nom : <%= current_user.last_name %></p>
+      <p>Email : <%= current_user.email %></p>
+      <p>Adresse : <%= current_user.address %></p>
+      <p>Code postal : <%= current_user.zip_code %>
+      <p>Ville : <%= current_user.city %></p>
   </div>
 <br>
   <div>
@@ -37,8 +59,7 @@
   </div>
 <br>
   <div>
-    <h2> Le goût : </h2>
-      <p>J'aime le vin : </p>
+      <p>Le goût : </p>
       <% if current_user.vin_sec = true %>
       <p>Sec </p>
       <% end %>

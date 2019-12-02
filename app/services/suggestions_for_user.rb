@@ -6,10 +6,10 @@ class SuggestionsForUser
     wines = self.call_region(user, wines)
     wines = self.call_alcool(user, wines)
     wines = self.call_biodynamique_naturel(user, wines)
-    #wines = self.call_sec_sucre(user, wines)
-    #wines = self.call_mineral_fruite(user, wines)
-    #wines = self.call_leger_puissant(user, wines)
-    #wines = self.call_fruite_tannique(user, wines)
+    wines = self.call_sec_sucre(user, wines)
+    wines = self.call_mineral_fruite(user, wines)
+    wines = self.call_leger_puissant(user, wines)
+    wines = self.call_fruite_tannique(user, wines)
     return wines.uniq
   end
 
