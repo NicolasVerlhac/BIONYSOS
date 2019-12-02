@@ -1,15 +1,8 @@
 <h1>Boxes#show</h1>
 <p>Find me in app/views/boxes/show.html.erb</p>
 
-
 <p>Récapitulatif de votre commande </p>
-<%= @wine_1.name %><br>
-<%= @wine_1.regionclassification %><br><br><br>
-<%= @wine_2.name %><br>
-<%= @wine_2.regionclassification %><br><br><br>
-
-
-
-
-
-
+<% @wines.each do |wine| %>
+  <%= wine.name %><br>
+  <%= wine.regionclassification %><br><br><br>
+<% end %>

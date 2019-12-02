@@ -6,8 +6,8 @@ class BoxesController < ApplicationController
   def show
     @box = Box.find_by_id(params[:id])
     @wines = @box.wines
-    @wine_1 = @wines[0]
-    @wine_2 = @wines[1]
+    # @wine_1 = @wines[0]
+    # @wine_2 = @wines[1]
 
 
     # @box_items = @box.boxItem
