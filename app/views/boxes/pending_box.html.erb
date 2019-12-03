@@ -79,7 +79,9 @@ console.log("DROP");
           <p><%= wine.color %></p>
         </div>
         <div class="add-bottle">
+          <%=link_to wine_box_items_path(wine), method: :post do %>
           <%= image_tag "add.png" %>
+          <% end %>
         </div>
         <div class="card-trip-infos">
           <div>
