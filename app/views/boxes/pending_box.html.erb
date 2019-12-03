@@ -28,25 +28,27 @@ console.log("DROP");
     <div class="suggestion-block">
     <h2> <strong><%= current_user.first_name.capitalize %></strong>, voici les <strong>2</strong> vins que nous vous recommandons :</h2>
       <div class="row mt-4 justify-content-md-center">
-      <% @box.wines.each do |wine| %>
-        <div class="col-sm-4" id="<%= wine.id %>">
+      <% @box.box_items.each do |box_item| %>
+        <div class="col-sm-4" id="<%= box_item.wine.id %>">
          <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
-          <%= cl_image_tag wine.wine_photo.key %>
-            <div class="card-wine-color-suggestions <%= wine.color %>">
-            <p><%= wine.color %></p>
+          <%= cl_image_tag box_item.wine.wine_photo.key %>
+            <div class="card-wine-color-suggestions <%= box_item.wine.color %>">
+            <p><%= box_item.wine.color %></p>
             </div>
             <div class="delete-bottle">
-              <%= image_tag "cross.png" %>
+              <%=link_to box_item_path(box_item), method: :delete do %>
+                <%= image_tag "cross.png" %>
+              <% end %>
             </div>
           <div class="card-trip-infos-suggestions">
           <div>
-            <h3> <strong><%= wine.name.first(20) %> </strong> </h3>
+            <h3> <strong><%= box_item.wine.name.first(20) %> </strong> </h3>
             <div class="card-trip-infos-suggestions-hidden">
-            <h3> <strong><%= wine.name.first(20) %> </strong> </h3>
-            <h4><%= image_tag "pin.png", class: 'picto-show' %> <%=wine.regionclassification%>, <%=wine.year%></h4>
-            <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin <%=wine.biodynamique_naturel.downcase%></h4>
-            <h4><%= image_tag "cepages.png", class: 'picto-show' %> <%=wine.cepages%></h4>
-            <h5><%= wine.description.first(350) %></h5>
+            <h3> <strong><%= box_item.wine.name.first(20) %> </strong> </h3>
+            <h4><%= image_tag "pin.png", class: 'picto-show' %> <%=box_item.wine.regionclassification%>, <%=box_item.wine.year%></h4>
+            <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin <%=box_item.wine.biodynamique_naturel.downcase%></h4>
+            <h4><%= image_tag "cepages.png", class: 'picto-show' %> <%=box_item.wine.cepages%></h4>
+            <h5><%= box_item.wine.description.first(350) %></h5>
             </div>
           </div>
         </div>
@@ -57,9 +59,9 @@ console.log("DROP");
 
   <div class="row justify-content-md-center">
     <%= form_for @box do |f| %>
-
-      <%= f.hidden_field :wine_id_1, value: @box_wines.first.id %>
-      <%= f.hidden_field :wine_id_2, value: @box_wines.last.id %>
+      <%= f.hidden_field :status, value: "confirmed" %>
+      <%#= f.hidden_field :wine_id_1, value: @box_wines.first.id %>
+      <%#= f.hidden_field :wine_id_2, value: @box_wines.last.id %>
       <%= f.submit "Je valide ma sélection", class: 'btn btn-flat' %>
 
     <% end %>

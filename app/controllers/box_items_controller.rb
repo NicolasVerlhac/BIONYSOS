@@ -4,12 +4,12 @@ class BoxItemsController < ApplicationController
     @boxItems = BoxItem.all
   end
 
-  def edit
-  end
-
-  def update
+  def create
   end
 
   def destroy
+    @box_item = BoxItem.find(params[:id])
+    @box_item.destroy
+    redirect_to boxes_pending_box_path
   end
 end

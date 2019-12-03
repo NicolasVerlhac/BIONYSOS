@@ -24,15 +24,20 @@ class BoxesController < ApplicationController
   end
 
   def pending_box
-    @box = Box.create(user: current_user, status: "pending")
-    @box_wines = SuggestionsForUser.call(current_user).first(2)
-    @box_wines.each do |wine|
-      BoxItem.create(
-        box: @box,
-        wine: wine
-      )
+    @box = current_user.boxes.find_by(status: "pending")
+    if @box.nil?
+      @box = Box.create(user: current_user, status: "pending")
+      box_wines = SuggestionsForUser.call(current_user).first(2)
+      box_wines.each do |wine|
+        BoxItem.create(
+          box: @box,
+          wine: wine
+        )
+      end
+      @other_wines = SuggestionsForUser.call(current_user).where.not(id: box_wines.pluck(:id))
+    else
+      @other_wines = SuggestionsForUser.call(current_user).where.not(id: @box.wines.pluck(:id))
     end
-    @other_wines = SuggestionsForUser.call(current_user).where.not(id: @box_wines.pluck(:id))
 
     # @wine_1 = Wine.find(params[:box][:wine_id_1])
     # @wine_2 = Wine.find(params[:box][:wine_id_2])
