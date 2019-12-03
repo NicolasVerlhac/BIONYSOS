@@ -5,12 +5,12 @@ class BoxItemsController < ApplicationController
   end
 
   def create
-    @box_item = Wine.find(params[:wine_id])
-    if @box_item.nil?
-      @box_item = current_wine
-    @box_item.save
-    redirect_to boxes_pending_box_path
+    @wine = Wine.find(params[:wine_id])
+    @box = current_user.boxes.find_by(status: "pending")
+    if @box.box_items.count < 2
+      @box_item = BoxItem.create(box: @box, wine: @wine)
     end
+    redirect_to boxes_pending_box_path
   end
 
   def destroy
