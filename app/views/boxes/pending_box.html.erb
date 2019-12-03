@@ -1,0 +1,102 @@
+<!-- <div class="banner-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container text-center">
+    <h1><%= current_user.first_name.capitalize %>, voici les 2 vins que nous vous recommandons :</h1>
+  </div>
+</div> -->
+
+<!--   <script type="text/javascript">
+    function allowDrop(ev) {
+      console.log("ALLOW DROP");
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      console.log("DRAG");
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+console.log("DROP");
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script> -->
+
+<div class="banner-suggestion" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1543418219-44e30b057fea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80);">
+  <div class="container suggestions">
+    <div class="suggestion-block">
+    <h2> <strong><%= current_user.first_name.capitalize %></strong>, voici les <strong>2</strong> vins que nous vous recommandons :</h2>
+      <div class="row mt-4 justify-content-md-center">
+      <% @box.wines.each do |wine| %>
+        <div class="col-sm-4" id="<%= wine.id %>">
+         <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <%= cl_image_tag wine.wine_photo.key %>
+            <div class="card-wine-color-suggestions <%= wine.color %>">
+            <p><%= wine.color %></p>
+            </div>
+            <div class="delete-bottle">
+              <%= image_tag "cross.png" %>
+            </div>
+          <div class="card-trip-infos-suggestions">
+          <div>
+            <h3> <strong><%= wine.name.first(20) %> </strong> </h3>
+            <div class="card-trip-infos-suggestions-hidden">
+            <h3> <strong><%= wine.name.first(20) %> </strong> </h3>
+            <h4><%= image_tag "pin.png", class: 'picto-show' %> <%=wine.regionclassification%>, <%=wine.year%></h4>
+            <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin <%=wine.biodynamique_naturel.downcase%></h4>
+            <h4><%= image_tag "cepages.png", class: 'picto-show' %> <%=wine.cepages%></h4>
+            <h5><%= wine.description.first(350) %></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <%= form_for @box do |f| %>
+
+      <%= f.hidden_field :wine_id_1, value: @box_wines.first.id %>
+      <%= f.hidden_field :wine_id_2, value: @box_wines.last.id %>
+      <%= f.submit "Je valide ma sélection", class: 'btn btn-flat' %>
+
+    <% end %>
+  </div>
+
+
+<div class="other-wines">
+  <h2> Troquer l'une de vos bouteilles avec l'une des suivantes :</h2>
+  <div class="row" id="wines-carousel">
+  <% @other_wines.each do |wine|  %>
+    <div class="col-sm-12" id="<%= wine.id %>">
+      <div class="card-wine-2">
+        <%= cl_image_tag wine.wine_photo.key, draggable: true, ondragstart: "drag(event)" %>
+        <div class="card-wine-2-color <%= wine.color %>">
+          <p><%= wine.color %></p>
+        </div>
+        <div class="add-bottle">
+          <%= image_tag "add.png" %>
+        </div>
+        <div class="card-trip-infos">
+          <div>
+            <h3> <strong><%= wine.name.first(40) %> </strong> </h3>
+            <div class="card-trip-infos-suggestions-hidden-2">
+            <h3> <strong><%= wine.name.first(40) %> </strong> </h3>
+            <h4><%= image_tag "pin.png" %> <%=wine.regionclassification%>, <%=wine.year%></h4>
+            <h4><%= image_tag "Homepage/leaf.png" %> Vin <%=wine.biodynamique_naturel.downcase%></h4>
+            <h4><%= image_tag "cepages.png" %> <%=wine.cepages%></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+

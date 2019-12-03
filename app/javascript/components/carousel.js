@@ -6,7 +6,7 @@ const initCarousel = () => {
       infinite: true,
       draggable: false,
       mobileFirst: true,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1
     });
   });

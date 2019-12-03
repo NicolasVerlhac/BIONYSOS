@@ -256,7 +256,7 @@ wine5 = Wine.new(
   sec_sucre: 'Sucré',
   mineral_fruite: 'Fruité',
   leger_puissant: 'Léger',
-  fruite_tannique: 'Fruité',
+  fruite_tannique: 'Rouge Fruité',
   vigneron: vigneron2)
 wine5.wine_photo.attach(io: wine_photo5, filename: 'wine_photo5.jpg', content_type: 'image/jpg')
 wine5.save!
@@ -400,7 +400,7 @@ wine14 = Wine.new(
   sec_sucre: 'Sec',
   mineral_fruite: 'Fruité',
   leger_puissant: 'Puissant',
-  fruite_tannique: 'Fruité',
+  fruite_tannique: 'Rouge Fruité',
   vigneron: vigneron6)
 wine14.wine_photo.attach(io: wine_photo14, filename: 'wine_photo14.jpg', content_type: 'image/jpg')
 wine14.save!
