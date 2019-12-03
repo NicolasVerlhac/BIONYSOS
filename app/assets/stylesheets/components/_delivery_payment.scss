@@ -6,6 +6,14 @@
   margin-bottom: 50px;
   border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  height: 400px;
+  img {
+    width:100%;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 }
 
 .btn-flat-payment {
@@ -17,5 +25,11 @@
   opacity: 0.95;
   transition: background 0.3s ease;
   text-decoration : none;
+  margin-bottom: 30px;
+}
+
+#form_info_payment {
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
