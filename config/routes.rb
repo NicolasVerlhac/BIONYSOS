@@ -12,9 +12,15 @@ Rails.application.routes.draw do
   resources :vignerons do
     resources :wines
   end
-  resources :boxes do
-    resources :box_items
+
+  resources :wines, only: [] do
+    resources :box_items, only: [:create]
   end
+
+  get '/boxes/pending_box', to: 'boxes#pending_box'
+
+  resources :boxes
+  resources :box_items, only: [:destroy]
 
   devise_for :users, controllers: { registrations: "registrations" }
 
