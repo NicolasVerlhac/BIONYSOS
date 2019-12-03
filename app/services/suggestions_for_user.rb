@@ -13,7 +13,7 @@ class SuggestionsForUser
     wines = self.call_leger_puissant(user, wines)
     wines = self.call_fruite_tannique(user, wines)
 
-    return wines.uniq
+    return wines
   end
 
   def self.call_color(user, wines = Wine.all)
@@ -22,9 +22,9 @@ class SuggestionsForUser
     user_colors << "Blanc" if user.color_white
     user_colors << "Rose" if user.color_rose
     if user_colors.length > 0
-      return Wine.where(color: user_colors)
+      return wines.where(color: user_colors)
     else
-      return Wine.all
+      return wines
     end
   end
 
@@ -36,20 +36,21 @@ class SuggestionsForUser
     user_regions << "Bourgogne" if user.region_bourgogne
     user_regions << "Loire" if user.region_loire
     if user_regions.length > 0
-      return Wine.where(regionclassification: user_regions)
+      return wines.where(regionclassification: user_regions)
     else
-      return Wine.all
+      return wines
     end
   end
 
   def self.call_alcool(user, wines = Wine.all)
     user_alcools = []
-    user_alcools << "12,5%" || "12%" if user.alcool_light
-    user_alcools << "13%" || "13,5%" || "14%" if user.alcool_strong
+    user_alcools << ["12,5%", "12%"] if user.alcool_light
+    user_alcools << ["13%", "13,5%", "14%"] if user.alcool_strong
+    user_alcools.flatten!
     if user_alcools.length > 0
-      return Wine.where(alcool: user_alcools)
+      return wines.where(alcool: user_alcools)
     else
-      return Wine.all
+      return wines
     end
   end
 
@@ -59,9 +60,9 @@ class SuggestionsForUser
     user_biodynamique_naturel << "Naturel" if user.classification_naturel
 
     if user_biodynamique_naturel.length > 0
-      return Wine.where(biodynamique_naturel: user_biodynamique_naturel)
+      return wines.where(biodynamique_naturel: user_biodynamique_naturel)
     else
-      return Wine.all
+      return wines
     end
   end
 
@@ -70,9 +71,9 @@ class SuggestionsForUser
     user_sec_sucre << "Sec" if user.vin_sec
     user_sec_sucre << "Sucré" if user.vin_sucre
     if user_sec_sucre.length > 0
-      return Wine.where(sec_sucre: user_sec_sucre)
+      return wines.where(sec_sucre: user_sec_sucre)
     else
-      return Wine.all
+      return wines
     end
   end
 
@@ -81,9 +82,9 @@ class SuggestionsForUser
     user_mineral_fruite << "Minéral" if user.vin_mineral
     user_mineral_fruite << "Fruité" if user.vin_fruite
     if user_mineral_fruite.length > 0
-      return Wine.where(mineral_fruite: user_mineral_fruite)
+      return wines.where(mineral_fruite: user_mineral_fruite)
     else
-      return Wine.all
+      return wines
     end
   end
 
@@ -92,20 +93,20 @@ class SuggestionsForUser
     user_leger_puissant << "Léger" if user.vin_leger
     user_leger_puissant << "Puissant" if user.vin_mineral
     if user_leger_puissant.length > 0
-      return Wine.where(leger_puissant: user_leger_puissant)
+      return wines.where(leger_puissant: user_leger_puissant)
     else
-      return Wine.all
+      return wines
     end
   end
 
   def self.call_fruite_tannique(user, wines = Wine.all)
     user_fruite_tannique = []
-    user_fruite_tannique << "Fruité" if user.vin_fruite
+    user_fruite_tannique << "Rouge Fruité" if user.fruite_red
     user_fruite_tannique << "Tannique" if user.vin_tannique
     if user_fruite_tannique.length > 0
-      return Wine.where(fruite_tannique: user_fruite_tannique)
+      return wines.where(fruite_tannique: user_fruite_tannique)
     else
-      return Wine.all
+      return wines
     end
   end
 
@@ -119,7 +120,7 @@ class SuggestionsForUser
   #   # wine3.color => “rose”
   #   # user_colors = [{user.color_red ? ‘red’ : nil},{user.color_white ? ‘white’ : nil},{user.color_rose ? ‘rose’ : nil}].compact
   #   # # [‘red’, nil, ‘rose’].compact =>[‘red’,‘rose’]
-  #   # Wine.where(“color in #{user_colors}“).where(“region in #{user_regions}“)
+  #   # wines.where(“color in #{user_colors}“).where(“region in #{user_regions}“)
   # SuggestionsForUser.call_color(user, wines = Wine.all)
   # end
 end

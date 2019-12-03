@@ -12,9 +12,13 @@ Rails.application.routes.draw do
   resources :vignerons do
     resources :wines
   end
+
+  get '/boxes/pending_box', to: 'boxes#pending_box'
+
   resources :boxes do
     resources :box_items
   end
+
 
   devise_for :users, controllers: { registrations: "registrations" }
 

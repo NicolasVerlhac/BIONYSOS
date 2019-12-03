@@ -423,15 +423,15 @@ a:hover {
   display: none;
 }
 
-.card-wine-suggestions:hover .card-trip-infos-suggestions-hidden {
-    display: block;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
+// .card-wine-suggestions:hover .card-trip-infos-suggestions-hidden {
+//     display: block;
+//     background-color: white;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+// }
 
 // .card-wine-cepages {
 //   background-color: gray;
@@ -567,21 +567,53 @@ a:hover {
   margin: 10px;
 }
 
-.card-trip-infos-suggestions-hidden {
+.card-trip-infos-suggestions-hidden-2 {
   display: none;
+  margin: 20px;
 }
 
-.card-wine-2:hover .card-trip-infos-suggestions-hidden {
-    display: block;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+// .card-wine-2 img:hover .card-trip-infos-suggestions-hidden-2 {
+//     display: inline;
+//     background-color: white;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+// }
+
+.card-trip-infos-suggestions-hidden-2 h4 img {
+  display: inline ;
+}
+
+.card-trip-infos-suggestions-hidden-2 h3 {
+  padding-top: 40px ;
 }
 
 
+.delete-bottle img {
+  height : 20px;
+}
 
+.delete-bottle {
+  opacity: 0.8;
+  border-radius: 2px;
+  position: absolute;
+  height: 30px;
+  top: 5px;
+  right: 25px;
+}
 
+.add-bottle img {
+  height : 20px;
+}
+
+.add-bottle {
+  opacity: 0.8;
+  border-radius: 2px;
+  position: absolute;
+  height: 30px;
+  top: 30px;
+  right: 45px;
+}
 
