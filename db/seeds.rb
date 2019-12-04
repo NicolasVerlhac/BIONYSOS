@@ -263,7 +263,7 @@ wine5.save!
 
 wine_photo6 = URI.open('https://s1.lesgrappes.com/media/catalog/product/b/g/bghcnblc-1485439236.pngxw140xh300xr2.jpg')
 wine6 = Wine.new(
-  name: 'Château de Premeaux - Hautes Côtes de Nuits',
+  name: 'Château de Premeaux - Hautes Côtes',
   color: 'Blanc',
   regionclassification:'Bourgogne',
   cepages: 'Chardonnay',
