@@ -1,24 +1,21 @@
-
-
-<% livraison_day = Date.today + 5  %>
-
+<div class="banner-paiement" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1543418219-44e30b057fea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80);">
 <div class="container">
-  <div class="text-center"><h2 style="margin-bottom: -35px">Récapitulatif de votre commande </h2></div>
   <div class="row">
 
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form_delivery_payment">
-        <h3>Abonnement</h3>
-      <p>Tarif : 29,90€ par mois</p>
-      <p>2 bouteilles de vin bio par mois</p>
-      <p>Bouteilles livrées le <%= livraison_day %> : </p>
-      <ul>
+        <h3>Récapitulatif</h3>
+      <p>Tarif : <U>29,90€ par mois</U></p>
+      <p>Livraison le <strong>mercredi 11 décembre </strong>: </p>
+      <p>Vos deux bouteilles du mois :</p>
+      <div class="picto-paiement">
       <% @wines.each do |wine| %>
-      <li> <b><%= wine.name %></b><br>
-      <%= wine.regionclassification %></li>
+      <h4><%= wine.name %>, <%=wine.year%></h4>
+      <p><%= image_tag "pin.png" %> <%=wine.regionclassification%></p>
+      <p><%= image_tag "Homepage/leaf.png" %> Vin <%=wine.biodynamique_naturel.downcase%></p>
       <% end %>
-      </ul>
       </div>
+    </div>
     </div>
 
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -26,13 +23,13 @@
         <h3>Livraison</h3>
        <%= simple_form_for current_user do |f| %>
         <div>
-          <div class="d-inline-block"><%= f.input :first_name, required: true, placeholder: '', label: false %></div>
-          <div class="d-inline-block"><%= f.input :last_name, required: true, placeholder: '', label: false %></div>
+          <div class="d-inline-block" style="width: 100%"><%= f.input :first_name, required: true, placeholder: '', label: false %></div>
+          <div class="d-inline-block" style="width: 100%"><%= f.input :last_name, required: true, placeholder: '', label: false %></div>
         </div>
         <div>
-          <div class="d-inline-block"><%= f.input :address, as: :text, required: true, placeholder: 'Adresse', label: false, :input_html => { :value => '16 Villa Gaudelet'}  %></div>
-          <div class="d-inline-block"><%= f.input :zip_code, required: true, placeholder: 'Code postal', label: false,  :input_html => { :value => '75011'}  %></div>
-          <div class="d-inline-block"><%= f.input :city, required: true, placeholder: 'Ville', label: false,  :input_html => { :value => 'Paris'}   %></div>
+          <div class="d-inline-block" style="width: 100%"><%= f.input :address, as: :text, required: true, placeholder: 'Adresse', label: false, :input_html => { :value => '16 Villa Gaudelet'}  %></div>
+          <div class="d-inline-block" style="width: 100%"><%= f.input :zip_code, required: true, placeholder: 'Code postal', label: false,  :input_html => { :value => '75011'}  %></div>
+          <div class="d-inline-block" style="width: 100%"><%= f.input :city, required: true, placeholder: 'Ville', label: false,  :input_html => { :value => 'Paris'}   %></div>
         </div>
       </div>
     </div>
@@ -42,13 +39,14 @@
         <h3>Paiement</h3>
         <h4><%= image_tag "stripe.png" %></h4>
         <div id="form_info_payment">
-          <div class="d-inline-block"><%= f.input :card_number, required: true, placeholder: 'Numéro de carte', label: false,  :input_html => { :value => '4242 4242 4242 4242'}   %></div>
-          <div class="d-inline-block"><%= f.input :expiry_date, required: true, placeholder: 'Date d expiration', label: false,  :input_html => { :value => '01/22'}   %></div>
-          <div class="d-inline-block"><%= f.input :security_code, required: true, placeholder: 'Code de sécurité', label: false,  :input_html => { :value => '201'}   %></div>
+          <div class="d-inline-block" style="width: 95%"><%= f.input :card_number, required: true, placeholder: 'Numéro de carte', label: false,  :input_html => { :value => '4242 4242 4242 4242'}   %></div>
+          <div class="d-inline-block" style="width: 95%"><%= f.input :expiry_date, required: true, placeholder: 'Date d expiration', label: false,  :input_html => { :value => '01/22'}   %></div>
+          <div class="d-inline-block" style="width: 95%"><%= f.input :security_code, required: true, placeholder: 'Code de sécurité', label: false,  :input_html => { :value => '201'}   %></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="text-center"><%= f.button :submit, "Je paie", class: "text-center", class: "btn btn-flat-payment", :id => 'login', "data-toggle" => "modal", 'data-target' => '#loginModal'  %>
+  <div class="text-center"><%= f.button :submit, "Je valide ma commande", class: "text-center", class: "btn btn-flat-payment", :id => 'login', "data-toggle" => "modal", 'data-target' => '#loginModal'  %>
       <% end %></div>
+</div>
 </div>
