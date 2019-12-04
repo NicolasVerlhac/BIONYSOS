@@ -16,10 +16,12 @@
 .starrating > label:before {
   content: "\f005"; /* Star */
   margin: 2px;
-  font-size: 30px;
+  font-size: 20px;
   font-family: FontAwesome;
   display: inline-block;
+  margin-top: -3px;
 }
+
 
 .starrating > label
 {
@@ -31,3 +33,34 @@
 
 .starrating > input:hover ~ label
 { color: #ffca08 ;  } /* Set yellow color when star hover */
+
+
+
+#nav-profile .card-wine-suggestions {
+  height: 440px;
+}
+
+#nav-contact .card-wine-suggestions {
+  height: 470px;
+  background-color: grey;
+  opacity: 0.7;
+}
+
+
+#rated {
+  height: 10px;
+  width: 10px;
+}
+
+.d-flex .starrating {
+  margin-left: 15px;
+}
+
+.starrating .starrated > label:before {
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 20px;
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-top: -3px;
+}
