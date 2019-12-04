@@ -16,143 +16,64 @@
             <div class='row'>
               <div class='card col-sm-3' >
                 <h1>Vos informations</h1>
-                <p><b><center><%= current_user.first_name %> <%= current_user.last_name %></center></b></p>
+                <p><b><%= current_user.first_name %> <%= current_user.last_name %></b></p>
                 <p>✉️ <%= current_user.email %></p>
                 <p>📬 <%= current_user.address %></p>
                 <p><%= current_user.zip_code %> <%= current_user.city %></p>
               </div>
               <div class='card col-sm-9' >
                 <h1>Vos préférences</h1>
-                <div class='dashboard-preferences'>
-                  <p>J'aime le vin : </p>
-                  <% if current_user.color_red == true %>
-                      <p><%= image_tag "dashboard/vin-rouge.png", class: "wine-picture" %> </p>
-                  <% end %>
-                  <% if current_user.color_white == true %>
-                    <p><%= image_tag "dashboard/vin-blanc.png", class: "wine-picture" %> </p>
-                  <% end %>
-                  <% if current_user.color_rose == true %>
-                    <p><%= image_tag "dashboard/vin-rose.png", class: "wine-picture" %> </p>
-                  <% end %>
-                </div>
-                <br>
-                <div class="d-flex">
-                  <p>Le goût : </p>
-                  <% if current_user.vin_sec == true %>
-                    <p>Sec, </p>
-                  <% end %>
-                  <% if current_user.vin_fruite == true %>
-                    <p>Fruité, </p>
-                  <% end %>
-                  <% if current_user.vin_mineral == true %>
-                    <p>Minéral, </p>
-                  <% end %>
-                  <% if current_user.vin_sucre == true %>
-                    <p>Sucré, </p>
-                  <% end %>
-                  <% if current_user.vin_leger == true %>
-                    <p>Léger, </p>
-                  <% end %>
-                  <% if current_user.vin_puissant == true %>
-                    <p>Puissant, </p>
-                  <% end %>
-                  <% if current_user.vin_tannique == true %>
-                    <p>Tannique </p>
-                  <% end %>
-                </div>
-                <br>
-                <div class="d-flex">
-                  <p>Alcool : </p>
-                  <% if current_user.alcool_light == true %>
-                    <p> < 12,5 ° </p>
-                  <% end %>
-                  <% if current_user.alcool_strong == true %>
-                    <p> > 12,5 ° </p>
-                  <% end %>
-                </div>
-                <br>
-                <div class="d-flex">
-                  <p>De classification : </p>
-                  <% if current_user.classification_biodynamique == true %>
-                    <p>Vin biodynamique </p>
-                  <% end %>
-                  <% if current_user.classification_naturel == true %>
-                    <p>Vin naturel </p>
-                  <% end %>
-                </div>
-                <br>
-                <div class="d-flex">
-                  <p>Mes régions préférées : </p>
-                  <% if current_user.region_alsace == true %>
-                    <p>Alsace </p>
-                  <% end %>
-                  <% if current_user.region_bordeaux == true %>
-                    <p>Bordeaux </p>
-                  <% end %>
-                  <% if current_user.region_rhone == true %>
-                    <p>Vallée du Rhône </p>
-                  <% end %>
-                  <% if current_user.region_bourgogne == true %>
-                    <p>Bourgogne </p>
-                  <% end %>
-                  <% if current_user.region_loire == true %>
-                    <p>Pays de la Loire </p>
-                  <% end %>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="form-input">
+                    <%= simple_form_for(@user) do |f| %>
+                        <div class="flex-row">
+                      <p> Quelle couleur ?</p>
+                          <div class="category_choices flex-row">
+                            <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "Rouge", input_html: { class: 'd-none' } %></div>
+                            <div class="category_choice"><%= f.input :color_white, as: :boolean, label: "Blanc", input_html: { class: 'd-none' } %></div>
+                            <div class="category_choice"><%= f.input :color_rose, as: :boolean, label: "Rosé", input_html: { class: 'd-none' } %></div>
+                          </div>
+                        </div>
+                    <p> Quelles sont vos région favorites ?</p>
+                      <div class="category_choices">
+                        <div class="category_choice"><%= f.input :region_alsace, as: :boolean, label: "Alsace", input_html: { class: 'd-none' } %></div>
+                        <div class="category_choice"><%= f.input :region_bordeaux, as: :boolean, label: "Bordeaux", input_html: { class: 'd-none' }  %></div>
+                        <div class="category_choice"><%= f.input :region_bourgogne, as: :boolean, label: "Bourgogne", input_html: { class: 'd-none' } %></div>
+                        <div class="category_choice"><%= f.input :region_loire, as: :boolean, label: "Loire", input_html: { class: 'd-none' } %></div>
+                        <div class="category_choice"><%= f.input :region_rhone, as: :boolean, label: "Rhone", input_html: { class: 'd-none' }  %></div>
+                      </div>
+                    <p> Plutôt légers ou corsés ? </p>
+                      <div class="category_choices">
+                        <div class="category_choice"><%= f.input :alcool_light, as: :boolean, label: " < 12.5%", input_html: { class: 'd-none' } %></div>
+                        <div class="category_choice"><%= f.input :alcool_strong, as: :boolean, label: " > 12.5%", input_html: { class: 'd-none' } %></div>
+                      </div>
+                    <p> Souhaitez-vous recevoir des vins ? <%= image_tag "information.png", data: { toggle:"tooltip", placement: "top"}, title:"BIODYNAMIQUES: intensifier la vie du sol afin qu’il y ait un meilleur échange entre la terre et la plantes || NATURELS: aucun intrants ni techniques visant à modifier le jus originel "%></p>
+                      <div class="category_choices">
+                        <div class="category_choice"><%= f.input :classification_biodynamique, as: :boolean, label: "Biodynamiques", input_html: { class: 'd-none' } %></div>
+                        <div class="category_choice"><%= f.input :classification_naturel, as: :boolean, label: "Naturels", input_html: { class: 'd-none' } %></div>
+                      </div>
+                    <p> Quels types de vins rouges préférez-vous ?</p>
+                      <div class="category_choices">
+                        <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_leger, as: :boolean, label: "Léger", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Se dit d'un vin peu coloré et peu corsé, mais équilibré et agréable. En général, à boire assez rapidement"  }  %></div>
+                        <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_puissant, as: :boolean, label: "Puissant", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Caractérise un vin qui est à la fois plein, corsé, généreux et d'un riche bouquet"  }  %></div>
+                        <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Rappel de la chair du fruit frais et mûr contenu dans un vin"  }  %></div>
+                        <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_tannique, as: :boolean, label: "Tannique", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Caractère d'un vin laissant apparaître une note d'astringence due à sa richesse en tanin"  }  %></div>
+                      </div>
+                    <p> Quels types de vins blancs/rosés préférez-vous ?</p>
+                          <div class="category_choices">
+                            <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sec, as: :boolean, label: "Sec", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"caractère dépourvu de saveur sucrée (moins de 49 grammes par litre)"  }  %></div>
+                            <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sucre, as: :boolean, label: "Sucré", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Un vin moelleux est un vin dont la teneur en sucre est de l'ordre de 10 à 45 grammes par litre"  }  %></div>
+                            <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_mineral, as: :boolean, label: "Minéral", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"On retrouve dans de nombreux vins cette minéralité plus ou moins accrue, caractéristique des pierres à fusil"  }  %></div>
+                            <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Qualificatif très général des arômes de la grande famille des fruits pour exprimer le rappel de la chair du fruit frais"  }  %></div>
+                          </div>
+                          <%= f.button :submit, "Enregistrer les modifications", class: "text-center", class: "btn btn-flat", id: "sign-up-submit-btn" %>
+                        <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-<div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <div class="form-input">
-          <%= simple_form_for(@user) do |f| %>
-              <div class="flex-row">
-                <div class="category_choices flex-row">
-                  <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "Rouge", input_html: { class: 'd-none' } %></div>
-                  <div class="category_choice"><%= f.input :color_white, as: :boolean, label: "Blanc", input_html: { class: 'd-none' } %></div>
-                  <div class="category_choice"><%= f.input :color_rose, as: :boolean, label: "Rosé", input_html: { class: 'd-none' } %></div>
-                </div>
-              </div>
-          <p> Quelles sont vos région favorites ?</p>
-            <div class="category_choices">
-              <div class="category_choice"><%= f.input :region_alsace, as: :boolean, label: "Alsace", input_html: { class: 'd-none' } %></div>
-              <div class="category_choice"><%= f.input :region_bordeaux, as: :boolean, label: "Bordeaux", input_html: { class: 'd-none' }  %></div>
-              <div class="category_choice"><%= f.input :region_bourgogne, as: :boolean, label: "Bourgogne", input_html: { class: 'd-none' } %></div>
-              <div class="category_choice"><%= f.input :region_loire, as: :boolean, label: "Loire", input_html: { class: 'd-none' } %></div>
-              <div class="category_choice"><%= f.input :region_rhone, as: :boolean, label: "Rhone", input_html: { class: 'd-none' }  %></div>
-            </div>
-          <p> Plutôt légers ou corsés ? </p>
-            <div class="category_choices">
-              <div class="category_choice"><%= f.input :alcool_light, as: :boolean, label: " < 12.5%", input_html: { class: 'd-none' } %></div>
-              <div class="category_choice"><%= f.input :alcool_strong, as: :boolean, label: " > 12.5%", input_html: { class: 'd-none' } %></div>
-            </div>
-          <p> Souhaitez-vous recevoir des vins ? <%= image_tag "information.png", data: { toggle:"tooltip", placement: "top"}, title:"BIODYNAMIQUES: intensifier la vie du sol afin qu’il y ait un meilleur échange entre la terre et la plantes || NATURELS: aucun intrants ni techniques visant à modifier le jus originel "%></p>
-            <div class="category_choices">
-              <div class="category_choice"><%= f.input :classification_biodynamique, as: :boolean, label: "Biodynamiques", input_html: { class: 'd-none' } %></div>
-              <div class="category_choice"><%= f.input :classification_naturel, as: :boolean, label: "Naturels", input_html: { class: 'd-none' } %></div>
-            </div>
-        </div>
-          <p> Quels types de vins rouges préférez-vous ?</p>
-            <div class="category_choices">
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_leger, as: :boolean, label: "Léger", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Se dit d'un vin peu coloré et peu corsé, mais équilibré et agréable. En général, à boire assez rapidement"  }  %></div>
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_puissant, as: :boolean, label: "Puissant", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Caractérise un vin qui est à la fois plein, corsé, généreux et d'un riche bouquet"  }  %></div>
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Rappel de la chair du fruit frais et mûr contenu dans un vin"  }  %></div>
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_tannique, as: :boolean, label: "Tannique", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Caractère d'un vin laissant apparaître une note d'astringence due à sa richesse en tanin"  }  %></div>
-            </div>
-          <p> Quels types de vins blancs/rosés préférez-vous ?</p>
-                <div class="category_choices">
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sec, as: :boolean, label: "Sec", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"caractère dépourvu de saveur sucrée (moins de 49 grammes par litre)"  }  %></div>
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sucre, as: :boolean, label: "Sucré", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Un vin moelleux est un vin dont la teneur en sucre est de l'ordre de 10 à 45 grammes par litre"  }  %></div>
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_mineral, as: :boolean, label: "Minéral", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"On retrouve dans de nombreux vins cette minéralité plus ou moins accrue, caractéristique des pierres à fusil"  }  %></div>
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Qualificatif très général des arômes de la grande famille des fruits pour exprimer le rappel de la chair du fruit frais"  }  %></div>
-                </div>
-                <%= f.button :submit, "Voir mes suggestions", class: "text-center", class: "btn btn-flat", id: "sign-up-submit-btn" %>
-              <% end %>
-        </div>
-      </div>
-
-
-
           </div>
 
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -175,6 +96,45 @@
                       </div>
                     </div>
                   </div>
+                  <form action="/ma-page-de-traitement" method="post">
+                    <div class="d-flex">
+                      <label for="mail">Acidité:</label>
+                      <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <label for="mail">Amertume:</label>
+                      <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                        <input type="radio" id="star6" name="rating" value="5" /><label for="star6" title="5 star"></label>
+                        <input type="radio" id="star7" name="rating" value="4" /><label for="star7" title="4 star"></label>
+                        <input type="radio" id="star8" name="rating" value="3" /><label for="star8" title="3 star"></label>
+                        <input type="radio" id="star9" name="rating" value="2" /><label for="star9" title="2 star"></label>
+                        <input type="radio" id="star10" name="rating" value="1" /><label for="star10" title="1 star"></label>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <label for="mail">Force:</label>
+                      <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                        <input type="radio" id="star11" name="rating" value="5" /><label for="star11" title="5 star"></label>
+                        <input type="radio" id="star12" name="rating" value="4" /><label for="star12" title="4 star"></label>
+                        <input type="radio" id="star13" name="rating" value="3" /><label for="star13" title="3 star"></label>
+                        <input type="radio" id="star14" name="rating" value="2" /><label for="star14" title="2 star"></label>
+                        <input type="radio" id="star15" name="rating" value="1" /><label for="star15" title="1 star"></label>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="msg">Commentaire :</label>
+                      <textarea id="msg" name="user_message"></textarea>
+                    </div>
+                    <div class="btn btn-flat-block">
+                    <%= link_to 'Noter' %>
+                    </div>
+                  </form>
                 </div>
                 <div class="col-sm-4">
                   <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -192,68 +152,46 @@
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-6">
-                   <form action="/ma-page-de-traitement" method="post">
-                      <div class="d-flex">
-                        <label for="mail">Acidité:</label>
-                        <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
-                          <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star"></label>
-                          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star"></label>
-                          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star"></label>
-                          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>
-                          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <label for="mail">Amertume:</label>
-                        <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
-                          <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star"></label>
-                          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star"></label>
-                          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star"></label>
-                          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>
-                          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <label for="mail">Force:</label>
-                        <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
-                          <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star"></label>
-                          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star"></label>
-                          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star"></label>
-                          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>
-                          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
-                        </div>
-                      </div>
-                      <div>
-                        <label for="msg">Commentaire :</label>
-                        <textarea id="msg" name="user_message"></textarea>
-                      </div>
-                    </form>
-                  </div>
-
-                  <div class="col-sm-6">
-                    <form action="/ma-page-de-traitement" method="post">
+                  <form action="/ma-page-de-traitement" method="post">
                     <div class="d-flex">
-                      <label for="mail">Note :</label>
+                      <label for="mail">Acidité:</label>
                       <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
-                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star"></label>
-                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star"></label>
-                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star"></label>
-                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>
-                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                        <input type="radio" id="star16" name="rating" value="5" /><label for="star16" title="5 star"></label>
+                        <input type="radio" id="star17" name="rating" value="4" /><label for="star17" title="4 star"></label>
+                        <input type="radio" id="star18" name="rating" value="3" /><label for="star18" title="3 star"></label>
+                        <input type="radio" id="star19" name="rating" value="2" /><label for="star19" title="2 star"></label>
+                        <input type="radio" id="star20" name="rating" value="1" /><label for="star20" title="1 star"></label>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <label for="mail">Amertume:</label>
+                      <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                        <input type="radio" id="star21" name="rating" value="5" /><label for="star21" title="5 star"></label>
+                        <input type="radio" id="star22" name="rating" value="4" /><label for="star22" title="4 star"></label>
+                        <input type="radio" id="star23" name="rating" value="3" /><label for="star23" title="3 star"></label>
+                        <input type="radio" id="star24" name="rating" value="2" /><label for="star24" title="2 star"></label>
+                        <input type="radio" id="star25" name="rating" value="1" /><label for="star25" title="1 star"></label>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <label for="mail">Force:</label>
+                      <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                        <input type="radio" id="star26" name="rating" value="5" /><label for="star26" title="5 star"></label>
+                        <input type="radio" id="star27" name="rating" value="4" /><label for="star27" title="4 star"></label>
+                        <input type="radio" id="star28" name="rating" value="3" /><label for="star28" title="3 star"></label>
+                        <input type="radio" id="star29" name="rating" value="2" /><label for="star29" title="2 star"></label>
+                        <input type="radio" id="star30" name="rating" value="1" /><label for="star30" title="1 star"></label>
                       </div>
                     </div>
                     <div>
-                        <label for="msg">Commentaire :</label>
-                        <textarea id="msg" name="user_message"></textarea>
+                      <label for="msg">Commentaire :</label>
+                      <textarea id="msg" name="user_message"></textarea>
                     </div>
-                    </form>
-                  </div>
+                    <div class="btn btn-flat-block">
+                    <%= link_to 'Noter' %>
+                    </div>
+                  </form>
                 </div>
-
               </div>
             </div>
           </div>
@@ -275,7 +213,48 @@
                         <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
                         <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin biodynamique</h4>
                         <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
-                        <h5>Description</h5>
+                        <form action="/ma-page-de-traitement" method="post">
+                          <div class="d-flex" style="
+                          margin-left: 23px;
+                          margin-top: 13px;">
+                            <label for="mail"><h4>Acidité: </h4></label>
+                            <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                              <input type="radio" id="rated" name="rating" value="5" /><label for="star5" title="5 star"></label>
+                              <input type="radio" id="rated" name="rating" value="4" /><label for="star4" title="4 star"></label>
+                              <input type="radio" id="rated" name="rating" value="3" /><label for="star3" title="3 star"></label>
+                              <input type="radio" id="rated" name="rating" value="2" /><label for="star2" title="2 star"></label>
+                              <input type="radio" id="rated" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                            </div>
+                          </div>
+                          <div class="d-flex" style="
+                          margin-left: 23px;
+                          margin-top: -11px;">
+                            <label for="mail"><h4>Amertume: </h4></label>
+                            <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                              <input type="radio" id="star6" name="rating" value="5" /><label for="star6" title="5 star"></label>
+                              <input type="radio" id="star7" name="rating" value="4" /><label for="star7" title="4 star"></label>
+                              <input type="radio" id="star8" name="rating" value="3" /><label for="star8" title="3 star"></label>
+                              <input type="radio" id="star9" name="rating" value="2" /><label for="star9" title="2 star"></label>
+                              <input type="radio" id="star10" name="rating" value="1" /><label for="star10" title="1 star"></label>
+                            </div>
+                          </div>
+                          <div class="d-flex" style="
+                          margin-left: 23px;
+                          margin-top: -11px;">
+                            <label for="mail"><h4>Force: </h4></label>
+                            <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                              <input type="radio" id="star11" name="rating" value="5" /><label for="star11" title="5 star"></label>
+                              <input type="radio" id="star12" name="rating" value="4" /><label for="star12" title="4 star"></label>
+                              <input type="radio" id="star13" name="rating" value="3" /><label for="star13" title="3 star"></label>
+                              <input type="radio" id="star14" name="rating" value="2" /><label for="star14" title="2 star"></label>
+                              <input type="radio" id="star15" name="rating" value="1" /><label for="star15" title="1 star"></label>
+                            </div>
+                          </div>
+                          <p style='
+                          color:black;
+                          margin-left: 37px;
+                          margin-top: -11px;'>Commentaires : ... </p>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -293,7 +272,48 @@
                         <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
                         <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin naturel</h4>
                         <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
-                        <h5>Description</h5>
+                        <form action="/ma-page-de-traitement" method="post">
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: 13px;">
+                          <label for="mail"><h4>Acidité: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="rated" name="rating" value="5" /><label for="star5" title="5 star"></label>
+                            <input type="radio" id="rated" name="rating" value="4" /><label for="star4" title="4 star"></label>
+                            <input type="radio" id="rated" name="rating" value="3" /><label for="star3" title="3 star"></label>
+                            <input type="radio" id="rated" name="rating" value="2" /><label for="star2" title="2 star"></label>
+                            <input type="radio" id="rated" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: -11px;">
+                          <label for="mail"><h4>Amertume: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="star6" name="rating" value="5" /><label for="star6" title="5 star"></label>
+                            <input type="radio" id="star7" name="rating" value="4" /><label for="star7" title="4 star"></label>
+                            <input type="radio" id="star8" name="rating" value="3" /><label for="star8" title="3 star"></label>
+                            <input type="radio" id="star9" name="rating" value="2" /><label for="star9" title="2 star"></label>
+                            <input type="radio" id="star10" name="rating" value="1" /><label for="star10" title="1 star"></label>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: -11px;">
+                          <label for="mail"><h4>Force: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="star11" name="rating" value="5" /><label for="star11" title="5 star"></label>
+                            <input type="radio" id="star12" name="rating" value="4" /><label for="star12" title="4 star"></label>
+                            <input type="radio" id="star13" name="rating" value="3" /><label for="star13" title="3 star"></label>
+                            <input type="radio" id="star14" name="rating" value="2" /><label for="star14" title="2 star"></label>
+                            <input type="radio" id="star15" name="rating" value="1" /><label for="star15" title="1 star"></label>
+                          </div>
+                        </div>
+                        <p style='
+                        color:black;
+                        margin-left: 37px;
+                        margin-top: -11px;'>Commentaires : ... </p>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -311,47 +331,169 @@
                         <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
                         <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin naturel</h4>
                         <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
-                        <h5>Description</h5>
-                      </div>
+                        <form action="/ma-page-de-traitement" method="post">
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: 13px;">
+                          <label for="mail"><h4>Acidité: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="rated" name="rating" value="5" /><label for="star5" title="5 star"></label>
+                            <input type="radio" id="rated" name="rating" value="4" /><label for="star4" title="4 star"></label>
+                            <input type="radio" id="rated" name="rating" value="3" /><label for="star3" title="3 star"></label>
+                            <input type="radio" id="rated" name="rating" value="2" /><label for="star2" title="2 star"></label>
+                            <input type="radio" id="rated" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: -11px;">
+                          <label for="mail"><h4>Amertume: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="star6" name="rating" value="5" /><label for="star6" title="5 star"></label>
+                            <input type="radio" id="star7" name="rating" value="4" /><label for="star7" title="4 star"></label>
+                            <input type="radio" id="star8" name="rating" value="3" /><label for="star8" title="3 star"></label>
+                            <input type="radio" id="star9" name="rating" value="2" /><label for="star9" title="2 star"></label>
+                            <input type="radio" id="star10" name="rating" value="1" /><label for="star10" title="1 star"></label>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: -11px;">
+                          <label for="mail"><h4>Force: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="star11" name="rating" value="5" /><label for="star11" title="5 star"></label>
+                            <input type="radio" id="star12" name="rating" value="4" /><label for="star12" title="4 star"></label>
+                            <input type="radio" id="star13" name="rating" value="3" /><label for="star13" title="3 star"></label>
+                            <input type="radio" id="star14" name="rating" value="2" /><label for="star14" title="2 star"></label>
+                            <input type="radio" id="star15" name="rating" value="1" /><label for="star15" title="1 star"></label>
+                          </div>
+                        </div>
+                        <p style='
+                        color:black;
+                        margin-left: 37px;
+                        margin-top: -11px;'>Commentaires : ... </p>
+                      </form>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="col-sm-4">
-                  <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <%= image_tag "dashboard/silhouette-bouteille.png" %>
-                    <div class="card-wine-color-suggestions <%= @last_box.wines[1].color %>">
-                      <p>Couleur</p>
-                    </div>
-                    <div class="card-trip-infos-suggestions">
-                      <div>
-                        <h3> <strong>Bouteille 4</strong> </h3>
-                        <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
-                        <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin naturel</h4>
-                        <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
-                        <h5>Description</h5>
+              <div class="col-sm-4">
+                <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <%= image_tag "dashboard/silhouette-bouteille.png" %>
+                  <div class="card-wine-color-suggestions <%= @last_box.wines[1].color %>">
+                    <p>Couleur</p>
+                  </div>
+                  <div class="card-trip-infos-suggestions">
+                    <div>
+                      <h3> <strong>Bouteille 4</strong> </h3>
+                      <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
+                      <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin naturel</h4>
+                      <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
+                      <form action="/ma-page-de-traitement" method="post">
+                      <div class="d-flex" style="
+                      margin-left: 23px;
+                      margin-top: 13px;">
+                        <label for="mail"><h4>Acidité: </h4></label>
+                        <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                          <input type="radio" id="rated" name="rating" value="5" /><label for="star5" title="5 star"></label>
+                          <input type="radio" id="rated" name="rating" value="4" /><label for="star4" title="4 star"></label>
+                          <input type="radio" id="rated" name="rating" value="3" /><label for="star3" title="3 star"></label>
+                          <input type="radio" id="rated" name="rating" value="2" /><label for="star2" title="2 star"></label>
+                          <input type="radio" id="rated" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                        </div>
                       </div>
-                    </div>
+                      <div class="d-flex" style="
+                      margin-left: 23px;
+                      margin-top: -11px;">
+                        <label for="mail"><h4>Amertume: </h4></label>
+                        <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                          <input type="radio" id="star6" name="rating" value="5" /><label for="star6" title="5 star"></label>
+                          <input type="radio" id="star7" name="rating" value="4" /><label for="star7" title="4 star"></label>
+                          <input type="radio" id="star8" name="rating" value="3" /><label for="star8" title="3 star"></label>
+                          <input type="radio" id="star9" name="rating" value="2" /><label for="star9" title="2 star"></label>
+                          <input type="radio" id="star10" name="rating" value="1" /><label for="star10" title="1 star"></label>
+                        </div>
+                      </div>
+                      <div class="d-flex" style="
+                      margin-left: 23px;
+                      margin-top: -11px;">
+                        <label for="mail"><h4>Force: </h4></label>
+                        <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                          <input type="radio" id="star11" name="rating" value="5" /><label for="star11" title="5 star"></label>
+                          <input type="radio" id="star12" name="rating" value="4" /><label for="star12" title="4 star"></label>
+                          <input type="radio" id="star13" name="rating" value="3" /><label for="star13" title="3 star"></label>
+                          <input type="radio" id="star14" name="rating" value="2" /><label for="star14" title="2 star"></label>
+                          <input type="radio" id="star15" name="rating" value="1" /><label for="star15" title="1 star"></label>
+                        </div>
+                      </div>
+                      <p style='
+                      color:black;
+                      margin-left: 37px;
+                      margin-top: -11px;'>Commentaires : ... </p>
+                    </form>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div class="col-sm-4">
-                  <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <%= image_tag "dashboard/silhouette-bouteille.png" %>
-                    <div class="card-wine-color-suggestions <%= @last_box.wines[1].color %>">
-                      <p>Couleur</p>
-                    </div>
-                    <div class="card-trip-infos-suggestions">
-                      <div>
-                        <h3> <strong>Bouteille 5</strong> </h3>
-                        <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
-                        <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin naturel</h4>
-                        <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
-                        <h5>Description</h5>
+              <div class="col-sm-4">
+                <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <%= image_tag "dashboard/silhouette-bouteille.png" %>
+                  <div class="card-wine-color-suggestions <%= @last_box.wines[1].color %>">
+                    <p>Couleur</p>
+                  </div>
+                  <div class="card-trip-infos-suggestions">
+                    <div>
+                      <h3> <strong>Bouteille 5</strong> </h3>
+                      <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
+                      <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin naturel</h4>
+                      <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
+                      <form action="/ma-page-de-traitement" method="post">
+                      <div class="d-flex" style="
+                      margin-left: 23px;
+                      margin-top: 13px;">
+                        <label for="mail"><h4>Acidité: </h4></label>
+                        <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                          <input type="radio" id="rated" name="rating" value="5" /><label for="star5" title="5 star"></label>
+                          <input type="radio" id="rated" name="rating" value="4" /><label for="star4" title="4 star"></label>
+                          <input type="radio" id="rated" name="rating" value="3" /><label for="star3" title="3 star"></label>
+                          <input type="radio" id="rated" name="rating" value="2" /><label for="star2" title="2 star"></label>
+                          <input type="radio" id="rated" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                        </div>
+                      </div>
+                      <div class="d-flex" style="
+                      margin-left: 23px;
+                      margin-top: -11px;">
+                        <label for="mail"><h4>Amertume: </h4></label>
+                        <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                          <input type="radio" id="star6" name="rating" value="5" /><label for="star6" title="5 star"></label>
+                          <input type="radio" id="star7" name="rating" value="4" /><label for="star7" title="4 star"></label>
+                          <input type="radio" id="star8" name="rating" value="3" /><label for="star8" title="3 star"></label>
+                          <input type="radio" id="star9" name="rating" value="2" /><label for="star9" title="2 star"></label>
+                          <input type="radio" id="star10" name="rating" value="1" /><label for="star10" title="1 star"></label>
+                        </div>
+                      </div>
+                      <div class="d-flex" style="
+                      margin-left: 23px;
+                      margin-top: -11px;">
+                        <label for="mail"><h4>Force: </h4></label>
+                        <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                          <input type="radio" id="star11" name="rating" value="5" /><label for="star11" title="5 star"></label>
+                          <input type="radio" id="star12" name="rating" value="4" /><label for="star12" title="4 star"></label>
+                          <input type="radio" id="star13" name="rating" value="3" /><label for="star13" title="3 star"></label>
+                          <input type="radio" id="star14" name="rating" value="2" /><label for="star14" title="2 star"></label>
+                          <input type="radio" id="star15" name="rating" value="1" /><label for="star15" title="1 star"></label>
+                        </div>
+                      </div>
+                      <p style='
+                      color:black;
+                      margin-left: 37px;
+                      margin-top: -11px;'>Commentaires : ... </p>
+                    </form>                      </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
                 <div class="col-sm-4">
                   <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -365,7 +507,48 @@
                         <h4><%= image_tag "pin.png", class: 'picto-show' %> Région, année</h4>
                         <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin naturel</h4>
                         <h4><%= image_tag "cepages.png", class: 'picto-show' %> Cépages</h4>
-                        <h5>Description</h5>
+                        <form action="/ma-page-de-traitement" method="post">
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: 13px;">
+                          <label for="mail"><h4>Acidité: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="rated" name="rating" value="5" /><label for="star5" title="5 star"></label>
+                            <input type="radio" id="rated" name="rating" value="4" /><label for="star4" title="4 star"></label>
+                            <input type="radio" id="rated" name="rating" value="3" /><label for="star3" title="3 star"></label>
+                            <input type="radio" id="rated" name="rating" value="2" /><label for="star2" title="2 star"></label>
+                            <input type="radio" id="rated" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: -11px;">
+                          <label for="mail"><h4>Amertume: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="star6" name="rating" value="5" /><label for="star6" title="5 star"></label>
+                            <input type="radio" id="star7" name="rating" value="4" /><label for="star7" title="4 star"></label>
+                            <input type="radio" id="star8" name="rating" value="3" /><label for="star8" title="3 star"></label>
+                            <input type="radio" id="star9" name="rating" value="2" /><label for="star9" title="2 star"></label>
+                            <input type="radio" id="star10" name="rating" value="1" /><label for="star10" title="1 star"></label>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="
+                        margin-left: 23px;
+                        margin-top: -11px;">
+                          <label for="mail"><h4>Force: </h4></label>
+                          <div class="starrating starrated risingstar d-flex justify-content-center flex-row-reverse">
+                            <input type="radio" id="star11" name="rating" value="5" /><label for="star11" title="5 star"></label>
+                            <input type="radio" id="star12" name="rating" value="4" /><label for="star12" title="4 star"></label>
+                            <input type="radio" id="star13" name="rating" value="3" /><label for="star13" title="3 star"></label>
+                            <input type="radio" id="star14" name="rating" value="2" /><label for="star14" title="2 star"></label>
+                            <input type="radio" id="star15" name="rating" value="1" /><label for="star15" title="1 star"></label>
+                          </div>
+                        </div>
+                        <p style='
+                        color:black;
+                        margin-left: 37px;
+                        margin-top: -11px;'>Commentaires : ... </p>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -373,7 +556,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
