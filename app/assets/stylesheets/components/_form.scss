@@ -23,8 +23,8 @@
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    color: #666666;
-    margin-bottom: 30px;
+    color: black;
+    margin-bottom: 20px;
     margin-top: 20px;
   }
   .btn {
@@ -206,4 +206,15 @@ div.click-to-top:hover span {display: block; }
         color: #c91b31;
       }
   }
+}
+
+.form-check-input.is-valid ~ .form-check-label  {
+  color : black
+}
+
+.form-sign .btn {
+    padding: 4px 10px;
+    margin-top: 0px;
+    margin-bottom: 18px;
+    margin-left: -1px;
 }

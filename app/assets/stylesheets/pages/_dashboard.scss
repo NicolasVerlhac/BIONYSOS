@@ -25,14 +25,14 @@
 
 .starrating > label
 {
-  color: #222222; /* Start color when not clicked */
+  color: #e3e3e3; /* Start color when not clicked */
 }
 
 .starrating > input:checked ~ label
-{ color: #ffca08 ; } /* Set yellow color when star checked */
+{ color: #c91b31 ; } /* Set yellow color when star checked */
 
 .starrating > input:hover ~ label
-{ color: #ffca08 ;  } /* Set yellow color when star hover */
+{ color: #c91b31 ;  } /* Set yellow color when star hover */
 
 
 
