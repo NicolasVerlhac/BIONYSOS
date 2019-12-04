@@ -5,7 +5,7 @@
     <div class=" col-sm-6 form-sign">
       <div class="waiting-algo">
         <div>
-          <p>Nous recherchons les meilleures bouteilles pour vous...</p>
+          <p>Nous recherchons les <strong>meilleures bouteilles</strong> pour <strong>vous</strong>...</p>
           <%= image_tag 'https://media.giphy.com/media/GyJ8p0Um850ic/giphy.gif' %>
         </div>
       </div>
@@ -41,31 +41,31 @@
             <p>Quelles couleurs de vin aimez-vous ?</p>
               <div class="flex-row">
                 <div class="category_choices flex-row">
-                  <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "Rouge", :input_html => { class: 'd-none', :checked => true } %></div>
-                  <div class="category_choice"><%= f.input :color_white, as: :boolean, label: "Blanc", input_html: { class: 'd-none', :checked => true  } %></div>
-                  <div class="category_choice"><%= f.input :color_rose, as: :boolean, label: "Rosé", input_html: { class: 'd-none', :checked => true  } %></div>
+                  <div class="category_choice"><%= f.input :color_red, as: :boolean, label: "Rouge", :input_html => { class: 'd-none' } %></div>
+                  <div class="category_choice"><%= f.input :color_white, as: :boolean, label: "Blanc", input_html: { class: 'd-none' } %></div>
+                  <div class="category_choice"><%= f.input :color_rose, as: :boolean, label: "Rosé", input_html: { class: 'd-none' } %></div>
                 </div>
               </div>
 
-          <p> Quelles sont vos région favorites ?</p>
+          <p> Quelles sont vos régions favorites ?</p>
             <div class="category_choices">
-              <div class="category_choice"><%= f.input :region_alsace, as: :boolean, label: "Alsace", input_html: { class: 'd-none', :checked => true  } %></div>
-              <div class="category_choice"><%= f.input :region_bordeaux, as: :boolean, label: "Bordeaux", input_html: { class: 'd-none', :checked => true  }  %></div>
-              <div class="category_choice"><%= f.input :region_bourgogne, as: :boolean, label: "Bourgogne", input_html: { class: 'd-none', :checked => true  } %></div>
-              <div class="category_choice"><%= f.input :region_loire, as: :boolean, label: "Loire", input_html: { class: 'd-none', :checked => true  } %></div>
-              <div class="category_choice"><%= f.input :region_rhone, as: :boolean, label: "Rhone", input_html: { class: 'd-none', :checked => true  }  %></div>
+              <div class="category_choice"><%= f.input :region_alsace, as: :boolean, label: "Alsace", input_html: { class: 'd-none' } %></div>
+              <div class="category_choice"><%= f.input :region_bordeaux, as: :boolean, label: "Bordeaux", input_html: { class: 'd-none' }  %></div>
+              <div class="category_choice"><%= f.input :region_bourgogne, as: :boolean, label: "Bourgogne", input_html: { class: 'd-none' } %></div>
+              <div class="category_choice"><%= f.input :region_loire, as: :boolean, label: "Loire", input_html: { class: 'd-none' } %></div>
+              <div class="category_choice"><%= f.input :region_rhone, as: :boolean, label: "Rhone", input_html: { class: 'd-none' }  %></div>
             </div>
 
           <p> Plutôt légers ou corsés ? </p>
             <div class="category_choices">
-              <div class="category_choice"><%= f.input :alcool_light, as: :boolean, label: " < 12.5%", input_html: { class: 'd-none', :checked => true  } %></div>
-              <div class="category_choice"><%= f.input :alcool_strong, as: :boolean, label: " > 12.5%", input_html: { class: 'd-none', :checked => true  } %></div>
+              <div class="category_choice"><%= f.input :alcool_light, as: :boolean, label: " < 12.5%", input_html: { class: 'd-none' } %></div>
+              <div class="category_choice"><%= f.input :alcool_strong, as: :boolean, label: " > 12.5%", input_html: { class: 'd-none' } %></div>
             </div>
 
-          <p> Souhaitez-vous recevoir des vins ? <%= image_tag "information.png", data: { toggle:"tooltip", placement: "top"}, title:"BIODYNAMIQUES: intensifier la vie du sol afin qu’il y ait un meilleur échange entre la terre et la plantes || NATURELS: aucun intrants ni techniques visant à modifier le jus originel "%></p>
+          <p> Souhaitez-vous recevoir des vins ? </p>
             <div class="category_choices">
-              <div class="category_choice"><%= f.input :classification_biodynamique, as: :boolean, label: "Biodynamiques", input_html: { class: 'd-none', :checked => true  } %></div>
-              <div class="category_choice"><%= f.input :classification_naturel, as: :boolean, label: "Naturels", input_html: { class: 'd-none', :checked => true  } %></div>
+              <div class="category_choice"><%= f.input :classification_biodynamique, as: :boolean, label: "Biodynamiques", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "left"}, title:"Intensifier la vie du sol afin qu’il y ait un meilleur échange entre la terre et la plantes"  } %></div>
+              <div class="category_choice"><%= f.input :classification_naturel, as: :boolean, label: "Naturels", input_html: { class: 'd-none' }, label_html: { data: { toggle:"tooltip", placement: "right"}, title:"Aucun intrants ni techniques visant à modifier le jus originel" }  %></div>
             </div>
           <div class="text-center">
             <div class="btn btn-flat">
@@ -80,17 +80,17 @@
           <h2> 💡Si vous n'êtes pas sûrs, sélectionnez un maximum de possibilités ! 🍷</h2>
           <p> Quels types de vins rouges préférez-vous ?</p>
             <div class="category_choices">
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_leger, as: :boolean, label: "Léger", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Se dit d'un vin peu coloré et peu corsé, mais équilibré et agréable. En général, à boire assez rapidement"  }  %></div>
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_puissant, as: :boolean, label: "Puissant", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Caractérise un vin qui est à la fois plein, corsé, généreux et d'un riche bouquet"  }  %></div>
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :fruite_red, as: :boolean, label: "Fruité", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Rappel de la chair du fruit frais et mûr contenu dans un vin"  }  %></div>
-              <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_tannique, as: :boolean, label: "Tannique", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Caractère d'un vin laissant apparaître une note d'astringence due à sa richesse en tanin"  }  %></div>
+              <div class="category_choice d-inline-block"><%= f.input :vin_leger, as: :boolean, label: "Léger", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "left"}, title:"Se dit d'un vin peu coloré et peu corsé, mais équilibré et agréable. En général, à boire assez rapidement"  }  %></div>
+              <div class="category_choice d-inline-block"><%= f.input :vin_puissant, as: :boolean, label: "Puissant", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "right"}, title:"Caractérise un vin qui est à la fois plein, corsé, généreux et d'un riche bouquet"  }  %></div>
+              <div class="category_choice d-inline-block"><%= f.input :fruite_red, as: :boolean, label: "Fruité", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "left"}, title:"Rappel de la chair du fruit frais et mûr contenu dans un vin"  }  %></div>
+              <div class="category_choice d-inline-block"><%= f.input :vin_tannique, as: :boolean, label: "Tannique", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "right"}, title:"Caractère d'un vin laissant apparaître une note d'astringence due à sa richesse en tanin"  }  %></div>
             </div>
           <p> Quels types de vins blancs/rosés préférez-vous ?</p>
                 <div class="category_choices">
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sec, as: :boolean, label: "Sec", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"caractère dépourvu de saveur sucrée (moins de 49 grammes par litre)"  }  %></div>
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_sucre, as: :boolean, label: "Sucré", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Un vin moelleux est un vin dont la teneur en sucre est de l'ordre de 10 à 45 grammes par litre"  }  %></div>
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_mineral, as: :boolean, label: "Minéral", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"On retrouve dans de nombreux vins cette minéralité plus ou moins accrue, caractéristique des pierres à fusil"  }  %></div>
-                  <div class="category_choice_caracteristic d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none', :checked => true  }, label_html: { data: { toggle:"tooltip", placement: "top"}, title:"Qualificatif très général des arômes de la grande famille des fruits pour exprimer le rappel de la chair du fruit frais"  }  %></div>
+                  <div class="category_choice d-inline-block"><%= f.input :vin_sec, as: :boolean, label: "Sec", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "left"}, title:"caractère dépourvu de saveur sucrée (moins de 49 grammes par litre)"  }  %></div>
+                  <div class="category_choice d-inline-block"><%= f.input :vin_sucre, as: :boolean, label: "Sucré", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "right"}, title:"Un vin moelleux est un vin dont la teneur en sucre est de l'ordre de 10 à 45 grammes par litre"  }  %></div>
+                  <div class="category_choice d-inline-block"><%= f.input :vin_mineral, as: :boolean, label: "Minéral", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "left"}, title:"On retrouve dans de nombreux vins cette minéralité plus ou moins accrue, caractéristique des pierres à fusil"  }  %></div>
+                  <div class="category_choice d-inline-block"><%= f.input :vin_fruite, as: :boolean, label: "Fruité", input_html: { class: 'd-none'  }, label_html: { data: { toggle:"tooltip", placement: "right"}, title:"Qualificatif très général des arômes de la grande famille des fruits pour exprimer le rappel de la chair du fruit frais"  }  %></div>
                 </div>
                 <%= f.button :submit, "Voir mes suggestions", class: "text-center", class: "btn btn-flat", id: "sign-up-submit-btn" %>
               <% end %>
