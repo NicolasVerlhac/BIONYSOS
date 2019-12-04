@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Bionysos - Découvrez les meilleurs vins bio!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>BIONYSOS</title>
-    <link rel="icon" href="<%= image_path 'favicon.ico' %>" />
 
+    <meta property="og:title" content="Les meilleurs vins bio | Bionysos" />
+    <meta property="og:description" content="Recevez chaque mois 2 bouteilles de vin sélectionnées en fonction de vos goûts." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.bionysos.best" />
+    <meta property="og:image" content="https://res.cloudinary.com/dgsbj3xkk/image/upload/v1575467484/dailywinepicks_1600_hmn483.jpg" width="1200px" height="630px" />
+
+
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
