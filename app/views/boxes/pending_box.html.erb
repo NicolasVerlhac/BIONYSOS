@@ -35,11 +35,7 @@ console.log("DROP");
             <div class="card-wine-color-suggestions <%= box_item.wine.color %>">
             <p><%= box_item.wine.color %></p>
             </div>
-            <div class="delete-bottle">
-              <%=link_to box_item_path(box_item), method: :delete do %>
-                <%= image_tag "cross.png" %>
-              <% end %>
-            </div>
+
           <div class="card-trip-infos-suggestions">
           <div>
             <h3> <strong><%= box_item.wine.name.first(20) %> </strong> </h3>
@@ -52,6 +48,11 @@ console.log("DROP");
             </div>
           </div>
         </div>
+      </div>
+      <div class="delete-bottle">
+      <%=link_to box_item_path(box_item), method: :delete do %>
+      <%= image_tag "cross.png" %>
+      <% end %>
       </div>
     </div>
     <% end %>
@@ -78,11 +79,6 @@ console.log("DROP");
         <div class="card-wine-2-color <%= wine.color %>">
           <p><%= wine.color %></p>
         </div>
-        <div class="add-bottle">
-          <%=link_to wine_box_items_path(wine), method: :post do %>
-          <%= image_tag "add.png" %>
-          <% end %>
-        </div>
         <div class="card-trip-infos">
           <div>
             <h3> <strong><%= wine.name.first(40) %> </strong> </h3>
@@ -95,6 +91,11 @@ console.log("DROP");
           </div>
         </div>
       </div>
+        <div class="add-bottle">
+          <%=link_to wine_box_items_path(wine), method: :post do %>
+          <%= image_tag "add.png" %>
+          <% end %>
+        </div>
     </div>
   <% end %>
   </div>

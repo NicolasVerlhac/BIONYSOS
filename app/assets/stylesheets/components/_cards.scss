@@ -409,15 +409,15 @@ a:hover {
   display: none;
 }
 
-// .card-wine-suggestions:hover .card-trip-infos-suggestions-hidden {
-//     display: block;
-//     background-color: white;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-// }
+.card-wine-suggestions:hover .card-trip-infos-suggestions-hidden {
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
 // .card-wine-cepages {
 //   background-color: gray;
@@ -558,15 +558,15 @@ a:hover {
   margin: 20px;
 }
 
-// .card-wine-2 img:hover .card-trip-infos-suggestions-hidden-2 {
-//     display: inline;
-//     background-color: white;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-// }
+.card-wine-2:hover .card-trip-infos-suggestions-hidden-2 {
+    display: inline;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
 .card-trip-infos-suggestions-hidden-2 h4 img {
   display: inline ;

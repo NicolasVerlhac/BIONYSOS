@@ -1,2 +1,22 @@
-.carousel-item {
-}
+ .carousel-item {
+ }
+
+
+ .slick-prev:before {
+   font-size : 25px !important;
+   color : black !important;
+ }
+
+ .slick-prev {
+  left: 0px !important;
+    z-index: 2;
+ }
+
+ .slick-next {
+     right: 0px !important;
+ }
+
+ .slick-next:before {
+   font-size : 25px !important;
+   color : black !important;
+ }
