@@ -30,9 +30,9 @@
           <div class="d-inline-block"><%= f.input :last_name, required: true, placeholder: '', label: false %></div>
         </div>
         <div>
-          <div class="d-inline-block"><%= f.input :address, as: :text, required: true, placeholder: 'Adresse', label: false %></div>
-          <div class="d-inline-block"><%= f.input :zip_code, required: true, placeholder: 'Code postal', label: false %></div>
-          <div class="d-inline-block"><%= f.input :city, required: true, placeholder: 'Ville', label: false  %></div>
+          <div class="d-inline-block"><%= f.input :address, as: :text, required: true, placeholder: 'Adresse', label: false, :input_html => { :value => '16 Villa Gaudelet'}  %></div>
+          <div class="d-inline-block"><%= f.input :zip_code, required: true, placeholder: 'Code postal', label: false,  :input_html => { :value => '75011'}  %></div>
+          <div class="d-inline-block"><%= f.input :city, required: true, placeholder: 'Ville', label: false,  :input_html => { :value => 'Paris'}   %></div>
         </div>
       </div>
     </div>
@@ -42,9 +42,9 @@
         <h3>Paiement</h3>
         <h4><%= image_tag "stripe.png" %></h4>
         <div id="form_info_payment">
-          <div class="d-inline-block"><%= f.input :card_number, required: true, placeholder: 'Numéro de carte', label: false  %></div>
-          <div class="d-inline-block"><%= f.input :expiry_date, required: true, placeholder: 'Date d expiration', label: false  %></div>
-          <div class="d-inline-block"><%= f.input :security_code, required: true, placeholder: 'Code de sécurité', label: false  %></div>
+          <div class="d-inline-block"><%= f.input :card_number, required: true, placeholder: 'Numéro de carte', label: false,  :input_html => { :value => '4242 4242 4242 4242'}   %></div>
+          <div class="d-inline-block"><%= f.input :expiry_date, required: true, placeholder: 'Date d expiration', label: false,  :input_html => { :value => '01/22'}   %></div>
+          <div class="d-inline-block"><%= f.input :security_code, required: true, placeholder: 'Code de sécurité', label: false,  :input_html => { :value => '201'}   %></div>
         </div>
       </div>
     </div>
