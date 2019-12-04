@@ -171,7 +171,7 @@ vigneron10.save!
 
 puts 'Created the vignerons seed'
 
-wine_photo1 = URI.open('https://cdn.shopify.com/s/files/1/2802/2616/products/small-selection-oe-32_large.jpg?v=1571404436')
+wine_photo1 = URI.open('https://s.lesgrappes.com/media/catalog/product/p/i/pinot_blanc-1507620497.jpg')
 wine1 = Wine.new(
   name: 'Alsace Pinot Blanc',
   color: 'Blanc',
@@ -351,6 +351,24 @@ wine10 = Wine.new(
 wine10.wine_photo.attach(io: wine_photo10, filename: 'wine_photo10.jpg', content_type: 'image/jpg')
 wine10.save!
 
+wine_photo11 = URI.open('https://s2.lesgrappes.com/media/catalog/product/c/h/chateau-ferran-tucaou-rouge-2010.jpgxw100xh250xq60xr2xgc.jpg')
+wine11 = Wine.new(
+  name: 'Château Ferran',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Merlot',
+  year: '2014',
+  alcool: '12%',
+  description: "Robe brillante et profonde. Arômes de fruits rouges. Finement boisé, ce vin s’épanouit en bouche, il est doté de beaux tanins ronds et murs, et d’une finale longue.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron8)
+wine11.wine_photo.attach(io: wine_photo11, filename: 'wine_photo11.jpg', content_type: 'image/jpg')
+wine11.save!
+
 wine_photo12 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/h/chteau_magence_rouge_2009_barrique-1465398385.pngxw140xh300xr2.jpg')
 wine12 = Wine.new(
   name: 'Chateau Magence Rouge Barrique',
@@ -405,23 +423,293 @@ wine14 = Wine.new(
 wine14.wine_photo.attach(io: wine_photo14, filename: 'wine_photo14.jpg', content_type: 'image/jpg')
 wine14.save!
 
-wine_photo15 = URI.open('https://s1.lesgrappes.com/media/catalog/product/b/a/bassedef_bourgogne_chardonnay.pngxw140xh300xr2.jpg')
+wine_photo15 = URI.open('https://s1.lesgrappes.com/media/catalog/product/r/o/rouge2-1481544281.jpgxw100xh250xq60xr2xgc.jpg')
 wine15 = Wine.new(
-  name: 'Domaine de Champs Fleury - Chardonnay',
-  color: 'Blanc',
-  regionclassification:'Bourgogne',
-  cepages: 'Chardonnay',
-  year: '2018',
-  alcool: '13%',
-  description: "Il comporte une magnifique robe jaune paille avec quelques reflets verts. Le nez est très typé « chardonnay » avec des notes subtiles de muscat, de miel et de fleurs. La bouche, aux arômes de fruits confits est puissante, suave, mais avec de la fraîcheur. Ce vin est élégant, sympathique et convivial.",
-  biodynamique_naturel: 'Naturel',
+  name: 'Domaine Amirault - le clos des Quarterons',
+  color: 'Rouge',
+  regionclassification:'Loire',
+  cepages: 'Cabernet franc',
+  year: '2016',
+  alcool: '12%',
+  description: "Des raisins récoltés à la main en pleine maturité. Gourmand, frais, juteux, harmonieux et de franche digestibilité !",
+  biodynamique_naturel: 'Biodynamique',
   sec_sucre: 'Sec',
-  mineral_fruite: 'Fruité',
+  mineral_fruite: 'Minéral',
   leger_puissant: 'Puissant',
   fruite_tannique: 'Rouge Fruité',
-  vigneron: vigneron6)
+  vigneron: vigneron7)
 wine15.wine_photo.attach(io: wine_photo15, filename: 'wine_photo15.jpg', content_type: 'image/jpg')
 wine15.save!
+
+wine_photo16 = URI.open('https://s2.lesgrappes.com/media/catalog/product/l/a/lalande_2016.pngxw100xh250xq60xr2xgc.jpg')
+wine16 = Wine.new(
+  name: 'Lalande de Pomerol',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Cabernet Franc',
+  year: '2016',
+  alcool: '13,5%',
+  description: "La robe est rubis brillant avec des reflets violets. Au nez, le fruit domine (cerise noire), accompagné de notes finement boisées Une structure équilibrée en bouche.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron9)
+wine16.wine_photo.attach(io: wine_photo16, filename: 'wine_photo16.jpg', content_type: 'image/jpg')
+wine16.save!
+
+wine_photo17 = URI.open('https://s3.lesgrappes.com/media/catalog/product/b/o/bourgognehautescotesdebeaunevieillesvignespinotnoir2016544_orig.jpgxw100xh250xq60xr2xgc.jpg')
+wine17 = Wine.new(
+  name: 'Lalande de Pomerol',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Pinot Noir',
+  year: '2017',
+  alcool: '13%',
+  description: "A l'oeil la robe est rubis profond, le nez fruité sur les arômes de fraise et de framboise. La bouche est ample, ronde et fruitée. Sur les fruits confits, compotés, les tanins sont fins et la finale longue.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron10)
+wine17.wine_photo.attach(io: wine_photo17, filename: 'wine_photo17.jpg', content_type: 'image/jpg')
+wine17.save!
+
+wine_photo18 = URI.open('https://s.lesgrappes.com/media/catalog/product/g/r/gravilices-1481548585.jpgxw100xh250xq60xr2xgc.jpg')
+wine18 = Wine.new(
+  name: 'Les Gravilices',
+  color: 'Rouge',
+  regionclassification:'Loire',
+  cepages: 'Cabernet franc',
+  year: '2016',
+  alcool: '12%',
+  description: "Un vin équilibré et riche. Nous vous conseillons de le déguster après 1 à 3h de carafage pour qu'il révèle ses arôme de cerises et pruneaux confits.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron10)
+wine18.wine_photo.attach(io: wine_photo18, filename: 'wine_photo18.jpg', content_type: 'image/jpg')
+wine18.save!
+
+wine_photo19 = URI.open('https://s.lesgrappes.com/media/catalog/product/t/i/tirebouchon_ourea1545085486_1.jpgxw100xh250xq60xr2xgc.jpg')
+wine19 = Wine.new(
+  name: 'Tire-Bouchon Domaine Ouréa',
+  color: 'Rouge',
+  regionclassification:'Rhone',
+  cepages: 'Grenache',
+  year: '2018',
+  alcool: '13%',
+  description: "Très marqué sur le fruit, ce vin croquant est droit, précis, avec ses touches de mûres fraîchement cueillies et ce cassis bien mûrs, il sera parfait pour un moment convivial entre amis.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron9)
+wine19.wine_photo.attach(io: wine_photo19, filename: 'wine_photo19.jpg', content_type: 'image/jpg')
+wine19.save!
+
+wine_photo20 = URI.open('https://s3.lesgrappes.com/media/catalog/product/d/o/domaine-bott-geyl-gewurz-elements.jpgxw100xh250xq60xr2xgc.jpg')
+wine20 = Wine.new(
+  name: 'Gewurztraminer',
+  color: 'Blanc',
+  regionclassification:'Alsace',
+  cepages: 'Gewurztraminer',
+  year: '2015',
+  alcool: '13,5%',
+  description: "Le vin présente de belles notes épicées et exotiques, la bouche s’avère intense, équilibrée et élégante.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron8)
+wine20.wine_photo.attach(io: wine_photo20, filename: 'wine_photo20.jpg', content_type: 'image/jpg')
+wine20.save!
+
+wine_photo21 = URI.open('https://s2.lesgrappes.com/media/catalog/product/m/u/muscadetleverger02.jpgxw100xh250xq60xr2xgc.jpg')
+wine21 = Wine.new(
+  name: 'Le Verger 2018',
+  color: 'Blanc',
+  regionclassification:'Loire',
+  cepages: 'Melon de bourgogne',
+  year: '2018',
+  alcool: '12%',
+  description: "La genèse décrit le jardin d’Eden planté de 2 arbres : l’arbre de vie et l’arbre de la connaissance.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron8)
+wine21.wine_photo.attach(io: wine_photo21, filename: 'wine_photo21.jpg', content_type: 'image/jpg')
+wine21.save!
+
+wine_photo22 = URI.open('https://s3.lesgrappes.com/media/catalog/product/i/m/image2-1507200448.jpgxw100xh250xq60xr2xgc.jpg')
+wine22 = Wine.new(
+  name: 'Nuits blanches',
+  color: 'Blanc',
+  regionclassification:'Loire',
+  cepages: 'Sauvignon',
+  year: '2018',
+  alcool: '13,5%',
+  description: "En dégustant ce vin, on retrouve les arômes typiques des sauvignons cueillis à maturité soit en attaque, un coté agrumes puis un beau fruit qui vient envoûter notre palais.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron8)
+wine22.wine_photo.attach(io: wine_photo22, filename: 'wine_photo22.jpg', content_type: 'image/jpg')
+wine22.save!
+
+wine_photo23 = URI.open('https://s3.lesgrappes.com/media/catalog/product/n/g/nglnbl_sm-1540999349_2.pngxw100xh250xq60xr2xgc.jpg')
+wine23 = Wine.new(
+  name: 'Liberty Nages',
+  color: 'Blanc',
+  regionclassification:'Rhone',
+  cepages: 'Grenache',
+  year: '2018',
+  alcool: '12,5%',
+  description: "La robe jaune aux reflets verts accompagne les parfums de pamplemousses, de clémentines et de fruits de la passion.",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron7)
+wine23.wine_photo.attach(io: wine_photo23, filename: 'wine_photo23.jpg', content_type: 'image/jpg')
+wine23.save!
+
+wine_photo24 = URI.open('https://s1.lesgrappes.com/media/catalog/product/d/o/domaine-verqui_re-sablet-blanc.jpgxw100xh250xq60xr2xgc.jpg')
+wine24 = Wine.new(
+  name: 'Sablet Blanc',
+  color: 'Blanc',
+  regionclassification:'Rhone',
+  cepages: 'Grenache',
+  year: '2018',
+  alcool: '12,5%',
+  description: "La robe présente une couleur or pâle aux reflets verts. Le nez, très aromatique est agréable, fin et élégant, il laisse s’exprimer la pêche, le citron et l’amande fraîche.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron7)
+wine24.wine_photo.attach(io: wine_photo24, filename: 'wine_photo24.jpg', content_type: 'image/jpg')
+wine24.save!
+
+wine_photo25 = URI.open('https://s.lesgrappes.com/media/catalog/product/l/e/le_luron_de_la_tour-1470067168.pngxw100xh250xq60xr2xgc.jpg')
+wine25 = Wine.new(
+  name: 'Le luron de la tour',
+  color: 'Rose',
+  regionclassification:'Loire',
+  cepages: 'Cabernet Sauvignon',
+  year: '2018',
+  alcool: '12%',
+  description: "La robe est saumonée avec des reflets violines. Le nez est très gourmand avec des notes de framboises fraiches.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron5)
+wine25.wine_photo.attach(io: wine_photo25, filename: 'wine_photo25.jpg', content_type: 'image/jpg')
+wine25.save!
+
+wine_photo26 = URI.open('https://s3.lesgrappes.com/media/catalog/product/o/u/ouest_coast_ros-1492684225.jpgxw100xh250xq60xr2xgc.jpg')
+wine26 = Wine.new(
+  name: 'Ouest Coast',
+  color: 'Rose',
+  regionclassification:'Loire',
+  cepages: 'Grolleau',
+  year: '2018',
+  alcool: '12%',
+  description: "La robe est rose pale. Le nez est frais et fruité sur des notes de pétales de rose et de pamplemousse. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron5)
+wine26.wine_photo.attach(io: wine_photo26, filename: 'wine_photo26.jpg', content_type: 'image/jpg')
+wine26.save!
+
+wine_photo27 = URI.open('https://s1.lesgrappes.com/media/catalog/product/l/e/letoffe-1510158997.jpgxw100xh250xq60xr2xgc.jpg')
+wine27 = Wine.new(
+  name: 'Domaine de Rieflé',
+  color: 'Rouge',
+  regionclassification:'Alsace',
+  cepages: 'Pinot noir',
+  year: '2018',
+  alcool: '13%',
+  description: "L'étoffe, vin rouge élevé 9 mois en barriques de chêne, offre un paysage gustatif et olfactif varié. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron5)
+wine27.wine_photo.attach(io: wine_photo27, filename: 'wine_photo27.jpg', content_type: 'image/jpg')
+wine27.save!
+
+wine_photo28 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/h/chateau_la_levrette_blc-1499438313.jpgxw100xh250xq60xr2xgc.jpg')
+wine28 = Wine.new(
+  name: 'Chateau de la levrette',
+  color: 'Blanc',
+  regionclassification:'Bordeaux',
+  cepages: 'Sauvignon',
+  year: '2018',
+  alcool: '13%',
+  description: "Robe lumineuse. Son nez sera d'une complexité aromatique incroyable, avec des notes vanillés et de mangue. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sucré',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron5)
+wine28.wine_photo.attach(io: wine_photo28, filename: 'wine_photo28.jpg', content_type: 'image/jpg')
+wine28.save!
+
+wine_photo29 = URI.open('https://s1.lesgrappes.com/media/catalog/product/g/r/grav0652_1-1504884833.pngxw140xh300xr2.jpg')
+wine29 = Wine.new(
+  name: 'La cuvée de mère O',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Merlot',
+  year: '2015',
+  alcool: '14%',
+  description: "Un vin facile qui apporte un plaisir immédiat avec son agréable structure, ainsi que ses arômes généreux de fruits rouges tels que la mûre et la cerise. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron4)
+wine29.wine_photo.attach(io: wine_photo29, filename: 'wine_photo29.jpg', content_type: 'image/jpg')
+wine29.save!
+
+wine_photo30 = URI.open('https://s1.lesgrappes.com/media/catalog/product/l/e/lebateauivre-1498476260.pngxw100xh250xq60xr2xgc.jpg')
+wine30 = Wine.new(
+  name: 'Le bateau ivre',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Merlot',
+  year: '2017',
+  alcool: '13,5%',
+  description: "Les senteurs primeurs se manifestent généreusement à l’agitation avec des notes de cassis, framboise et truffe. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron4)
+wine30.wine_photo.attach(io: wine_photo30, filename: 'wine_photo30.jpg', content_type: 'image/jpg')
+wine30.save!
 
 # file = URI.open('https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 # fusée1 = User.first.vehicules.create!(title: "Ariane 5", description: "Développé pour placer des satellites sur orbite géostationnaire et des charges lourdes en orbite", category: "Fusée", capacity: 8, country: "🇫🇷 France", city: "Paris", address: "16 rue Duhesme", daily_price: 7000, permit: true, availability: true)
