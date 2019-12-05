@@ -711,6 +711,186 @@ wine30 = Wine.new(
 wine30.wine_photo.attach(io: wine_photo30, filename: 'wine_photo30.jpg', content_type: 'image/jpg')
 wine30.save!
 
+wine_photo31 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/h/chablis_vielles_vignes_de_ste_claire-1503661147.jpgxw100xh250xq60xr2xgc.jpg')
+wine31 = Wine.new(
+  name: 'Chablis Saint Claire',
+  color: 'Blanc',
+  regionclassification:'Bourgogne',
+  cepages: 'Chardonnay',
+  year: '2017',
+  alcool: '12,5%',
+  description: "Au nez, des notes citronnées, de fruits jaunes. La bouche est enveloppée, équilibrée, acidulée et salivante. Un vin précis tout en gourmandise.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron1)
+wine31.wine_photo.attach(io: wine_photo31, filename: 'wine_photo31.jpg', content_type: 'image/jpg')
+wine31.save!
+
+wine_photo32 = URI.open('https://s3.lesgrappes.com/media/catalog/product/d/d/ddvbouteillesavignylesbeauneblancssmill-1504012702.jpgxw100xh250xq60xr2xgc.jpg')
+wine32 = Wine.new(
+  name: 'Savigny-les-Baunes',
+  color: 'Blanc',
+  regionclassification:'Bourgogne',
+  cepages: 'Chardonnay',
+  year: '2017',
+  alcool: '13%',
+  description: "Très franc, avec une bonne vivacité, le Savigny-Lès-Beaune Blanc Decelle-Villa décline des arômes de fruits exotiques et de pomme golden.",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron1)
+wine32.wine_photo.attach(io: wine_photo32, filename: 'wine_photo32.jpg', content_type: 'image/jpg')
+wine32.save!
+
+wine_photo33 = URI.open('https://s2.lesgrappes.com/media/catalog/product/i/m/img_20171006_0917081507783516_1-1507799342.jpgxw100xh250xq60xr2xgc.jpg')
+wine33 = Wine.new(
+  name: 'Chateau Lagrange',
+  color: 'Blanc',
+  regionclassification:'Bordeaux',
+  cepages: 'Sauvignon',
+  year: '2018',
+  alcool: '12,5%',
+  description: "Notes d'agrumes et de fleurs blanches ( cépage Sauvignon ) et de vanille et fumé ( élevage en futs ).",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron3)
+wine33.wine_photo.attach(io: wine_photo33, filename: 'wine_photo33.jpg', content_type: 'image/jpg')
+wine33.save!
+
+wine_photo34 = URI.open('https://s3.lesgrappes.com/media/catalog/product/a/r/arton72-1499853255.jpgxw100xh250xq60xr2xgc.jpg')
+wine34 = Wine.new(
+  name: 'Sylvaner Tradition',
+  color: 'Blanc',
+  regionclassification:'Alsace',
+  cepages: 'Sylvaner',
+  year: '2018',
+  alcool: '12%',
+  description: "Le vin classique de la région !",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Tannique',
+  vigneron: vigneron3)
+wine34.wine_photo.attach(io: wine_photo34, filename: 'wine_photo34.jpg', content_type: 'image/jpg')
+wine34.save!
+
+wine_photo35 = URI.open('https://s1.lesgrappes.com/media/catalog/product/a/r/arton691-1499869833.jpgxw100xh250xq60xr2xgc.jpg')
+wine35 = Wine.new(
+  name: 'Riesling Vieilles Vignes',
+  color: 'Blanc',
+  regionclassification:'Alsace',
+  cepages: 'Riesling',
+  year: '2017',
+  alcool: '13%',
+  description: "Droit, frais, minéral et aromatique !",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron9)
+wine35.wine_photo.attach(io: wine_photo35, filename: 'wine_photo35.jpg', content_type: 'image/jpg')
+wine35.save!
+
+wine_photo36 = URI.open('https://s2.lesgrappes.com/media/catalog/product/l/e/les_cadets_2016.pngxw100xh250xq60xr2xgc.jpg')
+wine36 = Wine.new(
+  name: 'Les cadets',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Merlot',
+  year: '2018',
+  alcool: '13%',
+  description: "Un nez fruité avec des arôme mentholés et de chèvrefeuille. La bouche est droite, fine, et fraîche avec une finale pleine d'énergie. ",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron8)
+wine36.wine_photo.attach(io: wine_photo36, filename: 'wine_photo36.jpg', content_type: 'image/jpg')
+wine36.save!
+
+wine_photo37 = URI.open('https://s3.lesgrappes.com/media/catalog/product/c/h/chateau-ferran-tucaou-rouge-2010.jpgxw100xh250xq60xr2xgc.jpg')
+wine37 = Wine.new(
+  name: 'Chateau Ferran Tucaou',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Merlot',
+  year: '2014',
+  alcool: '13%',
+  description: "Robe brillante et profonde. Arômes de fruits rouges. Finement boisé, ce vin s’épanouit en bouche. ",
+  biodynamique_naturel: 'Biodynamique',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Fruité',
+  leger_puissant: 'Léger',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron8)
+wine37.wine_photo.attach(io: wine_photo37, filename: 'wine_photo37.jpg', content_type: 'image/jpg')
+wine37.save!
+
+wine_photo38 = URI.open('https://s2.lesgrappes.com/media/catalog/product/c/h/ch_grand_launay.jpgxw100xh250xq60xr2xgc.jpg')
+wine38 = Wine.new(
+  name: 'Grand Launay',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Merlot',
+  year: '2018',
+  alcool: '12,5%',
+  description: "Robe rubis profond, nez de mûre et légères notes empyreumatiques. L'attaque est franche avec une bouche minérale et soyeuse. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron5)
+wine38.wine_photo.attach(io: wine_photo38, filename: 'wine_photo38.jpg', content_type: 'image/jpg')
+wine38.save!
+
+wine_photo39 = URI.open('https://s1.lesgrappes.com/media/catalog/product/c/h/chateau-ferran-le-sans-nom-rouge.jpgxw100xh250xq60xr2xgc.jpg')
+wine39 = Wine.new(
+  name: 'Chateau Ferran sans nom',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Cabernet Sauvignon',
+  year: '2018',
+  alcool: '12%',
+  description: "La robe est brillante et profonde. On peut y déceler des arômes de fruits rouges. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron5)
+wine39.wine_photo.attach(io: wine_photo39, filename: 'wine_photo39.jpg', content_type: 'image/jpg')
+wine39.save!
+
+wine_photo40 = URI.open('https://s.lesgrappes.com/media/catalog/product/c/m/cm_final_400t_fond_blanc-1516204352.jpgxw100xh250xq60xr2xgc.jpg')
+wine40 = Wine.new(
+  name: 'Champ du Moulin',
+  color: 'Rouge',
+  regionclassification:'Bordeaux',
+  cepages: 'Cabernet Sauvignon',
+  year: '2013',
+  alcool: '13%',
+  description: "Ce millésime 2013 nous livre un vin fin et élégant avec une touche de mûres. ",
+  biodynamique_naturel: 'Naturel',
+  sec_sucre: 'Sec',
+  mineral_fruite: 'Minéral',
+  leger_puissant: 'Puissant',
+  fruite_tannique: 'Rouge Fruité',
+  vigneron: vigneron5)
+wine40.wine_photo.attach(io: wine_photo40, filename: 'wine_photo40.jpg', content_type: 'image/jpg')
+wine40.save!
+
 # file = URI.open('https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 # fusée1 = User.first.vehicules.create!(title: "Ariane 5", description: "Développé pour placer des satellites sur orbite géostationnaire et des charges lourdes en orbite", category: "Fusée", capacity: 8, country: "🇫🇷 France", city: "Paris", address: "16 rue Duhesme", daily_price: 7000, permit: true, availability: true)
 # fusée1.photo.attach(io: file, filename: 'fusée1.jpg', content_type: 'image/jpg')
