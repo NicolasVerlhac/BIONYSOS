@@ -1,0 +1,26 @@
+<div class="col-sm-4" id="<%= box_item.wine.id %>">
+  <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <%= cl_image_tag box_item.wine.wine_photo.key %>
+    <div class="card-wine-color-suggestions <%= box_item.wine.color %>">
+      <p><%= box_item.wine.color %></p>
+    </div>
+
+    <div class="card-trip-infos-suggestions">
+      <div>
+        <h3> <strong><%= box_item.wine.name.first(20) %> </strong> </h3>
+        <div class="card-trip-infos-suggestions-hidden">
+          <h3> <strong><%= box_item.wine.name.first(20) %> </strong> </h3>
+          <h4><%= image_tag "pin.png", class: 'picto-show' %> <%=box_item.wine.regionclassification%>, <%=box_item.wine.year%></h4>
+          <h4><%= image_tag "Homepage/leaf.png", class: 'picto-show' %> Vin <%=box_item.wine.biodynamique_naturel.downcase%></h4>
+          <h4><%= image_tag "cepages.png", class: 'picto-show' %> <%=box_item.wine.cepages%></h4>
+          <h5><%= box_item.wine.description.first(350) %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="delete-bottle">
+    <%=link_to box_item_path(box_item), method: :delete, remote: true do %>
+      <%= image_tag "cross.png" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container suggestions" id="suggestions">
+  <!-- <div class="suggestion-block"> -->
+    <h2> <strong><%= current_user.first_name.capitalize %></strong>, voici les <strong>2</strong> vins que nous vous recommandons :</h2>
+    <div class="row mt-4 justify-content-md-center" id="suggestions-carousel">
+      <% box.box_items.each do |box_item| %>
+        <%= render 'boxes/suggestion', box_item: box_item %>
+      <% end %>
+      <% (2 - box.box_items.count).times do %>
+        <div class="wine-placeholder"></div>
+      <% end %>
+    </div>
+  <!-- </div> -->
+</div>

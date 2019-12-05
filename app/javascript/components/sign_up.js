@@ -7,7 +7,7 @@ const signUp = () => {
         waitingAlgoDiv.style.display = 'flex';
         setTimeout(() => {
           signUpBtn.form.submit();
-        }, 5000)
+        }, 3000)
     })
   }
 }

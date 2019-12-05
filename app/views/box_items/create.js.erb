@@ -1,0 +1,15 @@
+// select carousel
+// const carousel = document.getElementById('wines-carousel');
+// select 1 placeholder
+// remove the placeholder
+
+// insert suggestion modal in carousel
+
+function addSuggestion(suggestionHTML) {
+  const placeholder = document.querySelector('.wine-placeholder');
+  placeholder.outerHTML = "<%= j render 'boxes/suggestion', box_item: @box_item %>";
+  const otherWines = document.getElementById();
+  otherWines.innerHTML = "<%= j render 'boxes/otherWines', other_wines: @other_wines %>"
+}
+
+addSuggestion();
