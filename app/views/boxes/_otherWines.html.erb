@@ -1,0 +1,26 @@
+<% other_wines.each do |wine|  %>
+  <div class="col-sm-12" id="<%= wine.id %>">
+    <div class="card-wine-2">
+      <%= cl_image_tag wine.wine_photo.key, draggable: true, ondragstart: "drag(event)" %>
+      <div class="card-wine-2-color <%= wine.color %>">
+        <p><%= wine.color %></p>
+      </div>
+      <div class="card-trip-infos">
+        <div>
+          <h3> <strong><%= wine.name.first(40) %> </strong> </h3>
+          <div class="card-trip-infos-suggestions-hidden-2">
+          <h3> <strong><%= wine.name.first(40) %> </strong> </h3>
+          <h4><%= image_tag "pin.png" %> <%=wine.regionclassification%>, <%=wine.year%></h4>
+          <h4><%= image_tag "Homepage/leaf.png" %> Vin <%=wine.biodynamique_naturel.downcase%></h4>
+          <h4><%= image_tag "cepages.png" %> <%=wine.cepages%></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="add-bottle">
+        <%=link_to wine_box_items_path(wine), method: :post, remote: true do %>
+        <%= image_tag "add.png" %>
+        <% end %>
+      </div>
+  </div>
+<% end %>

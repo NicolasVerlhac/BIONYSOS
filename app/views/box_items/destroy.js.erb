@@ -1,0 +1,6 @@
+function refreshSuggestions() {
+  const suggestionsDiv = document.getElementById('suggestions');
+  suggestionsDiv.innerHTML = "<%= j render 'boxes/suggestions', box: @box_item.box %>";
+}
+
+refreshSuggestions();
