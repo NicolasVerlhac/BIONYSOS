@@ -26,7 +26,7 @@ console.log("DROP");
 <div class="banner-suggestion" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1543418219-44e30b057fea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80);">
   <div class="container suggestions">
     <div class="suggestion-block">
-    <h2> <strong><%= current_user.first_name.capitalize %></strong>, voici les <strong>2</strong> vins que nous vous recommandons :</h2>
+    <h2> <strong><%= current_user.first_name.capitalize %></strong>, voici les <strong>2</strong> vins que nous vous recommandons ce mois-ci :</h2>
       <div class="row mt-4 justify-content-md-center">
       <% @box.box_items.each do |box_item| %>
         <div class="col-sm-4" id="<%= box_item.wine.id %>">
@@ -70,7 +70,7 @@ console.log("DROP");
 
 
 <div class="other-wines">
-  <h2> Troquer l'une de vos bouteilles avec l'une des suivantes :</h2>
+  <h2> Troquez l'une de vos bouteilles avec l'une des suivantes :</h2>
   <div class="row" id="wines-carousel">
   <% @other_wines.each do |wine|  %>
     <div class="col-sm-12" id="<%= wine.id %>">
