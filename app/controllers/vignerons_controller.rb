@@ -7,7 +7,8 @@ class VigneronsController < ApplicationController
       {
         lat: vigneron.latitude,
         lng: vigneron.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { vigneron: vigneron })
+        infoWindow: render_to_string(partial: "info_window", locals: { vigneron: vigneron }),
+        image_url: helpers.asset_url('pin.png')
       }
     end
   end
