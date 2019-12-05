@@ -82,7 +82,7 @@
                 <div class="col-sm-4">
                   <div class="card-wine-suggestions future" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <%= cl_image_tag @last_box.wines[0].wine_photo.key %>
-                    <div class="card-wine-color-suggestions future">
+                    <div class="card-wine-color-suggestions <%=@last_box.wines[0].color%> ">
                       <p style="margin-top: 0px;">Vin <%= @last_box.wines[0].color %> </p>
                     </div>
                     <div class="card-trip-infos-suggestions">
@@ -134,7 +134,7 @@
                 <div class="col-sm-4">
                   <div class="card-wine-suggestions" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <%= cl_image_tag @last_box.wines[1].wine_photo.key %>
-                    <div class="card-wine-color-suggestions future %>">
+                    <div class="card-wine-color-suggestions <%=@last_box.wines[1].color%> %>">
                       <p style="margin-top: 0px;">Vin <%= @last_box.wines[1].color %></p>
                     </div>
                     <div class="card-trip-infos-suggestions">
