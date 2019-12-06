@@ -1,7 +1,9 @@
 require 'open-uri'
 puts 'Delete vignerons and wines'
 
-BoxItem.destroy_all
+
+Box.destroy_all
+User.destroy_all
 Vigneron.destroy_all
 BoxItem.destroy_all
 Wine.destroy_all
